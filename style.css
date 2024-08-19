@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+  
+.row {
+    display: flex;
+}
+  
+.left {
+    flex: 40%;
+    padding: 10px;   
+    text-align: center;
+}
+
+.right {
+    flex: 60%;
+    margin-top: 60px;
+    padding: 10px;
+}
+
+Menu{
+    padding: 30px;
+    text-align: center;
+    left: 12.5%;
+    position: fixed; 
+}
+
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+.marker{
+    display: block;
+}
