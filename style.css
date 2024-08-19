@@ -1,5 +1,4 @@
 * {
-    box-sizing: border-box;
     scroll-behavior: smooth;
   }
   
@@ -23,6 +22,36 @@ Menu{
     text-align: center;
     left: 12.5%;
     position: fixed; 
+}
+
+.description{
+    flex:60%; 
+    padding-left: 10px
+}
+
+.titleHolder{
+    padding : 10px;
+    flex-basis: 500px;
+    background-color: gray;
+    flex : 40%;
+    border: 3px black;
+    height: auto;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.titleHolder img{
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    display: block;
+    min-height: 200px;
+}
+
+.project{
+    display : flex;
+    gap : 20px;
+    margin-bottom: 20px;
 }
 
 h1{
