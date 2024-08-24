@@ -9,43 +9,59 @@
     </title>
 </head>
 <body>
+    <script src = "Scripts/dragDown.js">
+    </script>
     <div class="row">
         <div class="column left">
             <Menu>
                 <h1>Jianwen Ding</h1>
-                <a class="marker" href = "#about">About</a>
-                <p></p>
-                <a class="marker" href = "#skill">Skills</a>
-                <p></p>
-                <a class="marker" href = "#projects">Projects</a>
-                <p></p>
-                <a class="marker" href = "#jams">Game Jams</a>
-                <p></p>
-                <a class="marker" href = "#other">Other</a>
-                <div style="display: flex;">
-                    <div style = "flex:50%; align-items: center;" >
-                        <a href="mailto:jianwen_ding@icloud.com">Contact</a>
+                <div>
+                    <a class="textLink" href = "#about">About</a>
+                </div>
+                <div>
+                    <a class="textLink" href = "#skill">Skills</a>
+                </div>
+                <div>
+                    <a id = "projectsLink" class="textLink" href = "#projects">
+                        Projects
+                    </a>
+                    <img onclick= "dragDown('projectsDrag')" id = "projectDragButton" src="Resources/DownIcon.png" alt="WOW" width="15px" height="15px">
+                    <div id = "projectsDrag" class = "gameDrag">
+                        <img src="Resources/RiptideTitle.png" alt="WOW" width="25px" height="25px">
                     </div>
-                    <div style = "flex:50%; align-items: center;" >
-                        <a href = "Resources/Game Development Resume Portfolio.pdf" class = "externalLink">
+                </div>
+                <div>
+                    <a class="textLink" href = "#jams">Game Jams</a>
+                </div>
+                <div>
+                    <a class="textLink" href = "#other">Other</a>
+                </div>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <div style = "flex:50%;">
+                        <a href="mailto:jianwen_ding@icloud.com" class = "textLink" >
+                            Contact
+                        </a>
+                    </div>
+                    <div style = "flex:50%;">
+                        <a href = "Resources/Game Development Resume Portfolio.pdf" class = "textLink">
                             Resume
                         </a>
                     </div>
                 </div>
                 <div style="display: flex;">
-                    <div style = "flex:30%; align-items: center;" >
-                        <a href = "https://pakmanlie.itch.io/" class = "externalLink">
-                            <img src="Resources/Logos/itchLog.png" alt="Itch io logo" width="25" height = "25">
+                    <div style = "flex:30%;">
+                        <a href = "https://pakmanlie.itch.io/" class = "centerLink">
+                            <img src="Resources/Logos/itchLog.png" alt="Itch io logo">
                         </a>
                     </div>
-                    <div style = "flex:30%; align-items: center;" >
-                        <a href = "https://www.linkedin.com/in/jianwen-ding-langley/" class = "externalLink">
-                            <img src="Resources/Logos/LinkedInLog.png" alt="LinkedIn logo" width="25" height = "25">
+                    <div style = "flex:30%;">
+                        <a href = "https://www.linkedin.com/in/jianwen-ding-langley/" class = "centerLink">
+                            <img src="Resources/Logos/LinkedInLog.png" alt="LinkedIn logo">
                         </a>
                     </div>
-                    <div style = "flex:30%; align-items: center;" >
-                        <a href = "https://github.com/Jianwen-Ding" class = "externalLink">
-                            <img src="Resources/Logos/gitLog.png" alt="Github logo" width="25" height = "25">
+                    <div style = "flex:30%;">
+                        <a href = "https://github.com/Jianwen-Ding" class = "centerLink">
+                            <img src="Resources/Logos/gitLog.png" alt="Github logo">
                         </a>
                     </div>
                 </div>
@@ -55,10 +71,11 @@
         <div class="column right">
             <Projects>
                 <div>
-                    <h2 id = "about">About Me</h2>
+                    <p id = "about"><br></p>
+                    <h2 class = "divison">About Me</h2>
                     <div style="display: flex;">
                         <div style = "flex:30%;">
-                            <img src="Resources/PortfolioPhoto.JPG" alt="Photo of me" width="384" height = "auto">
+                            <img src="Resources/PortfolioPhotoCropped.JPG" alt="Photo of me" class = "pic"width="200" height = "auto">
                         </div>
                         <div style = "flex:70%; padding-left: 10px;">
                             <p>wow<br> crazy <br> esoidfgjseoifj</p>
@@ -67,11 +84,13 @@
                     <p>Crazy</p>
                     <p><br><br></p>
                 </div>
+                    <p id="skill"><br></p>
                 <div>
-                    <h2 id = "skill">Skills</h2>
+                    <h2 id = "skill" class = "divison">Skills</h2>
                 </div>  
                 <div>
-                    <h2 id="projects">Projects</h2>
+                    <p id="projects"><br></p>
+                    <h2 class = "divison">Projects</h2>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
@@ -127,10 +146,10 @@
                             <p><b>Team Size:</b> Solo Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/head-hunters" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                                 <a href = "https://github.com/Jianwen-Ding/AgentRpg" class = "externalLink">
-                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github">
                                 </a>
                             </div>
                         </div>  
@@ -148,14 +167,15 @@
                             <p><b>Team Size:</b> Solo Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/velvet" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                             </div>
                     </div>  
                 </div>              
                 </div>
                 <div>
-                    <h2 id="jams">Game Jams</h2>
+                    <p id="jams"><br></p>
+                    <h2 class = "divison">Game Jams</h2>
                     <div class = "project">
                         <div class = "titleHolder" >
                             <div class = "titleBorder">
@@ -169,10 +189,10 @@
                             <p><b>Team Size:</b> 3 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/riptide-gardens" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                                 <a href = "https://github.com/nugamestudioclub/planting-game-spring-24" class = "externalLink">
-                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github">
                                 </a>
                             </div>
                         </div>                  
@@ -190,10 +210,10 @@
                             <p><b>Team Size:</b> 3 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/remenant-of-davys-crew" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                                 <a href = "https://github.com/nugamestudioclub/huskyjame-lighthouse" class = "externalLink">
-                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github">
                                 </a>
                             </div>
                         </div>                  
@@ -211,7 +231,7 @@
                             <p><b>Team Size:</b> Solo Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/combo-infinity" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                             </div>
                         </div>                  
@@ -229,14 +249,15 @@
                             <p><b>Team Size:</b> 2 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/spooder-ball" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                             </div>
                         </div> 
                     </div>
                 </div>
                 <div>
-                    <h2 id="other">Other</h2>
+                    <p id="other"><br></p>
+                    <h2 class = "divison">Other</h2>
                 </div>
             </Projects>
         </div>
