@@ -1,7 +1,7 @@
 * {
     scroll-behavior: smooth;
   }
-  
+
 .row {
     display: flex;
 }
@@ -17,6 +17,19 @@
     padding: 20px;
 }
 
+.tinyDiv{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.tinyTitle{
+    font-size: small ;
+}
+
+.tinyImage img{
+    width: 60px;
+    height: auto;
+}
+
 Menu{
     padding: 30px;
     text-align: center;
@@ -29,7 +42,102 @@ Menu{
     padding-left: 10px
 }
 
+@keyframes up1 {
+    from {
+        margin-bottom: 10px;
+        top : 0px;
+        clip-path: inset(0px 0px 0px 0px);
+    }
+    to {
+        margin-bottom: -190px;
+        top : -240px;
+        clip-path: inset(230px 0px 0px 0px);
+    }
+}
+
+@keyframes down1 {
+    from {
+        margin-bottom: -190px;
+        top : -240px;
+        clip-path: inset(230px 0px 0px 0px);
+    }
+    to {
+        margin-bottom: 10px;
+        top : 0px;
+        clip-path: inset(0px 0px 0px 0px);
+    }
+}
+
+@keyframes up2 {
+    from {
+        margin-bottom: 10px;
+        top : 0px;
+        clip-path: inset(0px 0px 0px 0px);
+    }
+    to {
+        margin-bottom: -160px;
+        top : -230px;
+        clip-path: inset(230px 0px 0px 0px);
+    }
+}
+
+@keyframes down2 {
+    from {
+        margin-bottom: -160px;
+        top : -230px;
+        clip-path: inset(230px 0px 0px 0px);
+    }
+    to {
+        margin-bottom: 10px;
+        top : 0px;
+        clip-path: inset(0px 0px 0px 0px);
+    }
+}
+
 .gameDrag{
+    position: relative;
+    display: block;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    margin-bottom: -160px;
+    top : -230px;
+    clip-path: inset(230px 0px 0px 0px);
+}
+
+.gameDrag.draggedUp{
+    background-color: black;
+    animation-name: up2;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.gameDrag.draggedDown{
+    background-color: yellow;
+    animation-name: down2;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+.jamsDrag{
+    position: relative;
+    display: block;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    margin-bottom: -190px;
+    top : -240px;
+    clip-path: inset(240px 0px 0px 0px);
+}
+
+.jamsDrag.draggedUp{
+    background-color: black;
+    animation-name: up1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.jamsDrag.draggedDown{
+    background-color: yellow;
+    animation-name: down1;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .titleHolder{

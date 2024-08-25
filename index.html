@@ -25,13 +25,95 @@
                     <a id = "projectsLink" class="textLink" href = "#projects">
                         Projects
                     </a>
-                    <img onclick= "dragDown('projectsDrag')" id = "projectDragButton" src="Resources/DownIcon.png" alt="WOW" width="15px" height="15px">
+                    <img onclick= "dragDown('projectsDrag')" id = "projectDragButton" src="Resources/DownIcon.png" alt="Dragdown button" width="15px" height="15px">
                     <div id = "projectsDrag" class = "gameDrag">
-                        <img src="Resources/RiptideTitle.png" alt="WOW" width="25px" height="25px">
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Strand</p>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Frogology</p>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#strand" class = "tinyImage">
+                                    <img src="Resources/StrandTitle.png" alt="Strand Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#frogology" class = "tinyImage">
+                                    <img src="Resources/FrogologyTitle.jpg" alt="Frogology Title Screen">
+                                </a>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Head Hunters</p>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Velvet</p>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#hunter" class = "tinyImage">
+                                    <img src="Resources/HeadhunterTitle.png" alt="Headhunter Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#velvet" class = "tinyImage">
+                                    <img src="Resources/VelvetTitle.png" alt="Velvet Title Screen">
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div>
                     <a class="textLink" href = "#jams">Game Jams</a>
+                    <img onclick= "dragDown('jamsDrag')" id = "jamDragButton" src="Resources/DownIcon.png" alt="Dragdown Button" width="15px" height="15px">
+                    <div id = "jamsDrag" class = "jamsDrag">
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Riptide Gardens</p>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Remenant of Davy's Crew</p>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#riptide" class = "tinyImage">
+                                    <img src="Resources/RiptideTitle.png" alt="Riptide Gardens Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#remenant" class = "tinyImage">
+                                    <img src="Resources/RemenantTitle.png" alt="Remenant of Davy's crew Title Screen">
+                                </a>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Combo Infinity</p>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Spooder Ball</p>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#combo" class = "tinyImage">
+                                    <img src="Resources/ComboTitle.png" alt="Combo Infinity Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#spooder" class = "tinyImage">
+                                    <img src="Resources/SpooderTitle.jpg" alt="Spooder Ball Title Screen">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div>
                     <a class="textLink" href = "#other">Other</a>
@@ -94,27 +176,6 @@
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "frogology" src="Resources/FrogologyTitle.jpg" alt="Title of the game Frogology">
-                            </div>
-                        </div>
-                        <div class = "description">
-                            <h3>Frogology</h3>
-                            <h4>An Animal Conservationist Simulator.</h4>
-                            <p><b>Time Span:</b> 5 week gamejam in 2024</p>
-                            <p><b>Team Size:</b> 8 people</p>
-                            <div style="display: flex;">
-                                <a href = "https://pakmanlie.itch.io/frogology" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
-                                </a>
-                                <a href = "https://github.com/Jianwen-Ding/FrogGame" class = "externalLink">
-                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
-                                </a>
-                            </div>
-                        </div>                
-                    </div> 
-                    <div class = "project">
-                        <div class = "titleHolder">
-                            <div class = "titleBorder">
                                 <img id = "strand" src="Resources/StrandTitle.png" alt="Title of the game Strand">
                             </div>
                         </div>
@@ -133,6 +194,27 @@
                             </div>
                         </div>                
                     </div>  
+                    <div class = "project">
+                        <div class = "titleHolder">
+                            <div class = "titleBorder">
+                                <img id = "frogology" src="Resources/FrogologyTitle.jpg" alt="Title of the game Frogology">
+                            </div>
+                        </div>
+                        <div class = "description">
+                            <h3>Frogology</h3>
+                            <h4>An Animal Conservationist Simulator.</h4>
+                            <p><b>Time Span:</b> 5 week gamejam in 2024</p>
+                            <p><b>Team Size:</b> 8 people</p>
+                            <div style="display: flex;">
+                                <a href = "https://pakmanlie.itch.io/frogology" class = "externalLink">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                </a>
+                                <a href = "https://github.com/Jianwen-Ding/FrogGame" class = "externalLink">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
+                                </a>
+                            </div>
+                        </div>                
+                    </div> 
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">

@@ -1,67 +1,59 @@
-idMap = new Map();
-downSpeed = 10;
-upSpeed = 10;   
 
 //This class stores all of the information of idMaps
 class DragInfo{
-    constructor(dragIdSet, iconIdSet, downLocSet, upLocSet, dragUpIconSet, dragDownIconSet){
+    constructor(dragIdSet, dragTimeSet, iconIdSet, dragUpIconSet, dragDownIconSet){
         this.state = "inactive";
         this.dragId = dragIdSet;
         this.iconId = iconIdSet;
-        this.downLoc = downLocSet;
-        this.upLoc = upLocSet;
         this.dragUpIcon = dragUpIconSet;
         this.dragDownIcon = dragDownIconSet;
         this.icon = document.getElementById(this.iconId);
         this.dragDownElement = document.getElementById(this.dragId);
+        this.dragEnd = dragTimeSet;
+        this.timeInto =  dragTimeSet;
     }
 }
 
 //This function initializes a dragdown element
-function dragInit(dragId, iconId, downLoc, upLoc, dragUpIcon, dragDownIcon){
-    idMap.set(dragId, new DragInfo(dragId, iconId, downLoc, upLoc, dragUpIcon, dragDownIcon))
+function dragInit(dragId, dragTime, iconId, dragUpIcon, dragDownIcon){
+    idMap.set(dragId, new DragInfo(dragId, dragTime, iconId, dragUpIcon, dragDownIcon))
 }
 
 //This function drags down a html
 function dragDown(dragId){
     var info = idMap.get(dragId);
     // Drags down element and puts it into view
-    if(info.state == "inactive"){
-        info.state = "draggedDown";
+    if(info.state == "inactive" && info.timeInto >= info.dragEnd){
+        info.dragDownElement.classList.remove("draggedUp");
+        info.state = "active";
         info.icon.src = info.dragUpIcon;
+        info.dragDownElement.classList.add("draggedDown");
+        info.timeInto = 0;
     }
     // Drags up element and hides it
-    else if(info.state == "active"){
-        info.state = "draggedDown";
-        info.icon.src = info.dragUpIcon;
+    else if(info.state == "active" && info.timeInto >= info.dragEnd){
+        info.dragDownElement.classList.remove("draggedDown");
+        info.state = "inactive";
+        info.icon.src = info.dragDownIcon;
+        info.dragDownElement.classList.add("draggedUp");
+        info.timeInto = 0;
     }
-}
-function updateId(value, key){
-    if(value.state == "draggedDown"){
-        if(Math.abs(parseFloat(value.dragDownElement.style.top) - value.downLoc) < value.downSpeed){
-            value.state = "active";
-        }
-        else{
-            value.dragDownElement.style.top = parseFloat(value.dragDownElement.style.top) - downSpeed;
-        }
-    }
-    else if(value.state == "draggedUp"){
-        if(Math.abs(parseFloat(value.dragDownElement.style.top) - value.upLoc) < value.upSpeed){
-            value.state = "inactive";
-        }
-        else{
-            value.dragDownElement.style.top = parseFloat(value.dragDownElement.style.top) + upSpeed;
-        }
-    }
-    console.log(value.dragDownElement.style);
-}
-function update(){
-    idMap.forEach((values,keys) => updateId(values,keys));
 }
 window.onload = function()
 { 
+    idMap = new Map();
+    downSpeed = 10;
+    upSpeed = 10;   
     // Actually setting up elements 
-    dragInit("projectsDrag", "projectDragButton", 0, 5, "Resources/UpIcon.png", "Resources/DownIcon.png");
-    console.log(idMap);
-    setInterval(update,.10);
+    dragInit("projectsDrag", 0.5, "projectDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
+    dragInit("jamsDrag", 0.5, "jamDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
+
+    setInterval(function(){
+        idMap.forEach((values,keys) =>
+        {
+            if(values.timeInto <= values.dragEnd){
+                values.timeInto = values.timeInto + 0.1;
+            }
+        });
+    },100);
 }
