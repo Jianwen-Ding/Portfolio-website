@@ -42,8 +42,6 @@ function dragDown(dragId){
 window.onload = function()
 { 
     idMap = new Map();
-    downSpeed = 10;
-    upSpeed = 10;   
     // Actually setting up elements 
     dragInit("projectsDrag", 0.5, "projectDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
     dragInit("jamsDrag", 0.5, "jamDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
