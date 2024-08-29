@@ -1,8 +1,8 @@
-idMap = new Map(); 
+elemInfoList = new Array(); 
 transitionTime = 0.5;
 mainTagTaken = "projectInfo";
-buttonTag = "button";
-elementTag = "infoElem";
+buttonTag = "INFOBUTTON";
+elementTag = "INFOELEM";
 // This class stores all of the information in a project 
 class SectionInfo{
     constructor(mainElemSet, conButtonSet, starting){
@@ -49,34 +49,34 @@ class SectionInfo{
     }
 }
 class ProjectInfo{
-    constructor(mainElemID){
+    constructor(mainElemSet){
         this.currentPage = 0;
         this.tranLeftTime = transitionTime;
-        this.mainElem = document.getElementById(mainElemID);
+        this.mainElem = mainElemSet;
         var mainElems = new Array();
         var conButtons = new Array();
         var childList = this.mainElem.children;
+        this.sectionInfos = new Array();
         for(let i = 0; i < childList.length; i++){
             if(childList[i].tagName == buttonTag){
-                conButtons.push(childList[i]);
+                conButtons = childList[i].children;
             }
             else if(childList[i].tagName == elementTag){
-                mainElems.push(childList[i]);
+                mainElems = childList[i].children;
             }
         }
-        this.sectionInfos.push(new SectionInfo(elemIDList[0], false));
-        for(let i = 1; i < elemIDList.length; i++){
-            this.sectionInfos.push(new SectionInfo(elemIDList[i], false));
+        this.sectionInfos.push(new SectionInfo(mainElems[0], conButtons[0], true));
+        for(let i = 1; i < mainElems.length; i++){
+            this.sectionInfos.push(new SectionInfo(mainElems[i], conButtons[i], false));
         }
-        
     }
     moveToSlide(nextSlide){
         if(this.tranLeftTime >= transitionTime&& this.currentPage != nextSlide){
-            if(this.currentPage < nextSlide){
-                this.sectionInfos[this.currentPage].slideRightOur();
+            if(this.currentPage > nextSlide){
+                this.sectionInfos[this.currentPage].slideRightOut();
                 this.sectionInfos[nextSlide].slideLeftIn();
             }
-            else if(this.currentPage > nextSlide){
+            else if(this.currentPage < nextSlide){
                 this.sectionInfos[this.currentPage].slideLeftOut();
                 this.sectionInfos[nextSlide].slideRightIn();
             }
@@ -85,16 +85,24 @@ class ProjectInfo{
         }
     }
 }
-window.onload = function()
+
+function slideTo(projectIndex, elemIndex){
+    elemInfoList[projectIndex].moveToSlide(elemIndex);
+}
+
+window.addEventListener("load",function()
 { 
     // Actually setting up elements 
-
+    var elemList = document.body.getElementsByTagName(mainTagTaken);
+    for(let i = 0; i < elemList.length; i++){
+        elemInfoList.push(new ProjectInfo(elemList[i]));
+    }
     setInterval(function(){
-        idMap.forEach((values,keys) =>
-        {
-            if(values.tranLeftTime <= transitionTime){
-                values.tranLeftTime = values.tranLeftTime + 0.1;
+        for(let i = 0; i < elemInfoList.length; i++){
+            if(elemInfoList[i].tranLeftTime < transitionTime){
+                elemInfoList[i].tranLeftTime = elemInfoList[i].tranLeftTime + 0.1;
+                console.log("wow");
             }
-        });
+        }
     },100);
-}
+});

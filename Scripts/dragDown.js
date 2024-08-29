@@ -1,3 +1,4 @@
+idMap = new Map();
 
 //This class stores all of the information of idMaps
 class DragInfo{
@@ -16,7 +17,7 @@ class DragInfo{
 
 //This function initializes a dragdown element
 function dragInit(dragId, dragTime, iconId, dragUpIcon, dragDownIcon){
-    idMap.set(dragId, new DragInfo(dragId, dragTime, iconId, dragUpIcon, dragDownIcon))
+    idMap.set(dragId, new DragInfo(dragId, dragTime, iconId, dragUpIcon, dragDownIcon));
 }
 
 //This function drags down a html
@@ -39,13 +40,13 @@ function dragDown(dragId){
         info.timeInto = 0;
     }
 }
-window.onload = function()
+window.addEventListener("load",
+function()
 { 
     idMap = new Map();
     // Actually setting up elements 
     dragInit("projectsDrag", 0.5, "projectDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
     dragInit("jamsDrag", 0.5, "jamDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
-
     setInterval(function(){
         idMap.forEach((values,keys) =>
         {
@@ -54,4 +55,4 @@ window.onload = function()
             }
         });
     },100);
-}
+});

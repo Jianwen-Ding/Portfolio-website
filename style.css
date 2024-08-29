@@ -44,53 +44,53 @@ Menu{
 
 @keyframes up1 {
     from {
-        margin-bottom: 10px;
-        top : 0px;
-        clip-path: inset(0px 0px 0px 0px);
+        margin-bottom: 10%;
+        transform: translateY(0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
     to {
-        margin-bottom: -190px;
-        top : -240px;
-        clip-path: inset(230px 0px 0px 0px);
+        margin-bottom: -78%;
+        transform: translateY(-100%);
+        clip-path: inset(100% 0% 0% 0%);
     }
 }
 
 @keyframes down1 {
     from {
-        margin-bottom: -190px;
-        top : -240px;
-        clip-path: inset(230px 0px 0px 0px);
+        margin-bottom: -78%;
+        transform: translateY(-100%);
+        clip-path: inset(100% 0% 0% 0%);
     }
     to {
-        margin-bottom: 10px;
-        top : 0px;
-        clip-path: inset(0px 0px 0px 0px);
+        margin-bottom: 10%;
+        transform: translateY(0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
 }
 
 @keyframes up2 {
     from {
-        margin-bottom: 10px;
-        top : 0px;
-        clip-path: inset(0px 0px 0px 0px);
+        margin-bottom: 10%;
+        transform: translateY(0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
     to {
-        margin-bottom: -160px;
-        top : -230px;
-        clip-path: inset(230px 0px 0px 0px);
+        margin-bottom: -65%;
+        transform: translateY(-100%);
+        clip-path: inset(100% 0% 0% 0%);
     }
 }
 
 @keyframes down2 {
     from {
-        margin-bottom: -160px;
-        top : -230px;
-        clip-path: inset(230px 0px 0px 0px);
+        margin-bottom: -65%;
+        transform: translateY(-100%);
+        clip-path: inset(100% 0% 0% 0%);
     }
     to {
-        margin-bottom: 10px;
-        top : 0px;
-        clip-path: inset(0px 0px 0px 0px);
+        margin-bottom: 10%;
+        transform: translateY(0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
 }
 
@@ -99,9 +99,9 @@ Menu{
     display: block;
     animation-duration: 0.5s;
     animation-delay: 0s;
-    margin-bottom: -160px;
-    top : -230px;
-    clip-path: inset(230px 0px 0px 0px);
+    margin-bottom: -65%;
+    top : 0%;
+    clip-path: inset(0% 0% 100% 0%);
 }
 
 .gameDrag.draggedUp{
@@ -122,9 +122,9 @@ Menu{
     display: block;
     animation-duration: 0.5s;
     animation-delay: 0s;
-    margin-bottom: -190px;
-    top : -240px;
-    clip-path: inset(240px 0px 0px 0px);
+    margin-bottom: -78%;
+    top : 100%;
+    clip-path: inset(0% 0% 100% 0%);
 }
 
 .jamsDrag.draggedUp{
@@ -245,4 +245,120 @@ h2{
 .pic{
     overflow: hidden;
     border-radius: 0%;
+}
+
+@keyframes enterLeft{
+    from{
+        transform: translateX(-100%);
+        clip-path: inset(0% 0% 0% 100%);
+    }
+    to{
+        transform: translateX(0%);
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+@keyframes leaveLeft{
+    from{
+        transform: translateX(0%);
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    to{
+        transform: translateX(-100%);
+        clip-path: inset(0% 0% 0% 100%);
+    }
+}
+@keyframes enterRight{
+    from{
+        transform: translateX(100%);
+        clip-path: inset(0% 100% 0% 0%);
+    }
+    to{
+        transform: translateX(0%);
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+@keyframes leaveRight{
+    from{
+        transform: translateX(0%);
+        clip-path: inset(0 0% 0% 0%);
+    }
+    to{
+        transform: translateX(100%);
+        clip-path: inset(0% 100% 0% 0%);
+    }
+}
+
+projectInfo{
+    display: block;
+    background-color: gray;
+    height: 500%;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+infoButton{
+    display: flex;
+    height: 15%;
+}
+
+infoElem{
+    margin:auto;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    height: 75%;
+    width: 90%;
+    background-color: white;
+}
+
+.indNav{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.indNavButton{
+    border: none;
+    border-radius: 5px;
+    height: 50%;
+    width: 70%;
+}
+
+.indInfoElem{
+    position:absolute;
+    display: block;
+    background-color: yellow;
+    clip-path: inset(0% 100% 0% 100%);
+}
+
+.indInfoElem.startSlide{
+    clip-path: inset(0% 0% 0% 0%);
+}
+
+.indInfoElem.rightOutSlide{
+    animation-name: leaveRight;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.indInfoElem.leftOutSlide{
+    animation-name: leaveLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.indInfoElem.rightInSlide{
+    animation-name: enterRight;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+}
+
+.indInfoElem.leftInSlide{
+    animation-name: enterLeft;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
 }
