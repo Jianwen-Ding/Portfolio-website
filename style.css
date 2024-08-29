@@ -291,7 +291,7 @@ h2{
 projectInfo{
     display: block;
     background-color: gray;
-    height: 500%;
+    height: 500px;
     margin-bottom: 20px;
     justify-content: center;
 }
@@ -306,9 +306,26 @@ infoElem{
     display: flex;
     justify-self: center;
     justify-content: center;
-    height: 75%;
+    height: 76%;
     width: 90%;
     background-color: white;
+    position: relative;
+}
+
+.indInfoElem{
+    position:absolute;
+    display: block;
+    width: 100%;
+    background-color: yellow;
+    clip-path: inset(0% 100% 0% 100%);
+}
+
+.indContentElem{
+    padding: 2%;
+}
+
+.indContenDiv{
+    padding: 2%;
 }
 
 .indNav{
@@ -322,13 +339,6 @@ infoElem{
     border-radius: 5px;
     height: 50%;
     width: 70%;
-}
-
-.indInfoElem{
-    position:absolute;
-    display: block;
-    background-color: yellow;
-    clip-path: inset(0% 100% 0% 100%);
 }
 
 .indInfoElem.startSlide{
