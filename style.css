@@ -150,10 +150,10 @@ Menu{
     flex-basis: 500px;
     background-color: gray;
     flex : 40%;
-    border: 3px black;
+    border: 3px rgba(0, 0, 0, 0);
     height: auto;
     border-style: solid;
-    border-radius: 10px;
+    border-radius: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -164,6 +164,7 @@ Menu{
     height: auto;
     width: auto;
     min-height: 200px;
+    border-radius: 20px;
     
 }
 
@@ -230,7 +231,6 @@ Menu{
     display : flex;
     gap : 20px;
     margin-bottom: 20px;
-    background-color: rgb(186, 186, 186);
 }
 
 h1{
@@ -244,9 +244,8 @@ h2{
 .divison{
     padding: 50px;
     align-items: center;
-    font-size: 3rem;
+    font-size: 4rem;
     height: 50px;
-    background-color: gray;
 }
 
 .pic{
@@ -301,6 +300,7 @@ projectInfo{
     display: block;
     background-color: gray;
     height: 600px;
+    border-radius: 30px;
     margin-bottom: 20px;
     justify-content: center;
 }
@@ -317,6 +317,7 @@ infoElem{
     justify-content: center;
     height: 78%;
     width: 90%;
+    border-radius: 10px;
     background-color: white;
     position: relative;
 }
@@ -326,7 +327,8 @@ infoElem{
     display: block;
     width: 100%;
     height: 100%;
-    background-color: yellow;
+    border-radius: 10px;
+    background-color: white;
     clip-path: inset(0% 100% 0% 100%);
     overflow: scroll;
 }
@@ -382,6 +384,23 @@ infoElem{
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.indNav button{
+    font-size: 1.25rem;
+}
+
+.indNav.inactiveButton button{
+    background-color: rgba(171, 171, 171, 0.5);
+}
+.indNav.inactiveButton:hover  button{
+    background-color: rgba(171, 171, 171, 0.8);
+}
+.indNav.inactiveButton  button{
+    background-color: rgba(112, 112, 112, 0.5);
+}
+.indNav.inactiveButton:hover button{
+    background-color: rgba(112, 112, 112, 0.8);
 }
 
 .indNavButton{
