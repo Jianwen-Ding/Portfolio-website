@@ -18,12 +18,12 @@ html{
 .right {
     flex: 60%;
     margin-top: 60px;
-    padding: 20px;
+    padding: 5%;
 }
 
 .tinyDiv{
-    padding-right: 5px;
-    padding-left: 5px;
+    padding-right: 5%;
+    padding-left: 5%;
 }
 .tinyTitle{
     font-size: small;
@@ -48,7 +48,7 @@ Menu{
 }
 .projectSkills{
     flex:20%; 
-    padding-left: 10px
+    padding-left: 5%
 }
 
 @keyframes up1 {
@@ -163,7 +163,6 @@ Menu{
     max-width: 100%;
     height: auto;
     width: auto;
-    min-height: 200px;
     border-radius: 20px;
     
 }
@@ -223,7 +222,9 @@ Menu{
 .externalLink img{
     max-width: 100%;
     height: 25px;
-    width: 25px;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
     align-self: center;
 }
 
@@ -349,12 +350,14 @@ infoElem{
     margin-right: auto;
     width: auto;
     max-height : 200px;
+    max-width: 100%;
 }
 .imageInfoWithNote{
     display:block; 
     margin-left:auto; 
     margin-right: auto;
     width: auto;
+    max-width: 100%;
     max-height : 160px;
 }
 .imageNote{
@@ -443,7 +446,7 @@ infoElem{
 }
 .mainTitle{
     text-align: left;
-    font-size: 6rem;
+    font-size: 5rem;
     font-weight: bold;
     display: block;
     margin-bottom: 0.25rem;
@@ -480,3 +483,100 @@ infoElem{
 .infoText{
     font-size: 1.25rem;
 }
+
+.idHolder{
+    margin-bottom: 0px;
+}
+
+@media only screen and (max-device-width : 480px) {
+    html{
+        font-size:7px;
+    }
+    .row {
+        display: block;
+    }
+    Menu{
+        padding-left: 2rem;
+        padding-top: 0rem;
+        text-align: left;
+        left: 5%;
+        position: relative; 
+    }
+    @keyframes up1 {
+        from {
+            margin-bottom: 2.5%;
+            transform: translateY(0%);
+            clip-path: inset(0% 0% 0% 0%);
+        }
+        to {
+            margin-bottom: -24rem;
+            transform: translateY(-100%);
+            clip-path: inset(100% 0% 0% 0%);
+        }
+    }
+    
+    @keyframes down1 {
+        from {
+            margin-bottom: -24rem;
+            transform: translateY(-100%);
+            clip-path: inset(100% 0% 0% 0%);
+        }
+        to {
+            margin-bottom: 2.5%;
+            transform: translateY(0%);
+            clip-path: inset(0% 0% 0% 0%);
+        }
+    }
+    
+    @keyframes up2 {
+        from {
+            margin-bottom: 2.5%;
+            transform: translateY(0%);
+            clip-path: inset(0% 0% 0% 0%);
+        }
+        to {
+            margin-bottom: -24rem;
+            transform: translateY(-100%);
+            clip-path: inset(100% 0% 0% 0%);
+        }
+    }
+    
+    @keyframes down2 {
+        from {
+            margin-bottom: -24rem;
+            transform: translateY(-100%);
+            clip-path: inset(100% 0% 0% 0%);
+        }
+        to {
+            margin-bottom: 2.5%;
+            transform: translateY(0%);
+            clip-path: inset(0% 0% 0% 0%);
+        }
+    }
+    .jamsDrag{
+        position: relative;
+        display: block;
+        animation-duration: 0.5s;
+        animation-delay: 0s;
+        margin-bottom: -24rem;
+        top : 100%;
+        clip-path: inset(0% 0% 100% 0%);
+    }
+    .gameDrag{
+        position: relative;
+        display: block;
+        animation-duration: 0.5s;
+        animation-delay: 0s;
+        margin-bottom: -24rem;
+        top : 0%;
+        clip-path: inset(0% 0% 100% 0%);
+    }
+    projectInfo{
+        display: block;
+        background-color: gray;
+        height: 400px;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        justify-content: center;
+    }
+ }

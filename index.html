@@ -9,7 +9,7 @@
     </title>
 </head>
 <body>
-    <body onLoad="window.scroll(0, 100)"></body>
+    <body onLoad="window.scroll(0, 175)"></body>
     <script src = "Scripts/dragDown.js">
     </script>
     <script src = "Scripts/projectNav.js">
@@ -95,20 +95,28 @@
                             </div>
                         </div>
                         <div style="display: flex;" >
-                            <div style="flex : 50%" class = "tinyDiv">
+                            <div style="flex : 33.333%" class = "tinyDiv">
+                                <p class = "tinyTitle">Checking In</p>
+                            </div>
+                            <div style="flex : 33.333%" class = "tinyDiv">
                                 <p class = "tinyTitle">Combo Infinity</p>
                             </div>
-                            <div style="flex : 50%" class = "tinyDiv">
+                            <div style="flex : 33.333%" class = "tinyDiv">
                                 <p class = "tinyTitle">Spooder Ball</p>
                             </div>
                         </div>
                         <div style="display: flex;" >
-                            <div style="flex : 50%" class = "tinyDiv">
+                            <div style="flex : 33.333%" class = "tinyDiv">
+                                <a href = "#checkin" class = "tinyImage">
+                                    <img src="Resources/CheckInTitle.png" alt="Checking In Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 33.333%" class = "tinyDiv">
                                 <a href = "#combo" class = "tinyImage">
                                     <img src="Resources/ComboTitle.png" alt="Combo Infinity Title Screen">
                                 </a>
                             </div>
-                            <div style="flex : 50%" class = "tinyDiv">
+                            <div style="flex : 33.333%" class = "tinyDiv">
                                 <a href = "#spooder" class = "tinyImage">
                                     <img src="Resources/SpooderTitle.jpg" alt="Spooder Ball Title Screen">
                                 </a>
@@ -156,7 +164,7 @@
         <div class="column right">
             <Projects>
                 <div>
-                    <p id = "about"><br></p>
+                    <p style="margin-bottom: -35px;" id = "about"><br></p>
                     <h2 class = "divison">About Me</h2>
                     <div style="display: flex;">
                         <div style = "flex:30%;">
@@ -177,15 +185,15 @@
                             </p>
                         </div>                
                     </div>
-                    <p><br><br></p>
                 </div>
                 <div>
-                    <p id="projects"><br></p>
-                    <h2 class = "divison">Projects</h2>
+                    <p style="margin-bottom: -35px;" id="projects"><br></p>
+                    <h2 class = "divison" style="margin-bottom: 0px;">Projects</h2>
+                    <p class = "idHolder" id = "strand"><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "strand" src="Resources/StrandTitle.png" alt="Title of the game Strand">
+                                <img  src="Resources/StrandTitle.png" alt="Title of the game Strand">
                             </div>
                         </div>
                         <div class = "description">
@@ -239,7 +247,7 @@
                                 <div class = "indContentElem">
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfo" src="Resources/StrandSShot1.png"></img>
+                                            <img class = "imageInfo" src="Resources/strandSShot1.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <p class = "infoText">Strand was initially created as a club project of a game development club I founded. Initially, the project was worked on during club meeting hours by a group of about 9 people. However, I continued to work on it individually after my graduation. During this project's time as a club project, I was project lead and directed art and music. Most of my work in this project is in programming/art.</p>
@@ -321,10 +329,11 @@
                             </div>
                         </infoElem>          
                     </projectInfo>     
+                    <p class = "idHolder" id = "frogology"><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "frogology" src="Resources/FrogologyTitle.jpg" alt="Title of the game Frogology">
+                                <img src="Resources/FrogologyTitle.jpg" alt="Title of the game Frogology">
                             </div>
                         </div>
                         <div class = "description">
@@ -432,10 +441,11 @@
                             </div>
                         </infoElem>          
                     </projectInfo>  
+                    <p class = "idHolder" id = "hunter"><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "hunter" src="Resources/HeadhunterTitle.png" alt="Title of the game Headhuter">
+                                <img src="Resources/HeadhunterTitle.png" alt="Title of the game Headhuter">
                             </div>
                         </div>
                         <div class = "description">
@@ -467,7 +477,7 @@
                             </div>
                             <div class = "indNav" style="flex : 25%">
                                 <button onclick = "slideTo(2,2)" class = "indNavButton">
-                                    Enemy Behavior/Pathfinding
+                                    Enemy Behavior
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
@@ -562,10 +572,11 @@
                             </div>
                         </infoElem>          
                     </projectInfo>  
+                    <p class = "idHolder" id = "velvet"><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "velvet" src="Resources/VelvetTitle.png" alt="Title of the game Velvet" width="384" height = "auto">
+                                <img src="Resources/VelvetTitle.png" alt="Title of the game Velvet" width="384" height = "auto">
                             </div>
                         </div>
                         <div class = "description">
@@ -601,7 +612,7 @@
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">A total of 11 levels were made and designed along with three enemy types.</p>
+                                            <p class = "infoText">A total of 11 levels were made and designed along with three enemy types. Also, a save system for level progression and collectible coins was created.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/VelvetSC2.png"></img>
@@ -613,12 +624,13 @@
                     </projectInfo>            
                 </div>
                 <div>
-                    <p id="jams"><br></p>
-                    <h2 class = "divison">Game Jams</h2>
+                    <p style="margin-bottom: -35px;" id="jams"><br></p>
+                    <h2 class = "divison" style="margin-bottom: 0px;">Game Jams</h2>
+                    <p class = "idHolder" id = "riptide" ><br></p>
                     <div class = "project">
                         <div class = "titleHolder" >
                             <div class = "titleBorder">
-                                <img id = "riptide" src="Resources/RiptideTitle.png" alt="Title of the game Riptide Gardens" >
+                                <img src="Resources/RiptideTitle.png" alt="Title of the game Riptide Gardens" >
                             </div>
                         </div>
                         <div class = "description">
@@ -667,10 +679,11 @@
                             </div>
                         </infoElem>          
                     </projectInfo>  
+                    <p class = "idHolder" id = "remenant" ><br></p>
                     <div class = "project">
                         <div class = "titleHolder" >
                             <div class = "titleBorder">
-                                <img id = "remenant" src="Resources/RemenantTitle.png" alt="Title of the game Remenant of Davy's Crew" >
+                                <img src="Resources/RemenantTitle.png" alt="Title of the game Remenant of Davy's Crew" >
                             </div>
                         </div>
                         <div class = "description">
@@ -719,10 +732,64 @@
                             </div>
                         </infoElem>          
                     </projectInfo> 
+                    <p class = "idHolder" id = "checkin" ><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "combo" src="Resources/ComboTitle.png" alt="Title of the game Combo Infinity">
+                                <img src="Resources/CheckInTitle.png" alt="Title of the game Spooder Ball">
+                            </div>
+                        </div>
+                        <div class = "description">
+                            <h3 class = "projectTitle">Checking In</h3>
+                            <h4 class = "projectDesc">A starical hopsital clerk simulator.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2 days in 2023</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 6 people</p>
+                            <div style="display: flex;">
+                                <a href = "https://austinszema.itch.io/checking-in" class = "externalLink">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
+                                </a>
+                                <a href = "https://github.com/nugamestudioclub/hospital-ludum-dare-54" class = "externalLink">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github">
+                                </a>
+                            </div>
+                        </div> 
+                    </div>
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/CheckInSC.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">This was made for Ludum Dare 54 and made to comply to the theme "Limited Space".The game was made with Unity C# with Github as the source control. The game has the player decide to either admit, waitlist, or reject a que of patients. Players are given the list of avalable rooms, the waitlist size, the insurance of the patient, and the injury of the patient.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">I worked with patient data made by a teammate to create a patient generator that produces patients with unique chances of death, payout, and treatment time, I created the room vacancy and waitlist system that determines if a patient is able to be admitted, and I polished up a notification system made by another programmer.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/CheckInSC2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo> 
+                    <p class = "idHolder" id = "combo" ><br></p>
+                    <div class = "project">
+                        <div class = "titleHolder">
+                            <div class = "titleBorder">
+                                <img src="Resources/ComboTitle.png" alt="Title of the game Combo Infinity">
                             </div>
                         </div>
                         <div class = "description">
@@ -768,10 +835,11 @@
                             </div>
                         </infoElem>          
                     </projectInfo> 
+                    <p class = "idHolder" id = "spooder" ><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
-                                <img id = "spooder" src="Resources/SpooderTitle.jpg" alt="Title of the game Spooder Ball">
+                                <img src="Resources/SpooderTitle.jpg" alt="Title of the game Spooder Ball">
                             </div>
                         </div>
                         <div class = "description">
@@ -811,58 +879,6 @@
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/SpooderBallSC2.png"></img>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </infoElem>          
-                    </projectInfo> 
-                    <div class = "project">
-                        <div class = "titleHolder">
-                            <div class = "titleBorder">
-                                <img id = "checkin" src="Resources/CheckInTitle.png" alt="Title of the game Spooder Ball">
-                            </div>
-                        </div>
-                        <div class = "description">
-                            <h3 class = "projectTitle">Checking In</h3>
-                            <h4 class = "projectDesc">A starical hopsital clerk simulator.</h4>
-                            <p class = "projectOverview"><b>Time Span:</b> 2 days in 2023</p>
-                            <p class = "projectOverview"><b>Team Size:</b> 6 people</p>
-                            <div style="display: flex;">
-                                <a href = "https://austinszema.itch.io/checking-in" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
-                                </a>
-                                <a href = "https://github.com/nugamestudioclub/hospital-ludum-dare-54" class = "externalLink">
-                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github">
-                                </a>
-                            </div>
-                        </div> 
-                    </div>
-                    <projectInfo>
-                        <infoButton>
-                            <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
-                                    Overview
-                                </button>
-                            </div>
-                        </infoButton>          
-                        <infoElem>
-                            <div class = "indInfoElem">
-                                <div class = "indContentElem">
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfo" src="Resources/CheckInSC.png"></img>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This was made for Ludum Dare 54 and made to comply to the theme "Limited Space".The game was made with Unity C# with Github as the source control. The game has the player decide to either admit, waitlist, or reject a que of patients. Players are given the list of avalable rooms, the waitlist size, the insurance of the patient, and the injury of the patient.</p>
-                                        </div>
-                                    </div>
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">I worked with patient data made by a teammate to create a patient generator that produces patients with unique chances of death, payout, and treatment time, I created the room vacancy and waitlist system that determines if a patient is able to be admitted, and I polished up a notification system made by another programmer.</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfo" src="Resources/CheckInSC2.png"></img>
                                         </div>
                                     </div>
                                 </div>
