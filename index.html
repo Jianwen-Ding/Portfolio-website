@@ -9,6 +9,7 @@
     </title>
 </head>
 <body>
+    <body onLoad="window.scroll(0, 100)"></body>
     <script src = "Scripts/dragDown.js">
     </script>
     <script src = "Scripts/projectNav.js">
@@ -16,12 +17,10 @@
     <div class="row">
         <div class="column left">
             <Menu>
-                <h1>Jianwen Ding</h1>
+                <h1 class = "mainTitle">Jianwen Ding</h1>
+                <h3 class = "mainSubtitle">Gameplay Programmer</h3>
                 <div>
                     <a class="textLink" href = "#about">About</a>
-                </div>
-                <div>
-                    <a class="textLink" href = "#skill">Skills</a>
                 </div>
                 <div>
                     <a id = "projectsLink" class="textLink" href = "#projects">
@@ -117,9 +116,11 @@
                         </div>
                     </div>
                 </div>
+                <!--
                 <div>
                     <a class="textLink" href = "#other">Other</a>
                 </div>
+                -->
                 <div style="display: flex; margin-bottom: 10px;">
                     <div style = "flex:50%;">
                         <a href="mailto:jianwen_ding@icloud.com" class = "textLink" >
@@ -159,19 +160,25 @@
                     <h2 class = "divison">About Me</h2>
                     <div style="display: flex;">
                         <div style = "flex:30%;">
-                            <img src="Resources/PortfolioPhotoCropped.JPG" alt="Photo of me" class = "pic"width="200" height = "auto">
+                            <img src="Resources/PortfolioPhotoCropped.JPG" alt="Photo of me" class = "pic">
                         </div>
                         <div style = "flex:70%; padding-left: 10px;">
-                            <p>wow<br> crazy <br> esoidfgjseoifj</p>
+                            <p class = "infoText">
+                                Hello! Welcome to my website, I'm Jianwen Ding and I'm an aspiring game developer who aslo happens to be a sophmore in Northeastern University who is currently studying Computer Science. 
+                            </p>
+                            <p class = "infoText">
+                                I love seeing interesting and fun ideas come to life, of course imagination always outpaces reality so you'll often see me in over my head while making games.
+                            </p>
+                            <p class = "infoText">
+                                I mainly use Unity C# to create games but have experience using Java and C++.
+                            </p>
+                            <p class = "infoText">
+                                
+                            </p>
                         </div>                
                     </div>
-                    <p>Crazy</p>
                     <p><br><br></p>
                 </div>
-                    <p id="skill"><br></p>
-                <div>
-                    <h2 id = "skill" class = "divison">Skills</h2>
-                </div>  
                 <div>
                     <p id="projects"><br></p>
                     <h2 class = "divison">Projects</h2>
@@ -182,10 +189,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Strand</h3>
-                            <h4>A survival rougelike about fending off zombies.</h4>
-                            <p><b>Time Span:</b> 2022-2024</p>
-                            <p><b>Team Size:</b> Solo Project</p>
+                            <h3 class = "projectTitle">Strand</h3>
+                            <h4 class = "projectDesc">A survival rougelike about fending off zombies.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2022-2024</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 9 person team for 2022, solo team for 2023-2024</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/strand" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
@@ -194,7 +201,15 @@
                                     <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
                                 </a>
                             </div>
-                        </div>           
+                        </div>     
+                        <!--
+                        <div class = "projectSkills">
+                            <h4>Skills</h4>
+                            <p>Object Oriented Programming</p>
+                            <p>Random Level Generation</p>
+                            <p>Collaboration in programming</p>
+                        </div>   
+                        -->    
                     </div>  
                     <projectInfo>
                         <infoButton>
@@ -205,32 +220,104 @@
                             </div>
                             <div class = "indNav" style="flex : 25%">
                                 <button onclick = "slideTo(0,1)" class = "indNavButton">
-                                    Quest System
+                                    Map Generation
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
                                 <button onclick = "slideTo(0,2)" class = "indNavButton">
-                                    Animal AI
+                                    Enemy Behavior
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
                                 <button onclick = "slideTo(0,3)" class = "indNavButton">
-                                    Other
+                                    Weapons/Art
                                 </button>
                             </div>
                         </infoButton>          
                         <infoElem>
                             <div class = "indInfoElem">
-                                WOW
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/StrandSShot1.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Strand was initially created as a club project of a game development club I founded. Initially, the project was worked on during club meeting hours by a group of about 9 people. However, I continued to work on it individually after my graduation. During this project's time as a club project, I was project lead and directed art and music. Most of my work in this project is in programming/art.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">This project was made in C# Unity, with Github as the source control. The main gameplay loop of this game involves traveling from the center into a randomly generated map to collect scrap. The player character throws and swings items to fend off various types of zombies.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/StrandSShot2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class = "indInfoElem">
-                                CRAZY
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/SampleMapScreenShot.png"></img>
+                                            <p class = "imageNote">An example of a generated map</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">I programmed the randomly generating map that Strand takes place in. The map is done in a room based system. The entire map is a grid of rooms with openings to other rooms. To determine openings in a map, each room randomly opens some of its sides. Afterwords, the entire map is processed so that every room can be reached with the given openings. "Dead ends" in the map are assigned to have a function of having loot, either in the form of food or scrap.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText"> Each room in the map is assigned a difficulty number, function, and open directions. In order to fill each room with a layout corresponding to the opening, function, and difficulty values, I made a text proccessor that takes values from a .txt file and turns them into layouts. Afterwards, I could randomly assign one of the valid layouts to each room, completing the overall layout of the entire map.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/GridEditorScreenShot.png"></img>
+                                            <p class = "imageNote">Some text from the custom grid editor</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class = "indInfoElem">
-                                TADA
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/EnemyDisplay.png"></img>
+                                            <p class = "imageNote">Display of all enemies within the game</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">One other major component of the game I programmed lies in enemy design and development. All of the enemies have a base class, as most of them have finite hp, the ability to be grabbed, and a stun state. Within the main state, many empty virtual functions were made such as a effect on being grabbed and an effect on being stunned. This collectively makes the process of creating unique enemies much simpler. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Each unique type of enemy usually has the pattern of staying at one spot until the player comes into view/enters the same tile as the enemy. They then all will have unique movement patterns in trying to get to or damage the player.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/EnemyBehaviorSC.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class = "indInfoElem">
-                                BABA
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/WeaponsDisplay.png"></img>
+                                            <p class = "imageNote">Display of all weapons within the game</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Weapons in the game are divided into golden scrap and normal scrap. Golden scrap have unusual properties like allowing for telportation or shooting projectiles while base scrap are just copies of eachother with modified number parameters *e.g. one basic weapon stuns a bit longer while another does more damage*.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">I made a sizeable chunk of the art in this game us the pixel editor Piskel. Menu's, half of enemy animations, and tile sprites were made by me. With this specific project I was aiming to provide a more "complete" game than most of the games I made earlier. Because of that, I did spend a sizeable amount of time trying to visually polish the game.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/MenuArtSample.gif"></img>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </infoElem>          
                     </projectInfo>     
@@ -241,10 +328,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Frogology</h3>
-                            <h4>An Animal Conservationist Simulator.</h4>
-                            <p><b>Time Span:</b> 5 week gamejam in 2024</p>
-                            <p><b>Team Size:</b> 8 people</p>
+                            <h3 class = "projectTitle">Frogology</h3>
+                            <h4 class = "projectDesc">An Animal Conservationist Simulator.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 5 week gamejam in 2024</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 8 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/frogology" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
@@ -253,57 +340,94 @@
                                     <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
                                 </a>
                             </div>
-                        </div>                
+                        </div>   
                     </div> 
                     <projectInfo>
                         <infoButton>
-                            <div class = "indNav" style="flex : 25%">
+                            <div class = "indNav" style="flex : 33.33%">
                                 <button onclick = "slideTo(1,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
-                            <div class = "indNav" style="flex : 25%">
+                            <div class = "indNav" style="flex : 33.33%">
                                 <button onclick = "slideTo(1,1)" class = "indNavButton">
-                                    Quest System
-                                </button>
-                            </div>
-                            <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(1,2)" class = "indNavButton">
                                     Animal AI
                                 </button>
                             </div>
-                            <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(1,3)" class = "indNavButton">
-                                    Other
+                            <div class = "indNav" style="flex : 33.33%">
+                                <button onclick = "slideTo(1,2)" class = "indNavButton">
+                                    Quest System
                                 </button>
                             </div>
                         </infoButton>          
                         <infoElem>
                             <div class = "indInfoElem">
                                 <div class = "indContentElem">
-                                    <div style="display : flex">
-                                        <div style="flex:50%" class = "indContenDiv">
-                                            <iframe width="100%" height="auto" src="https://www.youtube.com/embed/J5hjX9ytMcQ?si=sBDZq_l5EPOij1wm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/J5hjX9ytMcQ?si=sBDZq_l5EPOij1wm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">Trailer created by teammate Micah Ballard</p>
                                         </div>
-                                        <div style="flex:50%" class = "indContenDiv">
-                                            WOW
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Frogology was made for the "IndieCade Summer Game Design Internship" in which students participated in the 2024 Indiecade Climate Jam. Along with the game jam, the internship also required students to complete other tasks such as drafting plans on how to actually impact enviormental pursuits throug the game.</p>
+                                            <a href = "Resources/InternshipCertification.pdf" class = "textLink">
+                                                Internship Certification Letter
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText"> The game was programmed in the Unity game engine with me and two other programmers. The game was made in C# and we worked together using Github as version control. The main gameplay loop of the game involved learning more about nearby animals while catching them.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/Credits.png"></img>
+                                            <p class = "imageNote">Credits of Frogology</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class = "indInfoElem">
                                 <div class = "indContentElem">
-                                    CRAZY 
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/mTBWJssYyp8?si=uoYAvmasNQYnZQTj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">Demonstration of out of view animal AI</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">One of the main gameplay elements I was in charge of was programming and designing the behavior of the animals. Animal behavior could be divided up into two states, present and out of view. When animals move out of view all of their physics are disabled and they move between objects with certain preset tags. When animals move within range of a player, they materialize in a nearby bush and begin wandering around.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Present animals generally either wander in a random direction or run towards/away from predator/prey. Animals are able to avoid collisions while moving by shapecasting in several directions until it finds a direction in which it does not hit an object. Animal sight detection is triggered when a object is a set angle away from the foward vector. Animals are able to hear by scanning objects with certain tags and checking their distance from said animal.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/tumYVMTvu4g?si=d3e4tQZ5MNr0GUI-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">Demonstration of present animal AI</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class = "indInfoElem">
                                 <div class = "indContentElem">
-                                    TADA
-                                </div>
-                            </div>
-                            <div class = "indInfoElem">
-                                <div class = "indContentElem">
-                                    WOW
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/QuestShot.png"></img>
+                                            <p class = "imageNote">Editor representation of overarching quest flow</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Another important gameplay element I worked on was the overarching branching quest system of the game. I created a quest creation editor tool that shows connections between quests and the contents of quests that are created through inspector and a editor tool for branching dialogue based on the current quest. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">The quests document most if not all of the progression in the game, dialogue is locked behind quests, the ability to catch certain animals is locked between quests, and the ability to sleep in the game is locked behind quests. I handled locking events and abilities behind quests and events where quests would increment or complete. A save system for quest progress and species logging process was also implemented through playerprefs.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/SpeciesShot.png"></img>
+                                            <p class = "imageNote">A page of the Speciespedia</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </infoElem>          
@@ -315,10 +439,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Head Hunters</h3>
-                            <h4>A funk themed turn based strategy game.</h4>
-                            <p><b>Time Span:</b> 2021-2022</p>
-                            <p><b>Team Size:</b> Solo Project</p>
+                            <h3 class = "projectTitle">Head Hunters</h3>
+                            <h4 class = "projectDesc">A funk themed turn based strategy game.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2021-2022</p>
+                            <p class = "projectOverview"><b>Team Size:</b> Solo Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/head-hunters" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -329,6 +453,115 @@
                             </div>
                         </div>  
                     </div> 
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 25%">
+                                <button onclick = "slideTo(2,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                            <div class = "indNav" style="flex : 25%">
+                                <button onclick = "slideTo(2,1)" class = "indNavButton">
+                                    Turn/Move System
+                                </button>
+                            </div>
+                            <div class = "indNav" style="flex : 25%">
+                                <button onclick = "slideTo(2,2)" class = "indNavButton">
+                                    Enemy Behavior/Pathfinding
+                                </button>
+                            </div>
+                            <div class = "indNav" style="flex : 25%">
+                                <button onclick = "slideTo(2,3)" class = "indNavButton">
+                                    Art/Music
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/PresenceScreenShot.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Headhunter's is a game I started and finished in highschool. It was made in Unity C# and Github is used as the source control. Although much of the practices I used to create the game are a bit iffy as a result of inexperience, I am pretty proud that I managed to get a game like this out. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">The game is a strategy game where the player controls three characters to fight against bosses. The player can command each character to either shoot, use a special move, or move to a different tile and the opposing bosses can do the same. </p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/HunterSShot2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/ChaosScreenshot.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">The turn system that this game is based around, is a que of events that get played on the player fully deciding what to do. While this allows players and enemies to perform their actions, this also allows for other interactions like queing status effects and displaying special messages. Players essentially interacted with the game by queing in events that would be preformed by player characters.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Both enemies and players have access to special moves, a catagory of moves with unique effects ranging from reducing the speed of enemies to rigging another character to explode in a set amount of turns. The when the player chooses any special move, tiles that these special moves can be cast on are highlighted, and the resulting effect area are also highlighted. </p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/MovelistScreenshot.png"></img>
+                                            <p class = "imageNote">The move selection screen</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/Strike Screenshot.png"></img>
+                                            <p class = "imageNote">These enemies moves and attacks exactly like a knight in chess</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">The enemies in this game have all of the same abilities that a player character has like, shooting, moving, or using a special move. Thus, a system is needed to handle enemy behavior. It uses system that adjusts the priority based on the path to a location on the map and the potential final action that the enemy takes. At the end, an action is randomly selected from pool of actions with the most priority.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">The enemies also consider the properties of their special moves while pathfinding, they pathfind with movement abilities and find tiles in which they are in range for offensive abilities. Ultimately with this system, modifying priority paramaters and special moves allowed me to make enemies to display a wide range of unique behaviors.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/DashScreenshot.png"></img>
+                                            <p class = "imageNote">Enemy boss uses movement ability to move farther away from player characters</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/Totally Real _Lizard_.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Since this was a solo project, I ended up making pretty much all of the art/music assets by myself. All of the animations are done through Unity's animation system and the illustrations themselves were done through google draw.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">The music was done through Musescore and leaned very heavily into funk and rock music. The game itself is very inspired music from those generes too. The name of the game itself is taken from the album "Head Hunters" by Herbie Hancock. The boss "Face Gatherers" had enemies with named by the songs in the same album. The enemy Heavenmaker had moves with the same name as multiple song titles of the math rock band Elephant Gym.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/ChessGraveYard.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo>  
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
@@ -336,17 +569,48 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Velvet</h3>
-                            <h4>An action platformer revolving around hookshots.</h4>
-                            <p><b>Time Span:</b> 2019-2020</p>
-                            <p><b>Team Size:</b> Solo Project</p>
+                            <h3 class = "projectTitle">Velvet</h3>
+                            <h4 class = "projectDesc">An action platformer revolving around hookshots.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2019-2020</p>
+                            <p class = "projectOverview"><b>Team Size:</b> Solo Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/velvet" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
                                 </a>
                             </div>
-                    </div>  
-                </div>              
+                        </div>
+                    </div> 
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(3,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/VelvetSC.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText"> This game was made in Unity C#. The main gameplay loop is that the player dodges bullets while shooting and meleeing enemies. The hookshot is simply a tag that pulls the players towards it, and enemies attack by firing at the player at an angle that is offset by a random amount. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">A total of 11 levels were made and designed along with three enemy types.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/VelvetSC2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo>            
                 </div>
                 <div>
                     <p id="jams"><br></p>
@@ -358,10 +622,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Riptide Gardens</h3>
-                            <h4>A farming game with a constantly shifting base.</h4>
-                            <p><b>Time Span:</b> 1 week in 2024</p>
-                            <p><b>Team Size:</b> 3 people</p>
+                            <h3 class = "projectTitle">Riptide Gardens</h3>
+                            <h4 class = "projectDesc">A farming game with a constantly shifting base.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 1 week in 2024</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 3 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/riptide-gardens" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -372,6 +636,37 @@
                             </div>
                         </div>                  
                     </div>
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/RiptideScreenShot.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">This was originally part of the "Spring 2D Jam '24" but the concept the team created ended up requiring more time. The game worked off a grid system where plants would get boosts and debuffs depending on what kind of plants they were next to and how fertile the soil was or not. Waves would shift the landscape of the island periodically, destroying plants and shifting fertility. Fertility is mostly determined by proximity to sea.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">10 different plants were created all with different properties. Some plants are direct upgrades of other ones, some plants do better in fertile/infertile soil, some plants boost other plants, and some plants sabotage other plants. However, they all have the same base properties of producing food at set times and not being able to be placed in water.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/RiptideScreenShot2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo>  
                     <div class = "project">
                         <div class = "titleHolder" >
                             <div class = "titleBorder">
@@ -379,10 +674,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Remenant of Davy's Crew</h3>
-                            <h4>A horror game based around fending off ghosts.</h4>
-                            <p><b>Time Span:</b> 2 days in 2024</p>
-                            <p><b>Team Size:</b> 3 people</p>
+                            <h3 class = "projectTitle">Remenant of Davy's Crew</h3>
+                            <h4 class = "projectDesc">A horror game based around fending off ghosts.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2 days in 2024</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 3 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/remenant-of-davys-crew" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -393,6 +688,37 @@
                             </div>
                         </div>                  
                     </div>
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/RemenantSC.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">This game was made for the 2024 Husky Jam. Within the team there were two programmers. I created the ship and enemy AI, along with the overall level system of the game. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">Ships move toward lighthouse beams, sea monsters wreck lighthouses and are repulsed by light, and ghost ships act like normal ships until a light is directly shone on them causing them to start invading the lighthouse.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/RemenantSC2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo> 
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
@@ -400,10 +726,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Combo Infinity</h3>
-                            <h4>A fighting game based on maintaining a combo.</h4>
-                            <p><b>Time Span:</b> 2 days in 2024</p>
-                            <p><b>Team Size:</b> Solo Project</p>
+                            <h3 class = "projectTitle" >Combo Infinity</h3>
+                            <h4 class = "projectDesc">A fighting game based on maintaining a combo.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2 days in 2024</p>
+                            <p class = "projectOverview"><b>Team Size:</b> Solo Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/combo-infinity" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -411,6 +737,36 @@
                             </div>
                         </div>                  
                     </div>
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/ComboInftySC.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">This game was made for Ludum Dare 46. It's a fighting game based on keeping a combo alive until a set amount of hits are reached. It was made to adhere to the theme, "Keep it Alive"</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/ComboInftySC2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo> 
                     <div class = "project">
                         <div class = "titleHolder">
                             <div class = "titleBorder">
@@ -418,10 +774,10 @@
                             </div>
                         </div>
                         <div class = "description">
-                            <h3>Spooder Ball</h3>
-                            <h4>An arcade survival game where the player slams bugs together.</h4>
-                            <p><b>Time Span:</b> 2 days in 2020</p>
-                            <p><b>Team Size:</b> 2 people</p>
+                            <h3 class = "projectTitle">Spooder Ball</h3>
+                            <h4 class = "projectDesc">An arcade survival game where the player slams bugs together.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> 2 days in 2020</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 2 people</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/spooder-ball" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -429,11 +785,43 @@
                             </div>
                         </div> 
                     </div>
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/SpooderBallSC.png"></img>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">This was made for the "GMTK 2021" game jam.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfo" src="Resources/SpooderBallSC2.png"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo> 
                 </div>
+                <!--
                 <div>
                     <p id="other"><br></p>
                     <h2 class = "divison">Other</h2>
                 </div>
+                -->
             </Projects>
         </div>
       </div>
