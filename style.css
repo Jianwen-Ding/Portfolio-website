@@ -259,7 +259,7 @@ h2{
 @keyframes enterLeft{
     from{
         transform: translateX(-100%);
-        clip-path: inset(0% 0% 0% 100%);
+        clip-path: inset(0% 0% 0% 0%);
     }
     to{
         transform: translateX(0%);
@@ -273,13 +273,13 @@ h2{
     }
     to{
         transform: translateX(-100%);
-        clip-path: inset(0% 0% 0% 100%);
+        clip-path: inset(0% 0% 0% 0%);
     }
 }
 @keyframes enterRight{
     from{
         transform: translateX(100%);
-        clip-path: inset(0% 100% 0% 0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
     to{
         transform: translateX(0%);
@@ -289,11 +289,11 @@ h2{
 @keyframes leaveRight{
     from{
         transform: translateX(0%);
-        clip-path: inset(0 0% 0% 0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
     to{
         transform: translateX(100%);
-        clip-path: inset(0% 100% 0% 0%);
+        clip-path: inset(0% 0% 0% 0%);
     }
 }
 
@@ -321,6 +321,7 @@ infoElem{
     border-radius: 10px;
     background-color: white;
     position: relative;
+    overflow: hidden;
 }
 
 .indInfoElem{
