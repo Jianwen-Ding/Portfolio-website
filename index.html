@@ -178,7 +178,7 @@
                                 I love seeing interesting and fun ideas come to life, of course imagination always outpaces reality so you'll often see me in over my head while making games.
                             </p>
                             <p class = "infoText">
-                                I mainly use Unity C# to create games but have experience using Java and C++.
+                                I mainly use Unity and C# to create games but have experience using Java and C++.
                             </p>
                             <p class = "infoText">
                                 
@@ -200,7 +200,7 @@
                             <h3 class = "projectTitle">Strand</h3>
                             <h4 class = "projectDesc">A survival rougelike about fending off zombies.</h4>
                             <p class = "projectOverview"><b>Time Span:</b> 2022-2024</p>
-                            <p class = "projectOverview"><b>Team Size:</b> 9 person team for 2022, solo team for 2023-2024</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 9 person team for 2022, personal project for 2023-2024</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/strand" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
@@ -247,15 +247,20 @@
                                 <div class = "indContentElem">
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfo" src="Resources/strandSShot1.png"></img>
+                                            <iframe class="videoInfo" src="https://www.youtube.com/embed/RQizr_ux7TU?si=CIPC6h0bUPZZyO6u" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">A clip of me playing Strand</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Strand was initially created as a club project of a game development club I founded. Initially, the project was worked on during club meeting hours by a group of about 9 people. However, I continued to work on it individually after my graduation. During this project's time as a club project, I was project lead and directed art and music. Most of my work in this project is in programming/art.</p>
+                                            <p class = "infoText">- Strand was initially created as a club project of a game development club I founded.</p>
+                                            <p class = "infoText">- Initially, the project was worked on during club meeting hours by a group of about 9 people but I continued to work on it individually after my graduation. </p>
+                                            <p class = "infoText">- During this project's time as a club project, I was project lead and directed art and music.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This project was made in C# Unity, with Github as the source control. The main gameplay loop of this game involves traveling from the center into a randomly generated map to collect scrap. The player character throws and swings items to fend off various types of zombies.</p>
+                                            <p class = "infoText">- This project was made in C# Unity, with Github as the source control. </p>
+                                            <p class = "infoText">- The main gameplay loop of this game involves collecting scrap while fending off zombies.</p>
+                                            <p class = "infoText">- Most of my work in this game involves programming and art.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/StrandSShot2.png"></img>
@@ -271,12 +276,16 @@
                                             <p class = "imageNote">An example of a generated map</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">I programmed the randomly generating map that Strand takes place in. The map is done in a room based system. The entire map is a grid of rooms with openings to other rooms. To determine openings in a map, each room randomly opens some of its sides. Afterwords, the entire map is processed so that every room can be reached with the given openings. "Dead ends" in the map are assigned to have a function of having loot, either in the form of food or scrap.</p>
+                                            <p class = "infoText">- I programmed the randomly generating map that Strand takes place in.</p>
+                                            <p class = "infoText">- The map is done in a room based system where each room in the map is assigned a difficulty number, function, and opening directions at the start.</p>
+                                            <p class = "infoText">- Resource rooms are distributed at certain "dead ends" to prevent aimless wandering.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText"> Each room in the map is assigned a difficulty number, function, and open directions. In order to fill each room with a layout corresponding to the opening, function, and difficulty values, I made a text proccessor that takes values from a .txt file and turns them into layouts. Afterwards, I could randomly assign one of the valid layouts to each room, completing the overall layout of the entire map.</p>
+                                            <p class = "infoText"> - The map itself is simply a grid of connected rooms.</p>
+                                            <p class = "infoText"> - I created a text proccessor that takes values from a .txt file and turns them into layouts.</p>
+                                            <p class = "infoText"> - Rooms are randomly assigned a layout with corresponding to the opening, function, and difficulty values.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfoWithNote" src="Resources/GridEditorScreenShot.png"></img>
@@ -293,12 +302,16 @@
                                             <p class = "imageNote">Display of all enemies within the game</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">One other major component of the game I programmed lies in enemy design and development. All of the enemies have a base class, as most of them have finite hp, the ability to be grabbed, and a stun state. Within the main state, many empty virtual functions were made such as a effect on being grabbed and an effect on being stunned. This collectively makes the process of creating unique enemies much simpler. </p>
+                                            <p class = "infoText">- I handled enemy behavior design and development.</p>
+                                            <p class = "infoText">- All of the enemies have a shared base class, as most of them have finite hp, the ability to be grabbed, and a stun state.</p>
+                                            <p class = "infoText">- This collectively makes the process of creating unique enemies much simpler.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Each unique type of enemy usually has the pattern of staying at one spot until the player comes into view/enters the same tile as the enemy. They then all will have unique movement patterns in trying to get to or damage the player.</p>
+                                            <p class = "infoText">- 5 unique types of enemies were created by me.</p>
+                                            <p class = "infoText">- They all have unique movement patterns in trying to get to or damage the player.</p>
+                                            <p class = "infoText">- These behaviors range from walking to player to flying around player and shooting projectiles.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/EnemyBehaviorSC.png"></img>
@@ -314,12 +327,17 @@
                                             <p class = "imageNote">Display of all weapons within the game</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Weapons in the game are divided into golden scrap and normal scrap. Golden scrap have unusual properties like allowing for telportation or shooting projectiles while base scrap are just copies of eachother with modified number parameters *e.g. one basic weapon stuns a bit longer while another does more damage*.</p>
+                                            <p class = "infoText">- I created programmed weapons into the game. </p>
+                                            <p class = "infoText">- Weapons in the game are divided into golden scrap and normal scrap.</p>
+                                            <p class = "infoText">- Golden scrap have unusual properties like allowing for telportation or shooting projectiles.</p>
+
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">I made a sizeable chunk of the art in this game us the pixel editor Piskel. Menu's, half of enemy animations, and tile sprites were made by me. With this specific project I was aiming to provide a more "complete" game than most of the games I made earlier. Because of that, I did spend a sizeable amount of time trying to visually polish the game.</p>
+                                            <p class = "infoText">- Base scrap resuse the same code but with modified values *e.g. one basic weapon stuns a bit longer while another does more damage*.</p>
+                                            <p class = "infoText">- I made a sizeable chunk of the art in this game us the pixel editor Piskel.</p>
+                                            <p class = "infoText">- My work included menu's, half the of enemy animations, and tile sprites.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/MenuArtSample.gif"></img>
@@ -375,10 +393,11 @@
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
                                             <iframe class = "videoInfo" src="https://www.youtube.com/embed/J5hjX9ytMcQ?si=sBDZq_l5EPOij1wm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            <p class = "imageNote">Trailer created by teammate Micah Ballard</p>
+                                            <p class = "imageNote">Trailer created by my teammate Micah Ballard</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Frogology was made for the "IndieCade Summer Game Design Internship" in which students participated in the 2024 Indiecade Climate Jam. Along with the game jam, the internship also required students to complete other tasks such as drafting plans on how to actually impact enviormental pursuits throug the game.</p>
+                                            <p class = "infoText">- Frogology was made for the "IndieCade Summer Game Design Internship" in which students participated in the 2024 Indiecade Climate Jam.</p>
+                                            <p class = "infoText">- The internship also involved other tasks such as drafting plans on how to impact enviormental pursuits through the game.</p>
                                             <a href = "Resources/InternshipCertification.pdf" class = "textLink">
                                                 Internship Certification Letter
                                             </a>
@@ -386,7 +405,9 @@
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText"> The game was programmed in the Unity game engine with me and two other programmers. The game was made in C# and we worked together using Github as version control. The main gameplay loop of the game involved learning more about nearby animals while catching them.</p>
+                                            <p class = "infoText">- The game was developed with Unity and C# by me and two other programmers.</p>
+                                            <p class = "infoText">- Github was used as the version control.</p>
+                                            <p class = "infoText">- The main gameplay loop of the game involved learning more about nearby animals while catching them.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfoWithNote" src="Resources/Credits.png"></img>
@@ -403,16 +424,20 @@
                                             <p class = "imageNote">Demonstration of out of view animal AI</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">One of the main gameplay elements I was in charge of was programming and designing the behavior of the animals. Animal behavior could be divided up into two states, present and out of view. When animals move out of view all of their physics are disabled and they move between objects with certain preset tags. When animals move within range of a player, they materialize in a nearby bush and begin wandering around.</p>
+                                            <p class = "infoText">- I was in charge of was programming and designing the behavior of the animals.</p>
+                                            <p class = "infoText">- Animals in Frogology are able to traverse a large map, gathering in points of intrest.</p>
+                                            <p class = "infoText">- Animals dematerialize upon moving out of range and sight of player, allowing for animals to still traverse map without preforming physics calculations.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Present animals generally either wander in a random direction or run towards/away from predator/prey. Animals are able to avoid collisions while moving by shapecasting in several directions until it finds a direction in which it does not hit an object. Animal sight detection is triggered when a object is a set angle away from the foward vector. Animals are able to hear by scanning objects with certain tags and checking their distance from said animal.</p>
+                                            <p class = "infoText">- Non-dematerialized animals generally go towards prey and away from predators. </p>
+                                            <p class = "infoText">- Animals are able to avoid collisions while moving.</p>
+                                            <p class = "infoText">- Animals can detect predator/prey that fall within a certain FOV or within a certain radius. This emulates the sight and hearing of animals.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <iframe class = "videoInfo" src="https://www.youtube.com/embed/tumYVMTvu4g?si=d3e4tQZ5MNr0GUI-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            <p class = "imageNote">Demonstration of present animal AI</p>
+                                            <p class = "imageNote">Demonstration of non-dematerialized animal AI</p>
                                         </div>
                                     </div>
                                 </div>
@@ -425,12 +450,16 @@
                                             <p class = "imageNote">Editor representation of overarching quest flow</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Another important gameplay element I worked on was the overarching branching quest system of the game. I created a quest creation editor tool that shows connections between quests and the contents of quests that are created through inspector and a editor tool for branching dialogue based on the current quest. </p>
+                                            <p class = "infoText">- I worked on the overarching branching quest system of the game.</p>
+                                            <p class = "infoText">- I created a quest creation tool through the Unity Editor that displayed connections between quests and the contents of quests.</p>
+                                            <p class = "infoText">- An editor tool for branching dialogue based on the completed quests was also completed by me. </p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">The quests document most if not all of the progression in the game, dialogue is locked behind quests, the ability to catch certain animals is locked between quests, and the ability to sleep in the game is locked behind quests. I handled locking events and abilities behind quests and events where quests would increment or complete. A save system for quest progress and species logging process was also implemented through playerprefs.</p>
+                                            <p class = "infoText">- I integrated the quest system into most if not all of the progression in the game.</p>
+                                            <p class = "infoText">- Abilities such as sleeping, going onto certain dialogue branches, and catching certain animals are locked behind quests.</p>
+                                            <p class = "infoText">- A save system for quest progress and species logging process was also implemented.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfoWithNote" src="Resources/SpeciesShot.png"></img>
@@ -452,7 +481,7 @@
                             <h3 class = "projectTitle">Head Hunters</h3>
                             <h4 class = "projectDesc">A funk themed turn based strategy game.</h4>
                             <p class = "projectOverview"><b>Time Span:</b> 2021-2022</p>
-                            <p class = "projectOverview"><b>Team Size:</b> Solo Project</p>
+                            <p class = "projectOverview"><b>Team Size:</b> Personal Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/head-hunters" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -491,15 +520,20 @@
                                 <div class = "indContentElem">
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfo" src="Resources/PresenceScreenShot.png"></img>
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/Lp9SjmDYSGU?si=vYU0L4hQaZagjNF9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">A short example video of me playing Head Hunters</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Headhunter's is a game I started and finished in highschool. It was made in Unity C# and Github is used as the source control. The game is a strategy game where the player controls three characters to fight against bosses. A total of 6 bosses were created.</p>
+                                            <p class = "infoText">- Headhunter's is a personal project I started and finished in highschool.</p>
+                                            <p class = "infoText">- The game was made in Unity and C# with Github as the source control. </p>
+                                            <p class = "infoText">- Headhunter's is a strategy game where the player controls three characters to fight against bosses.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText"> The player can command each character to either shoot, use a special move, or move to a different tile and the opposing bosses can do the same. </p>
+                                            <p class = "infoText">- A total of 6 bosses were created for this game.</p>
+                                            <p class = "infoText">- The player can command each character to either shoot, use a special move, or move to an adjacent tile.</p>
+                                            <p class = "infoText">- Opposing bosses can do all of the same actions as players can.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/HunterSShot2.png"></img>
@@ -514,12 +548,15 @@
                                             <img class = "imageInfo" src="Resources/ChaosScreenshot.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">The turn system that this game is based around, is a que of events that get played on the player fully deciding what to do. While this allows players and enemies to perform their actions, this also allows for other interactions like queing status effects and displaying special messages. Players essentially interacted with the game by queing in events that would be preformed by player characters.</p>
+                                            <p class = "infoText">- A turn system was created that allowed for a que of events and actions to be inserted.</p>
+                                            <p class = "infoText">- This allowed players and enemies to perform their actions, allowed for queing status effects, and allowed for the displaying of special messages.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Both enemies and players have access to special moves, a catagory of moves with unique effects ranging from reducing the speed of enemies to rigging another character to explode in a set amount of turns. The when the player chooses any special move, tiles that these special moves can be cast on are highlighted, and the resulting effect area are also highlighted. </p>
+                                            <p class = "infoText">- Both enemies and players have access to special moves.</p>
+                                            <p class = "infoText">- These special moves range from reducing the speed of enemies to rigging another character to explode in a set amount of turns. </p>
+                                            <p class = "infoText">- When the player first selects any special move, tiles that these special moves can be cast on and can affect are highlighted. </p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfoWithNote" src="Resources/MovelistScreenshot.png"></img>
@@ -536,16 +573,20 @@
                                             <p class = "imageNote">These enemies moves and attacks exactly like a knight in chess</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">The enemies in this game have all of the same abilities that a player character has like, shooting, moving, or using a special move. Thus, a system is needed to handle enemy behavior. It uses system that adjusts the priority based on the path to a location on the map and the potential final action that the enemy takes. At the end, an action is randomly selected from pool of actions with the most priority.</p>
+                                            <p class = "infoText">- The enemies in this game have all of the same abilities that a player character so a common behvaior system is needed.</p>
+                                            <p class = "infoText">- Actions are chosen based on which has the most priority points given to it.</p>
+                                            <p class = "infoText">- Priority is affected by the type of action and the path taken before preforming the action.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">The enemies also consider the properties of their special moves while pathfinding, they pathfind with movement abilities and find tiles in which they are in range for offensive abilities. Ultimately with this system, modifying priority paramaters and special moves allowed me to make enemies to display a wide range of unique behaviors.</p>
+                                            <p class = "infoText">- Enemies are able to consider movement properties and offensive range of special moves while traversing the battlefield.</p>
+                                            <p class = "infoText">- Special moves can be adjusted to give more priority in unique scenarios.</p>
+                                            <p class = "infoText">- Changing values on priority calculations creates new behaviors without changing code.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfoWithNote" src="Resources/DashScreenshot.png"></img>
-                                            <p class = "imageNote">Enemy boss uses movement ability to move farther away from player characters</p>
+                                            <p class = "imageNote">Enemy boss escaping by using movement ability</p>
                                         </div>
                                     </div>
                                 </div>
@@ -557,12 +598,15 @@
                                             <img class = "imageInfo" src="Resources/Totally Real _Lizard_.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Since this was a solo project, I ended up making pretty much all of the art/music assets by myself. All of the animations are done through Unity's animation system and the illustrations themselves were done through google draw.</p>
+                                            <p class = "infoText">- All of the animations were done by me by plugging in illustrations from google draw through Unity's animation system.</p>
+                                            <p class = "infoText">- The music was done through Musescore and leaned very heavily into funk and rock music.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">The music was done through Musescore and leaned very heavily into funk and rock music. The game itself is very inspired music from those generes too. The name of the game itself is taken from the album "Head Hunters" by Herbie Hancock. The boss "Face Gatherers" had enemies with named by the songs in the same album. The enemy Heavenmaker had moves with the same name as multiple song titles of the math rock band Elephant Gym.</p>
+                                            <p class = "infoText">- The game itself has multiple elements inspired from music from those generes too.</p>
+                                            <p class = "infoText">- The name of the game itself is taken from the album "Head Hunters" by Herbie Hancock.</p>
+                                            <p class = "infoText">- Many bosses were themed after albums or musical artists I liked at the time.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/ChessGraveYard.png"></img>
@@ -583,7 +627,7 @@
                             <h3 class = "projectTitle">Velvet</h3>
                             <h4 class = "projectDesc">An action platformer revolving around hookshots.</h4>
                             <p class = "projectOverview"><b>Time Span:</b> 2019-2020</p>
-                            <p class = "projectOverview"><b>Team Size:</b> Solo Project</p>
+                            <p class = "projectOverview"><b>Team Size:</b> Personal Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/velvet" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -607,12 +651,16 @@
                                             <img class = "imageInfo" src="Resources/VelvetSC.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText"> This game was made in Unity C#. The main gameplay loop is that the player dodges bullets while shooting and meleeing enemies. The hookshot is simply a tag that pulls the players towards it, and enemies attack by firing at the player at an angle that is offset by a random amount. </p>
+                                            <p class = "infoText">- This game was made in Unity and with C#. </p>
+                                            <p class = "infoText">- The main gameplay loop is that the player dodges bullets while shooting and meleeing enemies.</p>
+                                            <p class = "infoText"> The hookshot is simply a tag that pulls the players towards it.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">A total of 11 levels were made and designed along with three enemy types. Also, a save system for level progression and collectible coins was created.</p>
+                                            <p class = "infoText">- A total of 11 levels were made and designed along with three enemy types.</p>
+                                            <p class = "infoText">- Enemies attack by shooting at the player while offsetting the angle by a random amount.</p>
+                                            <p class = "infoText">- A save system for level progression and collectible coins was created for this game.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/VelvetSC2.png"></img>
@@ -664,12 +712,16 @@
                                             <img class = "imageInfo" src="Resources/RiptideScreenShot.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This was originally part of the "Spring 2D Jam '24" but the concept the team created ended up requiring more time. The game was made with Unity C# with Github as the source control. The game worked off a grid system where plants would get boosts and debuffs depending on what kind of plants they were next to and how fertile the soil was or not. Waves would shift the landscape of the island periodically, destroying plants and shifting fertility. Fertility is mostly determined by proximity to sea.</p>
+                                            <p class = "infoText">- Riptide Gardens was originally made for the "Spring 2D Jam '24" but ended up requiring more than the three days provided.</p>
+                                            <p class = "infoText">- The game was made with Unity and C# with Github as the source control. </p>
+                                            <p class = "infoText">- The premise of the game is to escape starvation by planting a garden on an ever-shifting island.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">10 different plants were created all with different properties. Some plants are direct upgrades of other ones, some plants do better in fertile/infertile soil, some plants boost other plants, and some plants sabotage other plants. However, they all have the same base properties of producing food at set times and not being able to be placed in water.</p>
+                                            <p class = "infoText">- 10 different plants were created all with different properties. </p>
+                                            <p class = "infoText">- Plants range from basic food producers to plants that help or sabotage nearby plants</p>
+                                            <p class = "infoText">- All plants have the same base properties including producing food at set times and not being able to be placed in water.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/RiptideScreenShot2.png"></img>
@@ -717,12 +769,16 @@
                                             <img class = "imageInfo" src="Resources/RemenantSC.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This game was made for the 2024 Husky Jam and made with the theme "Lighthouse". Within the team there were two programmers. The game was made with Unity C# with Github as the source control. I created the ship and enemy AI, along with the overall level system of the game.</p>
+                                            <p class = "infoText">- This game was made for the 2024 Husky Jam and made with the theme "Lighthouse.</p>
+                                            <p class = "infoText">- The game was made with me and two other programmers through Unity and C# with Github as the source control.</p>
+                                            <p class = "infoText">- I created the ship, sea monster, and ghost ship AI, along with the overall level system of the game.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Ships move toward lighthouse beams, sea monsters wreck lighthouses and are repulsed by light, and ghost ships act like normal ships until a light is directly shone on them causing them to start invading the lighthouse.</p>
+                                            <p class = "infoText">- Ships move toward lighthouse beams.</p>
+                                            <p class = "infoText">- Sea monsters wreck lighthouses and are repulsed by light.</p>
+                                            <p class = "infoText">- Ghost ships act like normal ships until they are revealed by being shone on and subsequently attempt to invade the lighthouse.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/RemenantSC2.png"></img>
@@ -770,12 +826,16 @@
                                             <img class = "imageInfo" src="Resources/CheckInSC.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This was made for Ludum Dare 54 and made to comply to the theme "Limited Space".The game was made with Unity C# with Github as the source control. The game has the player decide to either admit, waitlist, or reject a que of patients. Players are given the list of avalable rooms, the waitlist size, the insurance of the patient, and the injury of the patient.</p>
+                                            <p class = "infoText">- This was made for Ludum Dare 54 and made to comply to the theme "Limited Space". </p>
+                                            <p class = "infoText">- The game was made with Unity and C# with Github as the source control.</p>
+                                            <p class = "infoText">- The game has the player decide to either admit, waitlist, or reject a que of patients.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">I worked with patient data made by a teammate to create a patient generator that produces patients with unique chances of death, payout, and treatment time, I created the room vacancy and waitlist system that determines if a patient is able to be admitted, and I polished up a notification system made by another programmer.</p>
+                                            <p class = "infoText">- I worked with patient data made by a teammate to create a patient generator that produces patients with randomized attributes.</p>
+                                            <p class = "infoText">- I created the room vacancy and waitlist system that determines if a patient is able to be admitted.</p>
+                                            <p class = "infoText">- I polished up a notification system made by another programmer.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/CheckInSC2.png"></img>
@@ -796,7 +856,7 @@
                             <h3 class = "projectTitle" >Combo Infinity</h3>
                             <h4 class = "projectDesc">A fighting game based on maintaining a combo.</h4>
                             <p class = "projectOverview"><b>Time Span:</b> 2 days in 2024</p>
-                            <p class = "projectOverview"><b>Team Size:</b> Solo Project</p>
+                            <p class = "projectOverview"><b>Team Size:</b> Personal Project</p>
                             <div style="display: flex;">
                                 <a href = "https://pakmanlie.itch.io/combo-infinity" class = "externalLink">
                                     <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io">
@@ -820,12 +880,14 @@
                                             <img class = "imageInfo" src="Resources/ComboInftySC.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This game was made for Ludum Dare 46. The game was made with Unity C# with Github as the source control. It's a fighting game based on keeping a combo alive until a set amount of hits are reached. It was made to adhere to the theme, "Keep it Alive"</p>
+                                            <p class = "infoText">- This game was made for Ludum Dare 46 and adhered to the theme "Keep it Alive".</p>
+                                            <p class = "infoText">- The game was made with Unity and C# with Github as the source control. </p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Six different levels were designed and implemented around this concept of perpetuating a combo while avoiding moving hazards.</p> 
+                                            <p class = "infoText">- Combo Infinity is a fighting game based on keeping a combo alive until a set amount of hits are reached.</p>
+                                            <p class = "infoText">- Six different levels were designed and implemented around this concept of perpetuating a combo while avoiding moving hazards.</p> 
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/ComboInftySC2.png"></img>
@@ -870,12 +932,15 @@
                                             <img class = "imageInfo" src="Resources/SpooderBallSC.png"></img>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">This was made for the "GMTK 2021" game jam and complies with the theme "Joined Together". The game was made with Unity C# with Github as the source control. In this game, the player controls a spider with the abilities to smash other bugs together and throw those bugs at enemies as a ball. The objective of the game is to survive as long as possible.</p>
+                                            <p class = "infoText">- This was made for the "GMTK 2021" game jam and complies with the theme "Joined Together".</p>
+                                            <p class = "infoText">- The game was made with Unity and C# with Github as the source control. </p>
+                                            <p class = "infoText">- In this game, the player controls a spider with the abilities to smash other bugs together and throw those bugs at enemies as a ball while surviving as long as possible.</p>
                                         </div>
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">Six unique types of enemies and a progressive difficulty system was implemented for this game. A webbing system that checks if the player is between two webbed enemies was established.</p>
+                                            <p class = "infoText">- Six unique types of enemies and a progressive difficulty system was implemented for this game.</p>
+                                            <p class = "infoText">- A webbing system that checks if the player is between two webbed enemies was established.</p>
                                         </div>
                                         <div style="flex:50%" class = "indContentDiv">
                                             <img class = "imageInfo" src="Resources/SpooderBallSC2.png"></img>
