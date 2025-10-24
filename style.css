@@ -103,6 +103,33 @@ Menu{
     }
 }
 
+
+@keyframes up3 {
+    from {
+        margin-bottom: 1.25%;
+        transform: translateY(0%);
+        clip-path: inset(0% 0% 0% 0%);
+    }
+    to {
+        margin-bottom: -6rem;
+        transform: translateY(-100%);
+        clip-path: inset(100% 0% 0% 0%);
+    }
+}
+
+@keyframes down3 {
+    from {
+        margin-bottom: -6rem;
+        transform: translateY(-100%);
+        clip-path: inset(100% 0% 0% 0%);
+    }
+    to {
+        margin-bottom: 1.25%;
+        transform: translateY(0%);
+        clip-path: inset(0% 0% 0% 0%);
+    }
+}
+
 .gameDrag{
     position: relative;
     display: block;
@@ -111,6 +138,27 @@ Menu{
     margin-bottom: -12rem;
     top : 0%;
     clip-path: inset(0% 0% 100% 0%);
+}
+
+.experienceDrag{
+    position: relative;
+    display: block;
+    animation-duration: 0.5s;
+    animation-delay: 0s;
+    margin-bottom: -6rem;
+    top : 0%;
+    clip-path: inset(0% 0% 100% 0%);
+}
+
+.experienceDrag.draggedUp{
+    animation-name: up3;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.experienceDrag.draggedDown{
+    animation-name: down3;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
 }
 
 .gameDrag.draggedUp{
@@ -229,6 +277,18 @@ Menu{
 }
 
 .project{
+    display : flex;
+    gap : 20px;
+    margin-bottom: 20px;
+}
+
+.experience{
+    display : flex;
+    gap : 20px;
+    margin-bottom: 20px;
+}
+
+.experienceInfo{
     display : flex;
     gap : 20px;
     margin-bottom: 20px;
@@ -556,6 +616,33 @@ infoElem{
             clip-path: inset(0% 0% 0% 0%);
         }
     }
+
+    @keyframes up3 {
+        from {
+            margin-bottom: 2.5%;
+            transform: translateY(0%);
+            clip-path: inset(0% 0% 0% 0%);
+        }
+        to {
+            margin-bottom: -12rem;
+            transform: translateY(-100%);
+            clip-path: inset(100% 0% 0% 0%);
+        }
+    }
+    
+    @keyframes down3 {
+        from {
+            margin-bottom: -12rem;
+            transform: translateY(-100%);
+            clip-path: inset(100% 0% 0% 0%);
+        }
+        to {
+            margin-bottom: 2.5%;
+            transform: translateY(0%);
+            clip-path: inset(0% 0% 0% 0%);
+        }
+    }
+
     .jamsDrag{
         position: relative;
         display: block;
@@ -571,6 +658,16 @@ infoElem{
         animation-duration: 0.5s;
         animation-delay: 0s;
         margin-bottom: -24rem;
+        top : 0%;
+        clip-path: inset(0% 0% 100% 0%);
+    }
+
+    .experienceDrag{
+        position: relative;
+        display: block;
+        animation-duration: 0.5s;
+        animation-delay: 0s;
+        margin-bottom: -12rem;
         top : 0%;
         clip-path: inset(0% 0% 100% 0%);
     }

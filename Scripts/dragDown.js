@@ -45,6 +45,7 @@ function()
 { 
     idMap = new Map();
     // Actually setting up elements 
+    dragInit("experienceDrag", 0.5, "experienceDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
     dragInit("projectsDrag", 0.5, "projectDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
     dragInit("jamsDrag", 0.5, "jamDragButton", "Resources/UpIcon.png", "Resources/DownIcon.png");
     setInterval(function(){

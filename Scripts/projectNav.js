@@ -101,7 +101,6 @@ window.addEventListener("load",function()
         for(let i = 0; i < elemInfoList.length; i++){
             if(elemInfoList[i].tranLeftTime < transitionTime){
                 elemInfoList[i].tranLeftTime = elemInfoList[i].tranLeftTime + 0.1;
-                console.log("wow");
             }
         }
     },100);

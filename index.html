@@ -9,7 +9,6 @@
     </title>
 </head>
 <body>
-    <body onLoad="window.scroll(0, 175)"></body>
     <script src = "Scripts/dragDown.js">
     </script>
     <script src = "Scripts/projectNav.js">
@@ -23,36 +22,62 @@
                     <a class="textLink" href = "#about">About</a>
                 </div>
                 <div>
+                    <a class="textLink" href = "#experience">Experience</a>
+                    <img onclick= "dragDown('experienceDrag')" id = "experienceDragButton" src="Resources/DownIcon.png" alt="Dragdown button" width="15px" height="15px">
+                    <div id = "experienceDrag" class = "experienceDrag">
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Associate Game Engineer</p>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <p class = "tinyTitle">Summer Game Design Intern</p>
+                            </div>
+                        </div>
+                        <div style="display: flex;" >
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#stormflag" class = "tinyImage">
+                                    <img src="Resources/SFLogoOnBlk.png" alt="Strand Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 50%" class = "tinyDiv">
+                                <a href = "#indiecade" class = "tinyImage">
+                                    <img src="Resources/IndiecadeLogo.jpg" alt="Plane Game Title Screen">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
                     <a id = "projectsLink" class="textLink" href = "#projects">
                         Projects
                     </a>
                     <img onclick= "dragDown('projectsDrag')" id = "projectDragButton" src="Resources/DownIcon.png" alt="Dragdown button" width="15px" height="15px">
                     <div id = "projectsDrag" class = "gameDrag">
                         <div style="display: flex;" >
-                            <div style="flex : 33.3333%" class = "tinyDiv">
+                            <div style="flex : 33.33333%" class = "tinyDiv">
                                 <p class = "tinyTitle">Strand</p>
                             </div>
-                            <div style="flex : 33.3333%" class = "tinyDiv">
-                                <p class = "tinyTitle">Frogology</p>
-                            </div>
-                            <div style="flex : 33.3333%" class = "tinyDiv">
+                            <div style="flex : 33.33333%" class = "tinyDiv">
                                 <p class = "tinyTitle">Plane Render</p>
+                            </div>
+                            <div style="flex : 33.33333%" class = "tinyDiv">
+                                <p class = "tinyTitle">Skyline Engine</p>
                             </div>
                         </div>
                         <div style="display: flex;" >
-                            <div style="flex : 33.3333%" class = "tinyDiv">
+                            <div style="flex : 33.33333%" class = "tinyDiv">
                                 <a href = "#strand" class = "tinyImage">
                                     <img src="Resources/StrandTitle.png" alt="Strand Title Screen">
                                 </a>
                             </div>
-                            <div style="flex : 33.3333%" class = "tinyDiv">
-                                <a href = "#frogology" class = "tinyImage">
-                                    <img src="Resources/FrogologyTitle.jpg" alt="Frogology Title Screen">
-                                </a>
-                            </div>
-                            <div style="flex : 33.3333%" class = "tinyDiv">
+                            <div style="flex : 33.33333%" class = "tinyDiv">
                                 <a href = "#plane" class = "tinyImage">
                                     <img src="Resources/PlaneSC2.png" alt="Plane Game Title Screen">
+                                </a>
+                            </div>
+                            <div style="flex : 33.33333%" class = "tinyDiv">
+                                <a href = "#skyline" class = "tinyImage">
+                                    <img src="Resources/Skyline_SC.png" alt="Plane Game Title Screen">
                                 </a>
                             </div>
                         </div>
@@ -87,7 +112,7 @@
                                 <p class = "tinyTitle">Riptide Gardens</p>
                             </div>
                             <div style="flex : 50%" class = "tinyDiv">
-                                <p class = "tinyTitle">Remenant of Davy's Crew</p>
+                                <p class = "tinyTitle">Remanent of Davy's Crew</p>
                             </div>
                         </div>
                         <div style="display: flex;" >
@@ -98,7 +123,7 @@
                             </div>
                             <div style="flex : 50%" class = "tinyDiv">
                                 <a href = "#remenant" class = "tinyImage">
-                                    <img src="Resources/RemenantTitle.png" alt="Remenant of Davy's crew Title Screen">
+                                    <img src="Resources/RemenantTitle.png" alt="Remanent of Davy's crew Title Screen">
                                 </a>
                             </div>
                         </div>
@@ -144,7 +169,7 @@
                         </a>
                     </div>
                     <div style = "flex:50%;">
-                        <a href = "Resources/Game Development Resume Portfolio.pdf" class = "textLink">
+                        <a href = "Resources/Resume Base 2025.pdf" class = "textLink">
                             Resume
                         </a>
                     </div>
@@ -156,7 +181,7 @@
                         </a>
                     </div>
                     <div style = "flex:30%;">
-                        <a href = "https://www.linkedin.com/in/jianwen-ding-langley/" class = "centerLink">
+                        <a href = "https://www.linkedin.com/in/jianwen-ding/" class = "centerLink">
                             <img src="Resources/Logos/LinkedInLog.png" alt="LinkedIn logo">
                         </a>
                     </div>
@@ -172,31 +197,259 @@
         <div class="column right">
             <Projects>
                 <div>
-                    <p style="margin-bottom: -35px;" id = "about"><br></p>
-                    <h2 class = "divison">About Me</h2>
+                    <h2 class = "divison" id = "about">About Me</h2>
                     <div style="display: flex;">
                         <div style = "flex:30%;">
                             <img src="Resources/PortfolioPhotoCropped.JPG" alt="Photo of me" class = "pic">
                         </div>
                         <div style = "flex:70%; padding-left: 10px;">
                             <p class = "infoText">
-                                Hello! Welcome to my website, I'm Jianwen Ding and I'm an aspiring game developer who aslo happens to be a sophmore in Northeastern University who is currently studying Computer Science. 
+                                Hello! Welcome to my website, I'm Jianwen Ding and I'm a programmer, game developer, and rising junior BSCS student in the University of Virginia. 
                             </p>
                             <p class = "infoText">
                                 I love seeing interesting and fun ideas come to life, of course imagination always outpaces reality so you'll often see me in over my head while making games.
                             </p>
                             <p class = "infoText">
-                                I mainly use Unity and C# to create games but have experience using Java and C++.
+                                I've been working and creating with computer science for about for about six years and have learned a lot in that time. 
                             </p>
                             <p class = "infoText">
-                                
+                                I have dived into the lower level side of game development by working on C++ game engines as well as higher level side of it by creating games with Unity and C#. I have also excelled in school while working with Java and python.
+                            </p>
+                            <p class = "infoText">
                             </p>
                         </div>                
                     </div>
                 </div>
+                <p style="margin-bottom: -35px;" id = "experience"><br></p>
+                <h2 class = "divison">Experience</h2>
+                <div>
+                    <p class = "idHolder" id = "stormflag"><br></p>
+                    <div style="display: flex;">
+                        <div style="flex : 30%">
+                            <div class = "titleHolder">
+                                <div class = "titleBorder">
+                                    <img src="Resources/SFLogoOnBlk.png" alt="The Logo of Storm Flag Games">
+                                </div>
+                            </div>
+                        </div>
+                        <div style="flex : 70%">
+                            <div  style="padding-left: 25px">
+                                <h3 class = "projectTitle">Associate Game Engineer</h3>
+                                <h4 class = "projectDesc">Storm Flag Games</h4>
+                                <p class = "projectOverview"><b>Time Worked:</b> Jan 2025- June 2025</p>
+                            </div>      
+                        </div>
+                    </div>   
+                    <div style="height: 20px;"> 
+                    </div>
+                    <projectInfo style="height: 410px;">
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(-1,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem style="height: 300px;">
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:100%" class = "indContentDiv">
+                                            <p class = "infoText">- Worked on C++ based game client for a large scale MMO.</p>
+                                            <p class = "infoText">- Debugged animation system of client.
+                                            <p class = "infoText" style = "margin-left: 30px;">= Patched transparency handling,  removing crashes and animations spasms.
+                                            <p class = "infoText" style = "margin-left: 30px;">= Adjusted mousepicking to work with animated models.
+                                            <p class = "infoText" style = "margin-left: 30px;">= Implemented dirty flagging system for animating previously static objects.
+                                            <p class = "infoText">- Patched SQLite save corruption bug and implemented save repair functionality.
+                                            <p class = "infoText">- Added Lua functions exposing more parts of the client's graphics engine to scripters.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo>           
+                </div>     
+                <div>
+                    <p class = "idHolder" id = "indiecade"><br></p>
+                    <div class = "project">
+                        <div class = "titleHolder">
+                            <div class = "titleBorder">
+                                <img src="Resources/IndiecadeLogo.jpg" alt="Title of the game Frogology" style="width: 200px;">
+                            </div>
+                        </div>
+                        <div class = "description">
+                            <h3 class = "projectTitle">Summer Game Design Intern</h3>
+                            <h4 class = "projectDesc">IndieCade</h4>
+                            <p class = "projectOverview"><b>Time Worked:</b> June 2025 - July 2025 </p>
+                            <div style="display: flex;">
+                                <a href = "https://pakmanlie.itch.io/frogology" class = "externalLink">
+                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
+                                </a>
+                                <a href = "https://github.com/Jianwen-Ding/FrogGame" class = "externalLink">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
+                                </a>
+                            </div>
+                        </div>   
+                    </div> 
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 33.33%">
+                                <button onclick = "slideTo(0,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                            <div class = "indNav" style="flex : 33.33%">
+                                <button onclick = "slideTo(0,1)" class = "indNavButton">
+                                    Animal AI
+                                </button>
+                            </div>
+                            <div class = "indNav" style="flex : 33.33%">
+                                <button onclick = "slideTo(0,2)" class = "indNavButton">
+                                    Quest System
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/J5hjX9ytMcQ?si=sBDZq_l5EPOij1wm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">Trailer created by my teammate Micah Ballard</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- In the IndieCade Summer Game Design Internship, students participated in the 2024 Indiecade Climate Jam.</p>
+                                            <p class = "infoText">- The internship also involved other tasks such as drafting plans on how to impact enviormental pursuits through the game.</p>
+                                            <a href = "Resources/InternshipCertification.pdf" class = "textLink">
+                                                Internship Certification Letter
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- Within the Climate Jam, I formed a team of 8 to develop the conservation simulator game Frogology.</p>
+                                            <p class = "infoText">- The game was developed with Unity and C# by me and two other programmers.</p>
+                                            <p class = "infoText">- The main gameplay loop involved learning more about nearby animals while catching them.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/Credits.png"></img>
+                                            <p class = "imageNote">Credits of Frogology</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/mTBWJssYyp8?si=uoYAvmasNQYnZQTj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">Demonstration of out of view animal AI</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- I was in charge of was programming and designing the behavior of the animals.</p>
+                                            <p class = "infoText">- Animals in Frogology are able to traverse a large map, gathering in points of intrest.</p>
+                                            <p class = "infoText">- Animals dematerialize upon moving out of range and sight of player, allowing for animals to still traverse map without preforming physics calculations.</p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- Non-dematerialized animals generally go towards prey and away from predators. </p>
+                                            <p class = "infoText">- Animals are able to avoid collisions while moving.</p>
+                                            <p class = "infoText">- Animals can detect predator/prey that fall within a certain FOV or within a certain radius. This emulates the sight and hearing of animals.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/tumYVMTvu4g?si=d3e4tQZ5MNr0GUI-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">Demonstration of non-dematerialized animal AI</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/QuestShot.png"></img>
+                                            <p class = "imageNote">Editor representation of overarching quest flow</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- I worked on the overarching branching quest system of the game.</p>
+                                            <p class = "infoText">- I created a quest creation tool through the Unity Editor that displayed connections between quests and the contents of quests.</p>
+                                            <p class = "infoText">- An editor tool for branching dialogue based on the completed quests was also completed by me. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- I integrated the quest system into most if not all of the progression in the game.</p>
+                                            <p class = "infoText">- Abilities such as sleeping, going onto certain dialogue branches, and catching certain animals are locked behind quests.</p>
+                                            <p class = "infoText">- A save system for quest progress and species logging process was also implemented.</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <img class = "imageInfoWithNote" src="Resources/SpeciesShot.png"></img>
+                                            <p class = "imageNote">A page of the Speciespedia</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo>  
+                </div>
                 <div>
                     <p style="margin-bottom: -35px;" id="projects"><br></p>
                     <h2 class = "divison" style="margin-bottom: 0px;">Projects</h2>
+                    <p class = "idHolder" id = "skyline"><br></p>
+                    <div class = "project">
+                        <div class = "titleHolder">
+                            <div class = "titleBorder">
+                                <img  src="Resources/Skyline_SC2.png" alt="Screen shot of the skyline engine">
+                            </div>
+                        </div>
+                        <div class = "description">
+                            
+                            <h3 class = "projectTitle">Skyline Engine</h3>
+                            <h4 class = "projectDesc">C++ game engine with Vulkan and WebGPU renderer.</h4>
+                            <p class = "projectOverview"><b>Time Span:</b> Nov 2024- Current</p>
+                            <p class = "projectOverview"><b>Team Size:</b> 4 Person Project </p>
+                            <div style="display: flex;">
+                                <a href = "https://github.com/melodicht/nu-ecs-prac/tree/abstraction_branch" class = "externalLink">
+                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
+                                </a>
+                            </div>
+                        </div>      
+                    </div>  
+                    <projectInfo>
+                        <infoButton>
+                            <div class = "indNav" style="flex : 100%">
+                                <button onclick = "slideTo(1,0)" class = "indNavButton">
+                                    Overview
+                                </button>
+                            </div>
+                        </infoButton>          
+                        <infoElem>
+                            <div class = "indInfoElem">
+                                <div class = "indContentElem">
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/9l6j0VRlfEA?si=Xlz4vhB3LCWLurtl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                            <p class = "imageNote">A demonstration of a flight around a loaded map</p>
+                                        </div>
+                                        <div style="flex:50%" class = "indContentDiv">
+                                            <p class = "infoText">- The eventual hope of this project is to create a general purpose game engine, but for now its just a vessel for team members of the project to explore what they find interesting. </p>
+                                            <p class = "infoText">- My main role within this project was in helping create an entity component system and the WebGPU backend of the renderer. </p>
+                                        </div>
+                                    </div>
+                                    <div class = "indContentFlexDiv" >
+                                        <div style="flex:100%" class = "indContentDiv">
+                                            <p class = "infoText">- Using Dawn WebGPU I implemented cascaded shadow mapping, dynamically lowering shadow resolution of farther away objects. </p>
+                                            <p class = "infoText">- Used dynamically scaling buffers and instanced rendering to improve performance. </p>
+                                            <p class = "infoText">- I organized a shared interface between Vulkan and WebGPU renderers. </p>
+                                            <p class = "infoText">- In CMake, I created system for building between Vulkan and WebGPU renderers. </p>
+                                            <p class = "infoText">- Created initial draft of entity component system that was later expanded upon. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </infoElem>          
+                    </projectInfo>    
                     <p class = "idHolder" id = "plane"><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
@@ -219,17 +472,17 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 33.3333%">
-                                <button onclick = "slideTo(0,0)" class = "indNavButton">
+                                <button onclick = "slideTo(2,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 33.3333%">
-                                <button onclick = "slideTo(0,1)" class = "indNavButton">
+                                <button onclick = "slideTo(2,1)" class = "indNavButton">
                                     Concepts Explored
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 33.3333%">
-                                <button onclick = "slideTo(0,2)" class = "indNavButton">
+                                <button onclick = "slideTo(2,2)" class = "indNavButton">
                                     Systems Created
                                 </button>
                             </div>
@@ -249,7 +502,7 @@
                                     </div>
                                     <div class = "indContentFlexDiv" >
                                         <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- This project was made with Visual Studio, OpenGL, GLSL, and C++. </p>
+                                            <p class = "infoText">- This project was made with Visual Studio Code, OpenGL, GLSL, and C++. </p>
                                             <p class = "infoText">- Other libaries like SDL and Assimp were used.</p>
                                             <p class = "infoText">- Multiple models were loaded into the program from "The Models Resource."</p>
                                         </div>
@@ -341,22 +594,22 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(1,0)" class = "indNavButton">
+                                <button onclick = "slideTo(3,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(1,1)" class = "indNavButton">
+                                <button onclick = "slideTo(3,1)" class = "indNavButton">
                                     Map Generation
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(1,2)" class = "indNavButton">
+                                <button onclick = "slideTo(3,2)" class = "indNavButton">
                                     Enemy Behavior
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(1,3)" class = "indNavButton">
+                                <button onclick = "slideTo(3,3)" class = "indNavButton">
                                     Weapons/Art
                                 </button>
                             </div>
@@ -466,129 +719,6 @@
                             </div>
                         </infoElem>          
                     </projectInfo>     
-                    <p class = "idHolder" id = "frogology"><br></p>
-                    <div class = "project">
-                        <div class = "titleHolder">
-                            <div class = "titleBorder">
-                                <img src="Resources/FrogologyTitle.jpg" alt="Title of the game Frogology">
-                            </div>
-                        </div>
-                        <div class = "description">
-                            <h3 class = "projectTitle">Frogology</h3>
-                            <h4 class = "projectDesc">An Animal Conservationist Simulator.</h4>
-                            <p class = "projectOverview"><b>Time Span:</b> 5 week gamejam in 2024</p>
-                            <p class = "projectOverview"><b>Team Size:</b> 8 people</p>
-                            <div style="display: flex;">
-                                <a href = "https://pakmanlie.itch.io/frogology" class = "externalLink">
-                                    <img src="Resources/Logos/itchLogGrey.png" alt="Logo of Itch io" width="25" height = "25">
-                                </a>
-                                <a href = "https://github.com/Jianwen-Ding/FrogGame" class = "externalLink">
-                                    <img src="Resources/Logos/gitLogGrey.png" alt="Logo of Github" width="25" height = "25">
-                                </a>
-                            </div>
-                        </div>   
-                    </div> 
-                    <projectInfo>
-                        <infoButton>
-                            <div class = "indNav" style="flex : 33.33%">
-                                <button onclick = "slideTo(2,0)" class = "indNavButton">
-                                    Overview
-                                </button>
-                            </div>
-                            <div class = "indNav" style="flex : 33.33%">
-                                <button onclick = "slideTo(2,1)" class = "indNavButton">
-                                    Animal AI
-                                </button>
-                            </div>
-                            <div class = "indNav" style="flex : 33.33%">
-                                <button onclick = "slideTo(2,2)" class = "indNavButton">
-                                    Quest System
-                                </button>
-                            </div>
-                        </infoButton>          
-                        <infoElem>
-                            <div class = "indInfoElem">
-                                <div class = "indContentElem">
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/J5hjX9ytMcQ?si=sBDZq_l5EPOij1wm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            <p class = "imageNote">Trailer created by my teammate Micah Ballard</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- Frogology was made for the "IndieCade Summer Game Design Internship" in which students participated in the 2024 Indiecade Climate Jam.</p>
-                                            <p class = "infoText">- The internship also involved other tasks such as drafting plans on how to impact enviormental pursuits through the game.</p>
-                                            <a href = "Resources/InternshipCertification.pdf" class = "textLink">
-                                                Internship Certification Letter
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- The game was developed with Unity and C# by me and two other programmers.</p>
-                                            <p class = "infoText">- Github was used as the version control.</p>
-                                            <p class = "infoText">- The main gameplay loop of the game involved learning more about nearby animals while catching them.</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfoWithNote" src="Resources/Credits.png"></img>
-                                            <p class = "imageNote">Credits of Frogology</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class = "indInfoElem">
-                                <div class = "indContentElem">
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/mTBWJssYyp8?si=uoYAvmasNQYnZQTj" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            <p class = "imageNote">Demonstration of out of view animal AI</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- I was in charge of was programming and designing the behavior of the animals.</p>
-                                            <p class = "infoText">- Animals in Frogology are able to traverse a large map, gathering in points of intrest.</p>
-                                            <p class = "infoText">- Animals dematerialize upon moving out of range and sight of player, allowing for animals to still traverse map without preforming physics calculations.</p>
-                                        </div>
-                                    </div>
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- Non-dematerialized animals generally go towards prey and away from predators. </p>
-                                            <p class = "infoText">- Animals are able to avoid collisions while moving.</p>
-                                            <p class = "infoText">- Animals can detect predator/prey that fall within a certain FOV or within a certain radius. This emulates the sight and hearing of animals.</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <iframe class = "videoInfo" src="https://www.youtube.com/embed/tumYVMTvu4g?si=d3e4tQZ5MNr0GUI-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                                            <p class = "imageNote">Demonstration of non-dematerialized animal AI</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class = "indInfoElem">
-                                <div class = "indContentElem">
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfoWithNote" src="Resources/QuestShot.png"></img>
-                                            <p class = "imageNote">Editor representation of overarching quest flow</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- I worked on the overarching branching quest system of the game.</p>
-                                            <p class = "infoText">- I created a quest creation tool through the Unity Editor that displayed connections between quests and the contents of quests.</p>
-                                            <p class = "infoText">- An editor tool for branching dialogue based on the completed quests was also completed by me. </p>
-                                        </div>
-                                    </div>
-                                    <div class = "indContentFlexDiv" >
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <p class = "infoText">- I integrated the quest system into most if not all of the progression in the game.</p>
-                                            <p class = "infoText">- Abilities such as sleeping, going onto certain dialogue branches, and catching certain animals are locked behind quests.</p>
-                                            <p class = "infoText">- A save system for quest progress and species logging process was also implemented.</p>
-                                        </div>
-                                        <div style="flex:50%" class = "indContentDiv">
-                                            <img class = "imageInfoWithNote" src="Resources/SpeciesShot.png"></img>
-                                            <p class = "imageNote">A page of the Speciespedia</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </infoElem>          
-                    </projectInfo>  
                     <p class = "idHolder" id = "hunter"><br></p>
                     <div class = "project">
                         <div class = "titleHolder">
@@ -614,22 +744,22 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(3,0)" class = "indNavButton">
+                                <button onclick = "slideTo(4,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(3,1)" class = "indNavButton">
+                                <button onclick = "slideTo(4,1)" class = "indNavButton">
                                     Turn/Move System
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(3,2)" class = "indNavButton">
+                                <button onclick = "slideTo(4,2)" class = "indNavButton">
                                     Enemy Behavior
                                 </button>
                             </div>
                             <div class = "indNav" style="flex : 25%">
-                                <button onclick = "slideTo(3,3)" class = "indNavButton">
+                                <button onclick = "slideTo(4,3)" class = "indNavButton">
                                     Art/Music
                                 </button>
                             </div>
@@ -757,7 +887,7 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                <button onclick = "slideTo(5,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
@@ -818,7 +948,7 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                <button onclick = "slideTo(6,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
@@ -854,11 +984,11 @@
                     <div class = "project">
                         <div class = "titleHolder" >
                             <div class = "titleBorder">
-                                <img src="Resources/RemenantTitle.png" alt="Title of the game Remenant of Davy's Crew" >
+                                <img src="Resources/RemenantTitle.png" alt="Title of the game Remanent of Davy's Crew" >
                             </div>
                         </div>
                         <div class = "description">
-                            <h3 class = "projectTitle">Remenant of Davy's Crew</h3>
+                            <h3 class = "projectTitle">Remanent of Davy's Crew</h3>
                             <h4 class = "projectDesc">A horror game based around fending off ghosts.</h4>
                             <p class = "projectOverview"><b>Time Span:</b> 2 days in 2024</p>
                             <p class = "projectOverview"><b>Team Size:</b> 3 people</p>
@@ -875,7 +1005,7 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                <button onclick = "slideTo(7,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
@@ -932,7 +1062,7 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                <button onclick = "slideTo(8,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
@@ -986,7 +1116,7 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                <button onclick = "slideTo(9,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
@@ -1038,7 +1168,7 @@
                     <projectInfo>
                         <infoButton>
                             <div class = "indNav" style="flex : 100%">
-                                <button onclick = "slideTo(4,0)" class = "indNavButton">
+                                <button onclick = "slideTo(10,0)" class = "indNavButton">
                                     Overview
                                 </button>
                             </div>
