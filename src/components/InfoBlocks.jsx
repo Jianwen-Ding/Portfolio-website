@@ -1,12 +1,31 @@
 import { asset, resolveHref } from '../asset.js';
 import { LINK_LOGOS } from '../data/portfolio.js';
 
+// A real <ul>. Items are plain strings, or objects carrying children, which
+// nest a second <ul> inside the <li> rather than faking depth with a margin.
+function BulletList({ items }) {
+  return (
+    <ul className="block__list">
+      {items.map((entry, i) => {
+        const { text, children } = typeof entry === 'string' ? { text: entry, children: [] } : entry;
+        return (
+          <li key={i}>
+            {text}
+            {children.length > 0 && <BulletList items={children} />}
+          </li>
+        );
+      })}
+    </ul>
+  );
+}
+
 function Block({ block }) {
   switch (block.kind) {
+    case 'list':
+      return <BulletList items={block.items} />;
+
     case 'text':
-      return (
-        <p className={`block__text${block.indent ? ' block__text--indent' : ''}`}>{block.text}</p>
-      );
+      return <p className="block__text">{block.text}</p>;
 
     case 'image':
       return block.note ? (

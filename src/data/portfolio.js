@@ -2,12 +2,17 @@
 // generic and simply render whatever this file describes.
 //
 // Each entry carries a `tabs` list describing its detail. A tab holds rows, a
-// row holds cells, and a cell holds blocks (paragraphs, images, videos or
-// links). Tabs render stacked under sub-headings; a lone tab renders with no
+// row holds cells, and a cell holds blocks (lists, paragraphs, images, videos
+// or links). Tabs render stacked under sub-headings; a lone tab renders with no
 // heading, which is the usual case now that every entry is kept to roughly one
 // screen. Add a second tab if an entry outgrows that.
 
-const p = (text, indent = false) => ({ kind: 'text', text, indent });
+// `list` renders a real <ul>. Entries are plain strings, or `item(parent, ...children)`
+// when a point needs sub-points, which nests a second <ul> inside the <li>.
+const list = (...items) => ({ kind: 'list', items });
+const item = (text, ...children) => ({ text, children });
+
+const p = (text) => ({ kind: 'text', text });
 const img = (src, note) => ({ kind: 'image', src, note });
 const video = (src, note) => ({ kind: 'video', src, note });
 const link = (href, text) => ({ kind: 'link', href, text });
@@ -42,13 +47,17 @@ export const experience = [
         row(
           cell(
             '100%',
-            p('- Worked on the C++ game client for a large scale MMO.'),
-            p('- Debugged the animation system of the client.'),
-            p('= Patched transparency handling, removing crashes and animation spasms.', true),
-            p('= Adjusted mousepicking to work with animated models.', true),
-            p('= Implemented a dirty flagging system for animating previously static objects.', true),
-            p('- Patched an SQLite save corruption bug and implemented save repair functionality.'),
-            p("- Added Lua functions exposing more of the client's graphics engine to scripters.")
+            list(
+              'Worked on the C++ game client for a large scale MMO.',
+              item(
+                'Debugged the animation system of the client.',
+                'Patched transparency handling, removing crashes and animation spasms.',
+                'Adjusted mousepicking to work with animated models.',
+                'Implemented a dirty flagging system for animating previously static objects.'
+              ),
+              'Patched an SQLite save corruption bug and implemented save repair functionality.',
+              "Added Lua functions exposing more of the client's graphics engine to scripters."
+            )
           )
         )
       ),
@@ -77,17 +86,21 @@ export const experience = [
           ),
           cell(
             '50%',
-            p('- Interns took part in the 2024 IndieCade Climate Jam, alongside work like drafting plans for how a game can push environmental causes.'),
-            p('- Within the jam I formed a team of 8 to build Frogology, a conservation simulator made in Unity and C# by me and two other programmers.'),
-            p('- The loop has you learning about nearby animals while catching them. I owned the animal behaviour and the quest system.')
+            list(
+              'Interns took part in the 2024 IndieCade Climate Jam, alongside work like drafting plans for how a game can push environmental causes.',
+              'Within the jam I formed a team of 8 to build Frogology, a conservation simulator made in Unity and C# by me and two other programmers.',
+              'The loop has you learning about nearby animals while catching them. I owned the animal behaviour and the quest system.'
+            )
           )
         ),
         row(
           cell(
             '50%',
-            p('- Animals traverse the map toward points of interest, moving toward prey and away from predators.'),
-            p('- They detect each other within a field of view or a radius, emulating sight and hearing, and avoid collisions as they move.'),
-            p('- Out of range and out of sight, animals dematerialize, so the map keeps living without paying for the physics.')
+            list(
+              'Animals traverse the map toward points of interest, moving toward prey and away from predators.',
+              'They detect each other within a field of view or a radius, emulating sight and hearing, and avoid collisions as they move.',
+              'Out of range and out of sight, animals dematerialize, so the map keeps living without paying for the physics.'
+            )
           ),
           cell(
             '50%',
@@ -101,9 +114,11 @@ export const experience = [
           cell('50%', img('Resources/QuestShot.png', 'Editor view of the overarching quest flow')),
           cell(
             '50%',
-            p('- Built the overarching branching quest system, plus a Unity editor tool laying out quest connections and contents visually.'),
-            p('- An editor tool for dialogue that branches on completed quests came out of the same work.'),
-            p('- Gated most progression behind it: sleeping, dialogue branches and catching certain animals, with saving for quest and species progress.')
+            list(
+              'Built the overarching branching quest system, plus a Unity editor tool laying out quest connections and contents visually.',
+              'An editor tool for dialogue that branches on completed quests came out of the same work.',
+              'Gated most progression behind it: sleeping, dialogue branches and catching certain animals, with saving for quest and species progress.'
+            )
           )
         )
       ),
@@ -135,17 +150,21 @@ export const projects = [
           ),
           cell(
             '50%',
-            p('- A general purpose engine in the long run, and for now a place for the team to dig into whatever each of us finds interesting.'),
-            p('- My part was the WebGPU backend of the renderer and the entity component system.')
+            list(
+              'A general purpose engine in the long run, and for now a place for the team to dig into whatever each of us finds interesting.',
+              'My part was the WebGPU backend of the renderer and the entity component system.'
+            )
           )
         ),
         row(
           cell(
             '50%',
-            p('- Using Dawn WebGPU, implemented cascaded shadow mapping that drops shadow resolution for objects further away.'),
-            p('- Used dynamically scaling buffers and instanced rendering to improve performance.'),
-            p('- Organised a shared interface between the Vulkan and WebGPU renderers, and the CMake system for building against either.'),
-            p('- Created the initial draft of the entity component system that the team later expanded on.')
+            list(
+              'Using Dawn WebGPU, implemented cascaded shadow mapping that drops shadow resolution for objects further away.',
+              'Used dynamically scaling buffers and instanced rendering to improve performance.',
+              'Organised a shared interface between the Vulkan and WebGPU renderers, and the CMake system for building against either.',
+              'Created the initial draft of the entity component system that the team later expanded on.'
+            )
           ),
           cell('50%', img('Resources/Skyline_SC.png', 'A loaded scene in the engine'))
         )
@@ -175,25 +194,31 @@ export const projects = [
           ),
           cell(
             '50%',
-            p('- A learning exercise in C++ and rendering as a whole: the program loads models and lets you insert lights of different types.'),
-            p('- Built with Visual Studio Code, OpenGL, GLSL and C++, using SDL and Assimp. Models were pulled from The Models Resource.')
+            list(
+              'A learning exercise in C++ and rendering as a whole: the program loads models and lets you insert lights of different types.',
+              'Built with Visual Studio Code, OpenGL, GLSL and C++, using SDL and Assimp. Models were pulled from The Models Resource.'
+            )
           )
         ),
         row(
           cell('50%', img('Resources/PlaneSC4.png', 'An overhead view of a loaded map')),
           cell(
             '50%',
-            p('- Learned the basics of vertex specification, and implemented lights of different types and fields through GLSL.'),
-            p('- Used Assimp to process 3D models into usable vertices and textures, and texture arrays to load several textures onto one mesh.'),
-            p('- Built a cube map texture for the skybox, and applied quaternions and linear algebra for transform matrices.')
+            list(
+              'Learned the basics of vertex specification, and implemented lights of different types and fields through GLSL.',
+              'Used Assimp to process 3D models into usable vertices and textures, and texture arrays to load several textures onto one mesh.',
+              'Built a cube map texture for the skybox, and applied quaternions and linear algebra for transform matrices.'
+            )
           )
         ),
         row(
           cell(
             '50%',
-            p('- Wrote a render manager that simplifies loading many instances of a model and different light types.'),
-            p('- A UV system automatically generates custom UVs for texture arrays, offsetting whatever padding is required.'),
-            p('- A transform class homogenises moving, rotating and scaling, with parent transforms for relative placement, and specular maps vary reflection across a model.')
+            list(
+              'Wrote a render manager that simplifies loading many instances of a model and different light types.',
+              'A UV system automatically generates custom UVs for texture arrays, offsetting whatever padding is required.',
+              'A transform class homogenises moving, rotating and scaling, with parent transforms for relative placement, and specular maps vary reflection across a model.'
+            )
           ),
           cell('50%', img('Resources/PlaneSC3.png', 'Multiple lights and models loaded at once'))
         )
@@ -223,26 +248,32 @@ export const projects = [
           ),
           cell(
             '50%',
-            p('- Started as a project of a game development club I founded, worked on during meetings by about 9 people, and continued solo after my graduation.'),
-            p('- Made in Unity and C# with Github for source control. The loop is collecting scrap while fending off zombies.'),
-            p('- I was project lead and directed art and music, and drew a good share of the pixel art myself in Piskel: menus, half the enemy animations and tile sprites.')
+            list(
+              'Started as a project of a game development club I founded, worked on during meetings by about 9 people, and continued solo after my graduation.',
+              'Made in Unity and C# with Github for source control. The loop is collecting scrap while fending off zombies.',
+              'I was project lead and directed art and music, and drew a good share of the pixel art myself in Piskel: menus, half the enemy animations and tile sprites.'
+            )
           )
         ),
         row(
           cell('50%', img('Resources/SampleMapScreenShot.png', 'An example of a generated map')),
           cell(
             '50%',
-            p('- Programmed the randomly generating map: a grid of rooms, each assigned a difficulty, function and set of opening directions.'),
-            p('- Wrote a text processor that turns values in a .txt file into room layouts, which rooms are then assigned at random to match their openings, function and difficulty.'),
-            p('- Resource rooms are placed at certain dead ends to stop aimless wandering.')
+            list(
+              'Programmed the randomly generating map: a grid of rooms, each assigned a difficulty, function and set of opening directions.',
+              'Wrote a text processor that turns values in a .txt file into room layouts, which rooms are then assigned at random to match their openings, function and difficulty.',
+              'Resource rooms are placed at certain dead ends to stop aimless wandering.'
+            )
           )
         ),
         row(
           cell(
             '50%',
-            p('- Handled enemy behaviour design and development: 5 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.'),
-            p('- Their movement ranges from walking at the player to flying around them and firing projectiles.'),
-            p('- Programmed the weapons too, split between normal scrap and golden scrap, the latter with unusual properties like teleportation or projectiles.')
+            list(
+              'Handled enemy behaviour design and development: 5 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.',
+              'Their movement ranges from walking at the player to flying around them and firing projectiles.',
+              'Programmed the weapons too, split between normal scrap and golden scrap, the latter with unusual properties like teleportation or projectiles.'
+            )
           ),
           cell('50%', img('Resources/EnemyDisplay.png', 'Every enemy in the game'))
         )
@@ -272,8 +303,10 @@ export const jams = [
           cell('50%', img('Resources/RiptideScreenShot.png')),
           cell(
             '50%',
-            p("- Made for the Spring 2D Jam '24 in Unity and C#: escape starvation by planting a garden on an ever-shifting island."),
-            p('- Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbours.')
+            list(
+              "Made for the Spring 2D Jam '24 in Unity and C#: escape starvation by planting a garden on an ever-shifting island.",
+              'Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbours.'
+            )
           )
         )
       ),
@@ -299,8 +332,10 @@ export const jams = [
           cell('50%', img('Resources/RemenantSC.png')),
           cell(
             '50%',
-            p('- Made for the 2024 Husky Jam on the theme "Lighthouse", in Unity and C# with two other programmers.'),
-            p('- I wrote the ship, sea monster and ghost ship AI plus the level system: ships steer toward lighthouse beams, monsters wreck lighthouses and are repelled by light, and ghost ships pass as normal until lit.')
+            list(
+              'Made for the 2024 Husky Jam on the theme "Lighthouse", in Unity and C# with two other programmers.',
+              'I wrote the ship, sea monster and ghost ship AI plus the level system: ships steer toward lighthouse beams, monsters wreck lighthouses and are repelled by light, and ghost ships pass as normal until lit.'
+            )
           )
         )
       ),
@@ -326,8 +361,10 @@ export const jams = [
           cell('50%', img('Resources/CheckInSC.png')),
           cell(
             '50%',
-            p('- Made for Ludum Dare 54 on the theme "Limited Space": admit, waitlist or reject a queue of patients.'),
-            p("- Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted.")
+            list(
+              'Made for Ludum Dare 54 on the theme "Limited Space": admit, waitlist or reject a queue of patients.',
+              "Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted."
+            )
           )
         )
       ),
@@ -350,8 +387,10 @@ export const jams = [
           cell('50%', img('Resources/ComboInftySC.png')),
           cell(
             '50%',
-            p('- Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.'),
-            p('- Keep a combo alive until a target hit count, across six levels designed around perpetuating it while dodging moving hazards.')
+            list(
+              'Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.',
+              'Keep a combo alive until a target hit count, across six levels designed around perpetuating it while dodging moving hazards.'
+            )
           )
         )
       ),

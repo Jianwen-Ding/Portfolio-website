@@ -591,8 +591,31 @@ img {
   margin: 0 0 7px;
 }
 
-.block__text--indent {
-  margin-left: 30px;
+/* Square markers to match the flat controls; nested points step down to a
+   hollow circle so the two levels stay legible at this size. */
+.block__list {
+  margin: 0 0 7px;
+  padding-left: 1.15em;
+  list-style-type: square;
+}
+
+.block__list li {
+  margin-bottom: 6px;
+}
+
+.block__list li::marker {
+  color: var(--muted);
+}
+
+.block__list .block__list {
+  margin: 6px 0 0;
+  padding-left: 1.05em;
+  list-style-type: circle;
+  font-size: 0.95em;
+}
+
+.block__list .block__list li:last-child {
+  margin-bottom: 0;
 }
 
 .block__figure {

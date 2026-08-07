@@ -22,7 +22,7 @@ public/Resources/          Images, logos, resume PDF (served as-is)
 src/
   main.jsx                 Client entry; hydrates the prerendered markup
   entry-server.jsx         Build-time render used by prerender.js
-  App.jsx                  Page skeleton: hero, nav, Experience, Projects
+  App.jsx                  Page skeleton: hero, nav, Experience, Projects, Game Jams
   asset.js                 Resolves resource paths against the deployment base
   data/portfolio.js        All site content lives here
   components/
@@ -31,7 +31,7 @@ src/
     ExperienceEntry.jsx    Logo + name + detail for one role
     ProjectGrid.jsx        Two-column grid
     ProjectCard.jsx        Grid tile that expands in place
-    InfoBlocks.jsx         Paragraph / image / video / link blocks
+    InfoBlocks.jsx         List / paragraph / image / video / link blocks
   styles/style.css         The whole stylesheet
 ```
 
@@ -44,11 +44,11 @@ revealed by an `IntersectionObserver` watching the hero.
 **Project cards.** Each card is a `<details>` element. Opening one sets
 `grid-column: 1 / -1` so it expands to a full-width row where it already sat,
 and the grid reflows around it — the page stays scrollable and the other cards
-stay put. All ten cards share `name="projects"`, which makes the grid an
-exclusive accordion natively. Script only adds the smooth scroll to a freshly
-opened card.
+stay put. Cards within a grid share a `name`, which makes each grid an exclusive
+accordion natively. Script only adds the smooth scroll to a freshly opened card.
 
-**Game jams** share the projects grid; their cards carry a "Game Jam" tag.
+**Game jams** are their own section and grid below Projects, with their own
+accordion group — opening a jam does not collapse an open project.
 
 ## Mobile
 
@@ -92,10 +92,22 @@ A project is one object in the `projects` or `jams` array:
 }
 ```
 
-The `tab` / `row` / `cell` / `p` / `img` / `video` / `link` helpers at the top of
-the file build the detail panel: a tab holds rows, a row holds cells, and a cell
-holds blocks. Tabs render stacked under sub-headings (a single tab renders with
-no heading), so the grouping stays useful for organising long entries.
+The `tab` / `row` / `cell` / `list` / `p` / `img` / `video` / `link` helpers at
+the top of the file build the detail panel: a tab holds rows, a row holds cells,
+and a cell holds blocks. Tabs render stacked under sub-headings (a single tab
+renders with no heading), so the grouping stays useful for organising long
+entries.
+
+Bullet points go through `list`, which renders a real `<ul>`. Pass plain strings,
+or `item(parent, ...children)` where a point needs sub-points — that nests a
+second `<ul>` inside the `<li>`:
+
+```js
+list(
+  'A flat point.',
+  item('A point with detail under it.', 'First detail.', 'Second detail.'),
+)
+```
 
 Resource paths are relative to `public/`, so `Resources/Foo.png` refers to
 `public/Resources/Foo.png`.
