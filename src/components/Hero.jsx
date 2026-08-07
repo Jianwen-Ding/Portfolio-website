@@ -1,13 +1,11 @@
-import { asset, resolveHref } from '../asset.js';
-import { about, contact } from '../data/portfolio.js';
+import { asset } from '../asset.js';
+import { about } from '../data/portfolio.js';
 
-// The landing panel: portrait and intro on the left, a grey gradient field on
-// the right that fades down into the work sections below.
+// The landing panel: portrait and intro on the left, showcase artwork on the
+// right. The whole section is a grey wash that fades into the sections below.
 export default function Hero({ innerRef }) {
   return (
     <header className="hero" ref={innerRef} id="top">
-      <div className="hero__gradient" aria-hidden="true" />
-
       <div className="hero__inner">
         <div className="hero__intro">
           <div className="hero__head">
@@ -24,15 +22,10 @@ export default function Hero({ innerRef }) {
               {text}
             </p>
           ))}
+        </div>
 
-          <div className="hero__actions">
-            <a className="button" href={resolveHref(contact.resume)}>
-              Resume
-            </a>
-            <a className="button" href={contact.email}>
-              Contact
-            </a>
-          </div>
+        <div className="hero__media">
+          <img className="hero__mediaImg" src={asset(about.showcase.src)} alt={about.showcase.alt} />
         </div>
       </div>
     </header>

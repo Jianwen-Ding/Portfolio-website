@@ -1,6 +1,27 @@
 import { asset } from '../asset.js';
 import FlatContent, { ExternalLinks } from './InfoBlocks.jsx';
 
+// Ringed plus/minus. The vertical stroke collapses away when the card opens, so
+// the same glyph reads as "expand" closed and "shrink" open.
+function ToggleGlyph() {
+  return (
+    <svg className="card__glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.1" />
+      <line x1="6.5" y1="12" x2="17.5" y2="12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <line
+        className="card__glyphStem"
+        x1="12"
+        y1="6.5"
+        x2="12"
+        y2="17.5"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+      />
+    </svg>
+  );
+}
+
 // A grid tile that expands in place into a full-width detail panel.
 //
 // Built on <details> so the whole open/close interaction is native: it works
@@ -19,7 +40,7 @@ export default function ProjectCard({ project, group }) {
       <summary className="card__summary">
         <span className="card__titleRow">
           <span className="card__title">{project.title}</span>
-          <span className="card__shrink">Shrink</span>
+          <ToggleGlyph />
         </span>
 
         <span className="card__thumb">

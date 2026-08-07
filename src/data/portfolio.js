@@ -17,6 +17,9 @@ const tab = (label, ...rows) => ({ label, rows });
 
 export const about = {
   photo: { src: 'Resources/PortfolioPhotoCropped.JPG', alt: 'Photo of me' },
+  // Square artwork shown opposite the intro. It is masked into a circular fade,
+  // so the subject should sit near the centre. Swap the src to replace it.
+  showcase: { src: 'Resources/HeroPlaceholder.svg', alt: '' },
   paragraphs: [
     "Hello! Welcome to my website, I'm Jianwen Ding and I'm a programmer, game developer, and rising junior BSCS student in the University of Virginia.",
     "I love seeing interesting and fun ideas come to life, of course imagination always outpaces reality so you'll often see me in over my head while making games.",

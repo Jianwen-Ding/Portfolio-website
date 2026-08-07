@@ -10,9 +10,10 @@
   --soft-hover: rgba(94, 94, 94, 0.32);
   --line: #cfcfcf;
 
-  --nav-h: 54px;
-  --page: 1180px;
-  --gutter: 32px;
+  --nav-h: 48px;
+  /* Content never exceeds two thirds of the viewport on desktop. */
+  --page: min(1040px, 66.67vw);
+  --gutter: 24px;
 }
 
 * {
@@ -28,8 +29,8 @@ body {
   background: var(--surface);
   color: var(--ink);
   font-family: 'Times New Roman', Times, serif;
-  font-size: 18px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.45;
 }
 
 img {
@@ -74,8 +75,8 @@ img {
 
 .externalLink img {
   display: block;
-  width: 25px;
-  height: 25px;
+  width: 21px;
+  height: 21px;
 }
 
 /* --- Hero --------------------------------------------------------------- */
@@ -107,25 +108,52 @@ img {
 .hero__inner {
   position: relative;
   z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 40%);
+  gap: 36px;
+  align-items: center;
   width: 100%;
   max-width: var(--page);
   margin: 0 auto;
-  padding: 72px var(--gutter);
+  padding: 48px var(--gutter);
 }
 
-.hero__intro {
-  max-width: 640px;
+/* Square artwork dissolved into a circle: a radial mask fades the image out
+   before it reaches the edges, so there is no hard crop. */
+.hero__media {
+  align-self: center;
+}
+
+.hero__mediaImg {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    #000 40%,
+    rgba(0, 0, 0, 0.75) 55%,
+    rgba(0, 0, 0, 0.25) 66%,
+    transparent 74%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 50%,
+    #000 40%,
+    rgba(0, 0, 0, 0.75) 55%,
+    rgba(0, 0, 0, 0.25) 66%,
+    transparent 74%
+  );
 }
 
 .hero__head {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
 }
 
 .hero__face {
-  width: 140px;
-  height: 140px;
+  width: 104px;
+  height: 104px;
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--tile-edge);
@@ -133,33 +161,27 @@ img {
 
 .hero__name {
   margin: 0;
-  font-size: 3.4rem;
+  font-size: 2.6rem;
   line-height: 1.05;
 }
 
 .hero__role {
-  margin: 6px 0 0;
-  font-size: 1.4rem;
+  margin: 4px 0 0;
+  font-size: 1.15rem;
   font-style: italic;
   color: var(--muted);
 }
 
 .hero__label {
-  margin: 40px 0 8px;
-  font-size: 1.6rem;
+  margin: 26px 0 8px;
+  font-size: 1.3rem;
   font-weight: normal;
   border-bottom: 1px solid var(--line);
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 }
 
 .hero__text {
-  margin: 0 0 12px;
-}
-
-.hero__actions {
-  display: flex;
-  gap: 10px;
-  margin-top: 24px;
+  margin: 0 0 9px;
 }
 
 /* --- Nav ---------------------------------------------------------------- */
@@ -174,47 +196,72 @@ img {
   border-bottom: 1px solid var(--tile-edge);
 }
 
+/* Three tracks: in-page navigation left, "to top" dead centre, outward links
+   right. The centre track is sized to content so the chevron stays put no
+   matter how wide either group gets. */
 .nav__inner {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  gap: 10px;
   height: 100%;
   max-width: var(--page);
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
 
+.nav__group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.nav__group--links {
+  justify-content: flex-end;
+}
+
 .nav__link {
-  padding: 5px 22px;
+  padding: 4px 14px;
   border: 1px solid var(--tile-edge);
   border-radius: 4px;
   background: var(--surface);
   color: var(--ink);
   text-decoration: none;
-  font-size: 1.05rem;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
 .nav__link:hover {
   background: var(--soft-hover);
 }
 
-.nav__gap {
-  width: 26px;
+/* Outward links read as secondary to the in-page navigation. */
+.nav__link--quiet {
+  background: transparent;
+  border-color: transparent;
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nav__link--quiet:hover {
+  background: transparent;
+  color: var(--ink);
 }
 
 .nav__icon {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 32px;
-  min-width: 40px;
-  padding: 0 8px;
+  height: 28px;
+  min-width: 34px;
+  padding: 0 6px;
   border: 1px solid var(--tile-edge);
   border-radius: 4px;
   background: var(--surface);
   color: var(--ink);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .nav__icon:hover {
@@ -223,31 +270,28 @@ img {
 
 .nav__icon img {
   display: block;
-  width: 20px;
-  height: 20px;
+  width: 18px;
+  height: 18px;
 }
 
-/* Last item in the row rather than floated over it, so it cannot collide with
-   the links at any width. It keeps its slot when hidden, so revealing it does
-   not shift the nav. */
+/* Deliberately understated: no chrome, just the mark, darkening on hover. */
 .nav__toTop {
-  margin-left: auto;
   display: grid;
   place-items: center;
-  flex: none;
-  width: 46px;
-  height: 32px;
-  border: 1px solid var(--tile-edge);
-  border-radius: 4px;
-  background: var(--surface);
-  color: var(--ink);
+  width: 40px;
+  height: 26px;
+  color: var(--muted);
   cursor: pointer;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease, color 0.15s ease;
+}
+
+.nav__toTop:hover {
+  color: var(--ink);
 }
 
 .js .nav__toTop {
   opacity: 0;
-  transform: translateY(-6px);
+  transform: translateY(-5px);
   pointer-events: none;
 }
 
@@ -255,10 +299,6 @@ img {
   opacity: 1;
   transform: none;
   pointer-events: auto;
-}
-
-.nav__toTop:hover {
-  background: var(--soft-hover);
 }
 
 /* --- Sections ----------------------------------------------------------- */
@@ -270,10 +310,10 @@ img {
 /* Scrolls away with the page rather than sticking under the nav. */
 .sectionHeader {
   margin: 0;
-  padding: 12px var(--gutter);
+  padding: 8px var(--gutter);
   background: var(--band);
   border-bottom: 1px solid var(--tile-edge);
-  font-size: 2rem;
+  font-size: 1.55rem;
   font-weight: normal;
   text-align: center;
 }
@@ -283,7 +323,7 @@ img {
 .exp {
   max-width: var(--page);
   margin: 0 auto;
-  padding: 44px var(--gutter);
+  padding: 26px var(--gutter);
   scroll-margin-top: var(--nav-h);
 }
 
@@ -293,36 +333,36 @@ img {
 
 .exp__name {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 1.65rem;
   font-weight: normal;
 }
 
 .exp__info {
-  margin: 4px 0 0;
+  margin: 3px 0 0;
   color: var(--muted);
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 
 .exp__body {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 40px;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 26px;
   align-items: start;
-  margin-top: 28px;
+  margin-top: 18px;
 }
 
 .exp__aside {
   display: grid;
   justify-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .exp__logo {
   display: grid;
   place-items: center;
-  width: 240px;
-  height: 240px;
-  padding: 26px;
+  width: 150px;
+  height: 150px;
+  padding: 16px;
   border: 1px solid var(--tile-edge);
   border-radius: 50%;
   background: var(--tile);
@@ -340,11 +380,11 @@ img {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 26px;
+  gap: 16px;
   align-items: start;
   max-width: var(--page);
   margin: 0 auto;
-  padding: 40px var(--gutter) 80px;
+  padding: 24px var(--gutter) 48px;
 }
 
 .card {
@@ -352,15 +392,15 @@ img {
   border: 1px solid var(--tile-edge);
   border-radius: 6px;
   background: var(--tile);
-  scroll-margin-top: calc(var(--nav-h) + 12px);
+  scroll-margin-top: calc(var(--nav-h) + 10px);
   transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
 
 .card:not([open]):hover,
 .card:not([open]):has(.card__summary:focus-visible) {
   z-index: 2;
-  transform: scale(1.03);
-  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+  transform: scale(1.025);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card[open] {
@@ -369,7 +409,7 @@ img {
 
 .card__summary {
   display: block;
-  padding: 20px;
+  padding: 13px;
   cursor: pointer;
   list-style: none;
 }
@@ -379,7 +419,7 @@ img {
 }
 
 .card[open] .card__summary {
-  padding-bottom: 12px;
+  padding-bottom: 9px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -391,38 +431,49 @@ img {
 
 .card__title {
   flex: 1;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .card[open] .card__title {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
 
-/* Clicking anywhere on the summary closes the card; this just labels it. */
-.card__shrink {
-  display: none;
+/* Clicking anywhere on the summary toggles the card; the glyph marks which way
+   it will go. The stem of the plus retracts as the card opens, leaving a minus. */
+.card__glyph {
   flex: none;
-  align-self: flex-start;
-  padding: 6px 14px;
-  border: 1px solid var(--tile-edge);
-  border-radius: 4px;
-  background: var(--surface);
-  font-size: 1rem;
+  align-self: center;
+  width: 22px;
+  height: 22px;
+  color: var(--muted);
+  transition: color 0.15s ease, transform 0.3s ease;
 }
 
-.card[open] .card__shrink {
-  display: inline-block;
+.card__glyphStem {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-.card__summary:hover .card__shrink {
-  background: var(--soft-hover);
+.card[open] .card__glyph {
+  color: var(--ink);
+  transform: rotate(180deg);
+}
+
+.card[open] .card__glyphStem {
+  transform: scaleY(0);
+  opacity: 0;
+}
+
+.card__summary:hover .card__glyph {
+  color: var(--ink);
 }
 
 .card__thumb {
   display: grid;
   place-items: center;
   aspect-ratio: 16 / 9;
-  margin: 10px 0;
+  margin: 8px 0;
   border-radius: 4px;
   background: #d8d8d8;
   overflow: hidden;
@@ -445,17 +496,19 @@ img {
 }
 
 .card[open] .card__subtitle {
-  margin-top: 4px;
+  margin-top: 3px;
 }
 
 .card__detail {
-  padding: 4px 20px 20px;
+  padding: 4px 13px 14px;
   animation: expandIn 0.35s ease both;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .card,
   .card__detail,
+  .card__glyph,
+  .card__glyphStem,
   .nav__toTop {
     animation: none;
     transition: none;
@@ -477,8 +530,8 @@ img {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 22px;
-  margin: 14px 0 4px;
+  gap: 5px 18px;
+  margin: 10px 0 2px;
 }
 
 .card__metaLine {
@@ -488,16 +541,16 @@ img {
 /* --- Detail content ----------------------------------------------------- */
 
 .flatSection__heading {
-  margin: 26px 0 10px;
-  padding-bottom: 5px;
+  margin: 18px 0 8px;
+  padding-bottom: 4px;
   border-bottom: 1px solid var(--line);
-  font-size: 1.35rem;
+  font-size: 1.1rem;
   font-weight: normal;
 }
 
 .contentRow {
   display: flex;
-  gap: 26px;
+  gap: 18px;
   align-items: flex-start;
 }
 
@@ -506,7 +559,7 @@ img {
 }
 
 .block__text {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
 }
 
 .block__text--indent {
@@ -520,23 +573,23 @@ img {
 .block__image {
   display: block;
   max-width: 100%;
-  max-height: 240px;
+  max-height: 190px;
   margin: 0 auto;
 }
 
 .block__video {
   display: block;
   width: 100%;
-  max-width: 520px;
+  max-width: 420px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   border: 0;
 }
 
 .block__note {
-  margin-top: 6px;
+  margin-top: 5px;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-style: italic;
   text-align: center;
 }
@@ -544,25 +597,47 @@ img {
 /* --- Narrow screens ----------------------------------------------------- */
 
 @media (max-width: 900px) {
+  /* The two-thirds cap is a desktop rule; on a phone the content needs the
+     full width. */
+  :root {
+    --page: 100%;
+    --gutter: 16px;
+    /* The nav wraps to two rows here; anchors need to clear both. */
+    --nav-h: 78px;
+  }
+
   body {
-    font-size: 17px;
+    font-size: 16px;
   }
 
   .hero {
     min-height: auto;
   }
 
+  .hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+    padding: 32px var(--gutter);
+  }
+
+  /* Artwork ahead of the intro so the fold is not all text. */
+  .hero__media {
+    order: -1;
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
   .hero__head {
-    gap: 16px;
+    gap: 14px;
   }
 
   .hero__face {
-    width: 96px;
-    height: 96px;
+    width: 84px;
+    height: 84px;
   }
 
   .hero__name {
-    font-size: 2.4rem;
+    font-size: 2.1rem;
   }
 
   .exp__body,
@@ -570,10 +645,14 @@ img {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .exp__aside {
+    justify-items: start;
+  }
+
   .exp__logo {
-    width: 180px;
-    height: 180px;
-    padding: 18px;
+    width: 120px;
+    height: 120px;
+    padding: 12px;
   }
 
   .contentRow {
@@ -586,36 +665,47 @@ img {
     width: 100%;
   }
 
+  /* Navigation on top, outward links beneath, so neither group has to scroll
+     sideways. */
+  .nav {
+    height: auto;
+  }
+
   .nav__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 6px;
-    padding: 0 14px;
-    overflow-x: auto;
+    padding: 6px var(--gutter);
+  }
+
+  .nav__group {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .nav__group--nav {
+    width: 100%;
   }
 
   .nav__link {
-    padding: 5px 12px;
-    white-space: nowrap;
+    padding: 4px 11px;
   }
 
-  .nav__gap {
-    width: 8px;
-  }
-
-  .nav__icon {
-    min-width: 36px;
-    padding: 0 6px;
-  }
-
-  /* The nav already scrolls sideways at this width, so the control floats
-     above the page instead of riding along inside it. */
+  /* The nav wraps to two rows here, so the control floats above the page
+     instead of competing for room inside it. */
   .nav__toTop {
     position: fixed;
     right: 14px;
     bottom: 14px;
-    margin-left: 0;
-    width: 46px;
-    height: 40px;
+    z-index: 30;
+    width: 44px;
+    height: 38px;
+    border: 1px solid var(--tile-edge);
     border-radius: 5px;
+    background: var(--surface);
+    color: var(--ink);
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
   }
 
