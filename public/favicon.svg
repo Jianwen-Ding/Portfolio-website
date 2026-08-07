@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" fill="#ededed" />
+  <rect x="3.5" y="3.5" width="57" height="57" fill="none" stroke="#2f2f2f" stroke-width="4" />
+  <text x="32" y="44" text-anchor="middle" font-family="Times New Roman, Times, serif"
+        font-size="34" fill="#141414">JD</text>
+</svg>

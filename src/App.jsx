@@ -4,6 +4,7 @@ import ExperienceEntry from './components/ExperienceEntry.jsx';
 import Hero from './components/Hero.jsx';
 import NavBar from './components/NavBar.jsx';
 import ProjectGrid from './components/ProjectGrid.jsx';
+import SectionHeader from './components/SectionHeader.jsx';
 import { experience, jams, projects } from './data/portfolio.js';
 
 export default function App() {
@@ -29,21 +30,21 @@ export default function App() {
 
       <main>
         <section className="section" id="experience">
-          <h2 className="sectionHeader">Experience</h2>
+          <SectionHeader title="Experience" note={`${experience.length} roles`} />
           {experience.map((entry) => (
             <ExperienceEntry key={entry.id} entry={entry} />
           ))}
         </section>
 
         <section className="section" id="projects">
-          <h2 className="sectionHeader">Projects</h2>
+          <SectionHeader title="Projects" note={`${projects.length} selected`} />
           {/* Each grid is its own accordion group, so opening a jam does not
               collapse an open project. */}
           <ProjectGrid projects={projects} group="projects" />
         </section>
 
         <section className="section" id="jams">
-          <h2 className="sectionHeader">Game Jams</h2>
+          <SectionHeader title="Game Jams" note={`${jams.length} entries`} />
           <ProjectGrid projects={jams} group="jams" />
         </section>
       </main>

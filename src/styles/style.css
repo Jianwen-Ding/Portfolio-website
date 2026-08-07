@@ -84,6 +84,7 @@ img {
   display: block;
   width: 20px;
   height: 20px;
+  object-fit: contain;
   transition: filter 0.12s linear;
 }
 
@@ -293,6 +294,7 @@ img {
   display: block;
   width: 18px;
   height: 18px;
+  object-fit: contain;
   transition: filter 0.12s linear;
 }
 
@@ -329,16 +331,39 @@ img {
   scroll-margin-top: var(--nav-h);
 }
 
-/* Scrolls away with the page rather than sticking under the nav. */
+/* Scrolls away with the page rather than sticking under the nav. Double rules
+   and flanking hairlines give the divider some weight without adding chrome. */
 .sectionHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 14px;
   margin: 0;
-  padding: 6px var(--gutter);
+  padding: 9px var(--gutter);
   background: var(--band);
-  border-top: 1px solid var(--edge);
-  border-bottom: 1px solid var(--edge);
+  border-top: 3px double var(--edge);
+  border-bottom: 3px double var(--edge);
   font-size: 1.4rem;
   font-weight: normal;
-  text-align: center;
+}
+
+.sectionHeader__title {
+  letter-spacing: 0.06em;
+}
+
+.sectionHeader__rule {
+  flex: 0 1 84px;
+  align-self: center;
+  height: 1px;
+  background: var(--edge);
+}
+
+.sectionHeader__note {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 
 /* --- Experience --------------------------------------------------------- */
@@ -648,6 +673,12 @@ img {
   text-align: center;
 }
 
+/* Runway past the final row, so the page has an ending and the last section's
+   anchor is not fighting the bottom of the document. */
+main > .section:last-child .grid {
+  padding-bottom: clamp(64px, 18vh, 200px);
+}
+
 /* Jam entries are a single short row, so they have room to spare. */
 #jams .block__image {
   max-height: 270px;
@@ -665,8 +696,9 @@ img {
   :root {
     --page: 100%;
     --gutter: 16px;
-    /* The nav wraps to two rows here; anchors need to clear both. */
-    --nav-h: 78px;
+    /* The nav wraps to two rows here and measures 83px; anchors need to clear
+       both rows, with a pixel to spare. */
+    --nav-h: 84px;
   }
 
   body {
@@ -703,13 +735,15 @@ img {
     font-size: 2.1rem;
   }
 
-  .exp__body,
   .grid {
     grid-template-columns: minmax(0, 1fr);
   }
 
-  .exp__aside {
-    justify-items: start;
+  /* The logo shrinks here but still sits beside the detail — stacking it this
+     early left a small circle alone against a wide empty column. */
+  .exp__body {
+    grid-template-columns: 120px minmax(0, 1fr);
+    gap: 18px;
   }
 
   .exp__logo {
@@ -777,5 +811,15 @@ img {
 
   .js .nav__toTop.is-visible {
     transform: translateY(0);
+  }
+}
+
+@media (max-width: 620px) {
+  .exp__body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .exp__aside {
+    justify-items: start;
   }
 }
