@@ -358,14 +358,6 @@ img {
   background: var(--edge);
 }
 
-.sectionHeader__note {
-  color: var(--muted);
-  font-size: 0.8rem;
-  font-style: italic;
-  letter-spacing: 0.04em;
-  white-space: nowrap;
-}
-
 /* --- Experience --------------------------------------------------------- */
 
 .exp {

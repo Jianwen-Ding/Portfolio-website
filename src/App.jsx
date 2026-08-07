@@ -30,21 +30,21 @@ export default function App() {
 
       <main>
         <section className="section" id="experience">
-          <SectionHeader title="Experience" note={`${experience.length} roles`} />
+          <SectionHeader title="Experience" />
           {experience.map((entry) => (
             <ExperienceEntry key={entry.id} entry={entry} />
           ))}
         </section>
 
         <section className="section" id="projects">
-          <SectionHeader title="Projects" note={`${projects.length} selected`} />
+          <SectionHeader title="Projects" />
           {/* Each grid is its own accordion group, so opening a jam does not
               collapse an open project. */}
           <ProjectGrid projects={projects} group="projects" />
         </section>
 
         <section className="section" id="jams">
-          <SectionHeader title="Game Jams" note={`${jams.length} entries`} />
+          <SectionHeader title="Game Jams" />
           <ProjectGrid projects={jams} group="jams" />
         </section>
       </main>
