@@ -497,11 +497,12 @@ img {
   color: var(--ink);
 }
 
+/* A definite height, not aspect-ratio plus max-height: the latter left the row
+   content-sized, so the image's `height: 100%` never resolved, `contain` had
+   nothing to fit against and `overflow` simply chopped the bottom off. */
 .card__thumb {
-  display: grid;
-  place-items: center;
-  aspect-ratio: 2 / 1;
-  max-height: 165px;
+  display: block;
+  height: 190px;
   margin: 7px 0;
   border: 1px solid var(--tile-edge);
   background: #d8d8d8;
@@ -514,6 +515,7 @@ img {
 }
 
 .card__thumb img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
@@ -625,14 +627,14 @@ img {
 .block__image {
   display: block;
   max-width: 100%;
-  max-height: 150px;
+  max-height: 190px;
   margin: 0 auto;
 }
 
 .block__video {
   display: block;
   width: 100%;
-  max-width: 360px;
+  max-width: 400px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   border: 0;
@@ -644,6 +646,15 @@ img {
   font-size: 0.85rem;
   font-style: italic;
   text-align: center;
+}
+
+/* Jam entries are a single short row, so they have room to spare. */
+#jams .block__image {
+  max-height: 270px;
+}
+
+#jams .card__detail {
+  padding-bottom: 18px;
 }
 
 /* --- Narrow screens ----------------------------------------------------- */
