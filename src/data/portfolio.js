@@ -1,9 +1,10 @@
 // All of the site's content lives here. Components below `src/components` are
 // generic and simply render whatever this file describes.
 //
-// A project is rendered as a header card followed by a tabbed "projectInfo"
-// panel. Each tab holds rows, each row holds cells, and each cell holds blocks
-// (paragraphs, images, videos or links).
+// Each entry carries a `tabs` list describing its long-form detail. A tab holds
+// rows, a row holds cells, and a cell holds blocks (paragraphs, images, videos
+// or links). Tabs render stacked under sub-headings; the grouping is kept so the
+// detail stays organised and could be re-tabbed later.
 
 const p = (text, indent = false) => ({ kind: 'text', text, indent });
 const img = (src, note) => ({ kind: 'image', src, note });
@@ -28,15 +29,10 @@ export const experience = [
   {
     id: 'stormflag',
     image: { src: 'Resources/SFLogoOnBlk.png', alt: 'The Logo of Storm Flag Games' },
-    // The original page gave this entry a wider description column than the
-    // standard project card.
-    header: { titleFlex: '30%', descriptionFlex: '70%', descriptionPadding: 25 },
     title: 'Associate Game Engineer',
     subtitle: 'Storm Flag Games',
     meta: [{ label: 'Time Worked:', value: 'Jan 2025- June 2025' }],
     links: [],
-    panelStyle: { height: '410px' },
-    slidesStyle: { height: '300px' },
     tabs: [
       tab(
         'Overview',
@@ -60,7 +56,6 @@ export const experience = [
     image: {
       src: 'Resources/IndiecadeLogo.jpg',
       alt: 'Title of the game Frogology',
-      style: { width: '200px' },
     },
     title: 'Summer Game Design Intern',
     subtitle: 'IndieCade',
@@ -490,7 +485,7 @@ export const projects = [
   },
   {
     id: 'velvet',
-    image: { src: 'Resources/VelvetTitle.png', alt: 'Title of the game Velvet', style: { width: '384px' } },
+    image: { src: 'Resources/VelvetTitle.png', alt: 'Title of the game Velvet' },
     title: 'Velvet',
     subtitle: 'An action platformer revolving around hookshots.',
     meta: [
@@ -527,6 +522,7 @@ export const projects = [
 export const jams = [
   {
     id: 'riptide',
+    tag: 'Game Jam',
     image: { src: 'Resources/RiptideTitle.png', alt: 'Title of the game Riptide Gardens' },
     title: 'Riptide Gardens',
     subtitle: 'A farming game with a constantly shifting base.',
@@ -564,6 +560,7 @@ export const jams = [
   },
   {
     id: 'remenant',
+    tag: 'Game Jam',
     image: { src: 'Resources/RemenantTitle.png', alt: "Title of the game Remanent of Davy's Crew" },
     title: "Remanent of Davy's Crew",
     subtitle: 'A horror game based around fending off ghosts.',
@@ -601,6 +598,7 @@ export const jams = [
   },
   {
     id: 'checkin',
+    tag: 'Game Jam',
     image: { src: 'Resources/CheckInTitle.png', alt: 'Title of the game Spooder Ball' },
     title: 'Checking In',
     subtitle: 'A starical hopsital clerk simulator.',
@@ -638,6 +636,7 @@ export const jams = [
   },
   {
     id: 'combo',
+    tag: 'Game Jam',
     image: { src: 'Resources/ComboTitle.png', alt: 'Title of the game Combo Infinity' },
     title: 'Combo Infinity',
     subtitle: 'A fighting game based on maintaining a combo.',
@@ -670,6 +669,7 @@ export const jams = [
   },
   {
     id: 'spooder',
+    tag: 'Game Jam',
     image: { src: 'Resources/SpooderTitle.jpg', alt: 'Title of the game Spooder Ball' },
     title: 'Spooder Ball',
     subtitle: 'An arcade survival game where the player slams bugs together.',
@@ -703,61 +703,10 @@ export const jams = [
   },
 ];
 
-// Menu drop-downs. Each drop-down is a list of rows so the original grid
-// groupings (three across, then two across, ...) are preserved.
-export const menuSections = [
-  {
-    id: 'experienceDrag',
-    label: 'Experience',
-    href: '#experience',
-    dragClass: 'experienceDrag',
-    rows: [
-      [
-        { label: 'Associate Game Engineer', href: '#stormflag', src: 'Resources/SFLogoOnBlk.png', alt: 'Strand Title Screen' },
-        { label: 'Summer Game Design Intern', href: '#indiecade', src: 'Resources/IndiecadeLogo.jpg', alt: 'Plane Game Title Screen' },
-      ],
-    ],
-  },
-  {
-    id: 'projectsDrag',
-    label: 'Projects',
-    href: '#projects',
-    dragClass: 'gameDrag',
-    rows: [
-      [
-        { label: 'Strand', href: '#strand', src: 'Resources/StrandTitle.png', alt: 'Strand Title Screen' },
-        { label: 'Plane Render', href: '#plane', src: 'Resources/PlaneSC2.png', alt: 'Plane Game Title Screen' },
-        { label: 'Skyline Engine', href: '#skyline', src: 'Resources/Skyline_SC.png', alt: 'Plane Game Title Screen' },
-      ],
-      [
-        { label: 'Head Hunters', href: '#hunter', src: 'Resources/HeadhunterTitle.png', alt: 'Headhunter Title Screen' },
-        { label: 'Velvet', href: '#velvet', src: 'Resources/VelvetTitle.png', alt: 'Velvet Title Screen' },
-      ],
-    ],
-  },
-  {
-    id: 'jamsDrag',
-    label: 'Game Jams',
-    href: '#jams',
-    dragClass: 'jamsDrag',
-    rows: [
-      [
-        { label: 'Riptide Gardens', href: '#riptide', src: 'Resources/RiptideTitle.png', alt: 'Riptide Gardens Title Screen' },
-        { label: "Remanent of Davy's Crew", href: '#remenant', src: 'Resources/RemenantTitle.png', alt: "Remanent of Davy's crew Title Screen" },
-      ],
-      [
-        { label: 'Checking In', href: '#checkin', src: 'Resources/CheckInTitle.png', alt: 'Checking In Title Screen' },
-        { label: 'Combo Infinity', href: '#combo', src: 'Resources/ComboTitle.png', alt: 'Combo Infinity Title Screen' },
-        { label: 'Spooder Ball', href: '#spooder', src: 'Resources/SpooderTitle.jpg', alt: 'Spooder Ball Title Screen' },
-      ],
-    ],
-  },
-];
-
 export const socials = [
-  { href: 'https://pakmanlie.itch.io/', src: 'Resources/Logos/itchLog.png', alt: 'Itch io logo' },
-  { href: 'https://www.linkedin.com/in/jianwen-ding/', src: 'Resources/Logos/LinkedInLog.png', alt: 'LinkedIn logo' },
-  { href: 'https://github.com/Jianwen-Ding', src: 'Resources/Logos/gitLog.png', alt: 'Github logo' },
+  { href: 'https://github.com/Jianwen-Ding', label: 'Github', src: 'Resources/Logos/gitLog.png', alt: 'Github logo' },
+  { href: 'https://www.linkedin.com/in/jianwen-ding/', label: 'LinkedIn', src: 'Resources/Logos/LinkedInLog.png', alt: 'LinkedIn logo' },
+  { href: 'https://pakmanlie.itch.io/', label: 'itch.io', src: 'Resources/Logos/itchLog.png', alt: 'Itch io logo' },
 ];
 
 export const contact = {

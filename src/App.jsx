@@ -1,55 +1,48 @@
-import About from './components/About.jsx';
-import Menu from './components/Menu.jsx';
-import Project from './components/Project.jsx';
+import { useEffect, useRef, useState } from 'react';
+
+import ExperienceEntry from './components/ExperienceEntry.jsx';
+import Hero from './components/Hero.jsx';
+import NavBar from './components/NavBar.jsx';
+import ProjectGrid from './components/ProjectGrid.jsx';
 import { experience, jams, projects } from './data/portfolio.js';
 
-// The section headings sit above an empty anchor paragraph so that jumping to
-// `#experience` / `#projects` / `#jams` lands on the heading itself.
-function SectionAnchor({ id }) {
-  return (
-    <p style={{ marginBottom: '-35px' }} id={id}>
-      <br />
-    </p>
-  );
-}
+// Game jams share the projects grid; their cards carry a "Game Jam" tag.
+const allProjects = [...projects, ...jams];
 
 export default function App() {
+  const heroRef = useRef(null);
+  const [heroVisible, setHeroVisible] = useState(true);
+
+  // The "to top" control only appears once the hero has scrolled out of view.
+  useEffect(() => {
+    const hero = heroRef.current;
+    if (!hero) return undefined;
+
+    const observer = new IntersectionObserver(([entry]) => setHeroVisible(entry.isIntersecting), {
+      threshold: 0,
+    });
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="row">
-      <div className="column left">
-        <Menu />
-      </div>
-      <div className="column right">
-        <main className="projects">
-          <About />
+    <>
+      <Hero innerRef={heroRef} />
+      <NavBar showToTop={!heroVisible} />
 
-          <SectionAnchor id="experience" />
-          <h2 className="divison">Experience</h2>
-          {experience.map((project) => (
-            <Project key={project.id} project={project} />
+      <main>
+        <section className="section" id="experience">
+          <h2 className="sectionHeader">Experience</h2>
+          {experience.map((entry) => (
+            <ExperienceEntry key={entry.id} entry={entry} />
           ))}
+        </section>
 
-          <div>
-            <SectionAnchor id="projects" />
-            <h2 className="divison" style={{ marginBottom: '0px' }}>
-              Projects
-            </h2>
-            {projects.map((project) => (
-              <Project key={project.id} project={project} />
-            ))}
-          </div>
-
-          <div>
-            <SectionAnchor id="jams" />
-            <h2 className="divison" style={{ marginBottom: '0px' }}>
-              Game Jams
-            </h2>
-            {jams.map((project) => (
-              <Project key={project.id} project={project} />
-            ))}
-          </div>
-        </main>
-      </div>
-    </div>
+        <section className="section" id="projects">
+          <h2 className="sectionHeader">Projects</h2>
+          <ProjectGrid projects={allProjects} />
+        </section>
+      </main>
+    </>
   );
 }

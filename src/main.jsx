@@ -1,11 +1,20 @@
 import React from 'react';
-import { createRoot } from 'react-dom/client';
+import { createRoot, hydrateRoot } from 'react-dom/client';
 
 import App from './App.jsx';
 import './styles/style.css';
 
-createRoot(document.getElementById('root')).render(
+const container = document.getElementById('root');
+const tree = (
   <React.StrictMode>
     <App />
   </React.StrictMode>
 );
+
+// The production build ships prerendered markup, so hydrate it rather than
+// throwing it away. `npm run dev` serves an empty root and mounts normally.
+if (container.hasChildNodes()) {
+  hydrateRoot(container, tree);
+} else {
+  createRoot(container).render(tree);
+}
