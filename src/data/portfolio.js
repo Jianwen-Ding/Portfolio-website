@@ -79,8 +79,7 @@ export const experience = [
             '50%',
             p('- Interns took part in the 2024 IndieCade Climate Jam, alongside work like drafting plans for how a game can push environmental causes.'),
             p('- Within the jam I formed a team of 8 to build Frogology, a conservation simulator made in Unity and C# by me and two other programmers.'),
-            p('- The loop has you learning about nearby animals while catching them. I owned the animal behaviour and the quest system.'),
-            link('Resources/InternshipCertification.pdf', 'Internship Certification Letter')
+            p('- The loop has you learning about nearby animals while catching them. I owned the animal behaviour and the quest system.')
           )
         ),
         row(
