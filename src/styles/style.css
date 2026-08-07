@@ -80,42 +80,28 @@ img {
 
 /* --- Hero --------------------------------------------------------------- */
 
+/* The "gradient transition into compilation of work": grey at the top of the
+   page washing out to the page background by the time the nav is reached, so
+   the hero dissolves into the sections below rather than ending at an edge.
+   The soft light field on the right is a second layer of the same wash, not a
+   shape — it has no discernible boundary. */
 .hero {
   position: relative;
   display: flex;
   align-items: center;
   min-height: calc(100vh - var(--nav-h));
   overflow: hidden;
-  background: linear-gradient(180deg, #f7f7f7 0%, #efefef 60%, #e6e6e6 100%);
-}
-
-/* The gradient field the wireframe places opposite the intro; it fades out at
-   the bottom so the hero melts into the work sections. */
-.hero__gradient {
-  position: absolute;
-  top: 50%;
-  right: -6%;
-  width: 54vw;
-  max-width: 780px;
-  aspect-ratio: 1;
-  transform: translateY(-50%);
-  border-radius: 50%;
-  background: radial-gradient(
-    circle at 40% 36%,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(223, 223, 223, 0.85) 30%,
-    rgba(180, 180, 180, 0.5) 56%,
-    rgba(170, 170, 170, 0.16) 78%,
-    rgba(170, 170, 170, 0) 100%
-  );
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 200px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, var(--surface) 100%);
+  background-image:
+    radial-gradient(58% 62% at 76% 36%, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0) 74%),
+    linear-gradient(
+      180deg,
+      #a5a5a5 0%,
+      #b6b6b6 18%,
+      #cccccc 40%,
+      #e2e2e2 62%,
+      #f3f3f3 82%,
+      var(--surface) 100%
+    );
 }
 
 .hero__inner {
@@ -241,18 +227,16 @@ img {
   height: 20px;
 }
 
-/* Sits on the nav's top edge, but inside it — the nav is flush with the
-   viewport top once stuck, so anything above it would be clipped. */
+/* Last item in the row rather than floated over it, so it cannot collide with
+   the links at any width. It keeps its slot when hidden, so revealing it does
+   not shift the nav. */
 .nav__toTop {
-  position: absolute;
-  top: 3px;
-  left: 50%;
-  z-index: 1;
+  margin-left: auto;
   display: grid;
   place-items: center;
+  flex: none;
   width: 46px;
-  height: 26px;
-  padding: 0;
+  height: 32px;
   border: 1px solid var(--tile-edge);
   border-radius: 4px;
   background: var(--surface);
@@ -263,13 +247,13 @@ img {
 
 .js .nav__toTop {
   opacity: 0;
-  transform: translate(-50%, -8px);
+  transform: translateY(-6px);
   pointer-events: none;
 }
 
 .js .nav__toTop.is-visible {
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: none;
   pointer-events: auto;
 }
 
@@ -412,15 +396,6 @@ img {
 
 .card[open] .card__title {
   font-size: 2rem;
-}
-
-.card__tag {
-  flex: none;
-  padding: 2px 8px;
-  border-radius: 3px;
-  background: var(--soft);
-  color: var(--muted);
-  font-size: 0.8rem;
 }
 
 /* Clicking anywhere on the summary closes the card; this just labels it. */
@@ -577,14 +552,6 @@ img {
     min-height: auto;
   }
 
-  .hero__gradient {
-    top: auto;
-    right: -30%;
-    bottom: -20%;
-    width: 90vw;
-    transform: none;
-  }
-
   .hero__head {
     gap: 16px;
   }
@@ -639,14 +606,13 @@ img {
     padding: 0 6px;
   }
 
-  /* There is no spare room on the nav at this width, so the control floats
-     above the page instead. */
+  /* The nav already scrolls sideways at this width, so the control floats
+     above the page instead of riding along inside it. */
   .nav__toTop {
     position: fixed;
-    top: auto;
-    left: auto;
     right: 14px;
     bottom: 14px;
+    margin-left: 0;
     width: 46px;
     height: 40px;
     border-radius: 5px;

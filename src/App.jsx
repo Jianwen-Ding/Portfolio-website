@@ -6,9 +6,6 @@ import NavBar from './components/NavBar.jsx';
 import ProjectGrid from './components/ProjectGrid.jsx';
 import { experience, jams, projects } from './data/portfolio.js';
 
-// Game jams share the projects grid; their cards carry a "Game Jam" tag.
-const allProjects = [...projects, ...jams];
-
 export default function App() {
   const heroRef = useRef(null);
   const [heroVisible, setHeroVisible] = useState(true);
@@ -40,7 +37,14 @@ export default function App() {
 
         <section className="section" id="projects">
           <h2 className="sectionHeader">Projects</h2>
-          <ProjectGrid projects={allProjects} />
+          {/* Each grid is its own accordion group, so opening a jam does not
+              collapse an open project. */}
+          <ProjectGrid projects={projects} group="projects" />
+        </section>
+
+        <section className="section" id="jams">
+          <h2 className="sectionHeader">Game Jams</h2>
+          <ProjectGrid projects={jams} group="jams" />
         </section>
       </main>
     </>

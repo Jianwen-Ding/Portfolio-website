@@ -522,7 +522,6 @@ export const projects = [
 export const jams = [
   {
     id: 'riptide',
-    tag: 'Game Jam',
     image: { src: 'Resources/RiptideTitle.png', alt: 'Title of the game Riptide Gardens' },
     title: 'Riptide Gardens',
     subtitle: 'A farming game with a constantly shifting base.',
@@ -560,7 +559,6 @@ export const jams = [
   },
   {
     id: 'remenant',
-    tag: 'Game Jam',
     image: { src: 'Resources/RemenantTitle.png', alt: "Title of the game Remanent of Davy's Crew" },
     title: "Remanent of Davy's Crew",
     subtitle: 'A horror game based around fending off ghosts.',
@@ -598,7 +596,6 @@ export const jams = [
   },
   {
     id: 'checkin',
-    tag: 'Game Jam',
     image: { src: 'Resources/CheckInTitle.png', alt: 'Title of the game Spooder Ball' },
     title: 'Checking In',
     subtitle: 'A starical hopsital clerk simulator.',
@@ -636,7 +633,6 @@ export const jams = [
   },
   {
     id: 'combo',
-    tag: 'Game Jam',
     image: { src: 'Resources/ComboTitle.png', alt: 'Title of the game Combo Infinity' },
     title: 'Combo Infinity',
     subtitle: 'A fighting game based on maintaining a combo.',
@@ -669,7 +665,6 @@ export const jams = [
   },
   {
     id: 'spooder',
-    tag: 'Game Jam',
     image: { src: 'Resources/SpooderTitle.jpg', alt: 'Title of the game Spooder Ball' },
     title: 'Spooder Ball',
     subtitle: 'An arcade survival game where the player slams bugs together.',

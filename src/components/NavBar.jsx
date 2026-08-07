@@ -16,22 +16,15 @@ function ChevronUp() {
 export default function NavBar({ showToTop }) {
   return (
     <nav className="nav" aria-label="Main">
-      {/* A plain anchor so it still works without JS (CSS handles the smooth
-          scroll). Script only controls when it is revealed. */}
-      <a
-        className={`nav__toTop${showToTop ? ' is-visible' : ''}`}
-        href="#top"
-        aria-label="Back to top"
-      >
-        <ChevronUp />
-      </a>
-
       <div className="nav__inner">
         <a className="nav__link" href="#experience">
           Experience
         </a>
         <a className="nav__link" href="#projects">
           Projects
+        </a>
+        <a className="nav__link" href="#jams">
+          Game Jams
         </a>
 
         <span className="nav__gap" />
@@ -43,6 +36,16 @@ export default function NavBar({ showToTop }) {
         ))}
         <a className="nav__icon nav__icon--text" href={contact.email} title="Email">
           Mail
+        </a>
+
+        {/* A plain anchor so it still works without JS (CSS handles the smooth
+            scroll). Script only controls when it is revealed. */}
+        <a
+          className={`nav__toTop${showToTop ? ' is-visible' : ''}`}
+          href="#top"
+          aria-label="Back to top"
+        >
+          <ChevronUp />
         </a>
       </div>
     </nav>

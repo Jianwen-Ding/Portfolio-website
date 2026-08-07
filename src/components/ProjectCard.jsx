@@ -4,10 +4,10 @@ import FlatContent, { ExternalLinks } from './InfoBlocks.jsx';
 // A grid tile that expands in place into a full-width detail panel.
 //
 // Built on <details> so the whole open/close interaction is native: it works
-// with JavaScript disabled, and the shared `name` makes the grid an exclusive
+// with JavaScript disabled, and cards sharing a `name` form an exclusive
 // accordion without any state. The only scripted part is scrolling a freshly
 // opened card into view, which is a pure enhancement.
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, group }) {
   const handleToggle = (event) => {
     if (event.currentTarget.open) {
       event.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -15,11 +15,10 @@ export default function ProjectCard({ project }) {
   };
 
   return (
-    <details className="card" name="projects" id={project.id} onToggle={handleToggle}>
+    <details className="card" name={group} id={project.id} onToggle={handleToggle}>
       <summary className="card__summary">
         <span className="card__titleRow">
           <span className="card__title">{project.title}</span>
-          {project.tag && <span className="card__tag">{project.tag}</span>}
           <span className="card__shrink">Shrink</span>
         </span>
 
