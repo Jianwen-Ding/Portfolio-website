@@ -1,12 +1,12 @@
 import { asset } from '../asset.js';
 import FlatContent, { ExternalLinks } from './InfoBlocks.jsx';
 
-// Ringed plus/minus. The vertical stroke collapses away when the card opens, so
+// Boxed plus/minus. The vertical stroke collapses away when the card opens, so
 // the same glyph reads as "expand" closed and "shrink" open.
 function ToggleGlyph() {
   return (
     <svg className="card__glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <circle cx="12" cy="12" r="10.5" fill="none" stroke="currentColor" strokeWidth="1.1" />
+      <rect x="1.5" y="1.5" width="21" height="21" fill="none" stroke="currentColor" strokeWidth="1.2" />
       <line x1="6.5" y1="12" x2="17.5" y2="12" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
       <line
         className="card__glyphStem"
