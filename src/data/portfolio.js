@@ -43,9 +43,12 @@ export const experience = [
           cell(
             '100%',
             p('- Worked on the C++ game client for a large scale MMO.'),
-            p('- Debugged the client animation system: patched transparency handling to remove crashes and animation spasms, fixed mousepicking on animated models, and added dirty flagging for previously static objects.'),
-            p('- Patched an SQLite save corruption bug and implemented save repair.'),
-            p("- Exposed more of the client's graphics engine to scripters through new Lua functions.")
+            p('- Debugged the animation system of the client.'),
+            p('= Patched transparency handling, removing crashes and animation spasms.', true),
+            p('= Adjusted mousepicking to work with animated models.', true),
+            p('= Implemented a dirty flagging system for animating previously static objects.', true),
+            p('- Patched an SQLite save corruption bug and implemented save repair functionality.'),
+            p("- Added Lua functions exposing more of the client's graphics engine to scripters.")
           )
         )
       ),
@@ -74,19 +77,35 @@ export const experience = [
           ),
           cell(
             '50%',
-            p('- Formed and led a team of 8 in the 2024 IndieCade Climate Jam to build Frogology, a conservation simulator made in Unity and C#.'),
-            p('- Programmed the animal behaviour: animals cross a large map gathering at points of interest, steering toward prey and away from predators within a sight and hearing radius.'),
-            p('- Animals dematerialize once out of range and view, so the map stays alive without paying for the physics.'),
+            p('- Interns took part in the 2024 IndieCade Climate Jam, alongside work like drafting plans for how a game can push environmental causes.'),
+            p('- Within the jam I formed a team of 8 to build Frogology, a conservation simulator made in Unity and C# by me and two other programmers.'),
+            p('- The loop has you learning about nearby animals while catching them. I owned the animal behaviour and the quest system.'),
             link('Resources/InternshipCertification.pdf', 'Internship Certification Letter')
           )
         ),
         row(
           cell(
             '50%',
-            p('- Built the branching quest system, plus a Unity editor tool that lays out quest connections and contents visually.'),
-            p('- Gated progression behind it, from sleeping to dialogue branches to catching certain animals, with saving for quest and species progress.')
+            p('- Animals traverse the map toward points of interest, moving toward prey and away from predators.'),
+            p('- They detect each other within a field of view or a radius, emulating sight and hearing, and avoid collisions as they move.'),
+            p('- Out of range and out of sight, animals dematerialize, so the map keeps living without paying for the physics.')
           ),
-          cell('50%', img('Resources/QuestShot.png', 'Editor view of the overarching quest flow'))
+          cell(
+            '50%',
+            video(
+              'https://www.youtube.com/embed/mTBWJssYyp8?si=uoYAvmasNQYnZQTj',
+              'Out of view animal AI'
+            )
+          )
+        ),
+        row(
+          cell('50%', img('Resources/QuestShot.png', 'Editor view of the overarching quest flow')),
+          cell(
+            '50%',
+            p('- Built the overarching branching quest system, plus a Unity editor tool laying out quest connections and contents visually.'),
+            p('- An editor tool for dialogue that branches on completed quests came out of the same work.'),
+            p('- Gated most progression behind it: sleeping, dialogue branches and catching certain animals, with saving for quest and species progress.')
+          )
         )
       ),
     ],
@@ -118,10 +137,18 @@ export const projects = [
           cell(
             '50%',
             p('- A general purpose engine in the long run, and for now a place for the team to dig into whatever each of us finds interesting.'),
-            p('- I built the WebGPU backend of the renderer and the first draft of the entity component system.'),
-            p('- In Dawn WebGPU, implemented cascaded shadow mapping that drops shadow resolution for distant objects.'),
-            p('- Used dynamically scaling buffers and instanced rendering for performance, and organised the shared interface and CMake setup that lets either backend build.')
+            p('- My part was the WebGPU backend of the renderer and the entity component system.')
           )
+        ),
+        row(
+          cell(
+            '50%',
+            p('- Using Dawn WebGPU, implemented cascaded shadow mapping that drops shadow resolution for objects further away.'),
+            p('- Used dynamically scaling buffers and instanced rendering to improve performance.'),
+            p('- Organised a shared interface between the Vulkan and WebGPU renderers, and the CMake system for building against either.'),
+            p('- Created the initial draft of the entity component system that the team later expanded on.')
+          ),
+          cell('50%', img('Resources/Skyline_SC.png', 'A loaded scene in the engine'))
         )
       ),
     ],
@@ -149,15 +176,25 @@ export const projects = [
           ),
           cell(
             '50%',
-            p('- A learning exercise in C++ and rendering that loads models and places lights of different types, built with OpenGL, GLSL, SDL and Assimp.'),
-            p('- Covered vertex specification, GLSL lighting, texture arrays for multi-textured meshes, cube-map skyboxes and specular maps.')
+            p('- A learning exercise in C++ and rendering as a whole: the program loads models and lets you insert lights of different types.'),
+            p('- Built with Visual Studio Code, OpenGL, GLSL and C++, using SDL and Assimp. Models were pulled from The Models Resource.')
+          )
+        ),
+        row(
+          cell('50%', img('Resources/PlaneSC4.png', 'An overhead view of a loaded map')),
+          cell(
+            '50%',
+            p('- Learned the basics of vertex specification, and implemented lights of different types and fields through GLSL.'),
+            p('- Used Assimp to process 3D models into usable vertices and textures, and texture arrays to load several textures onto one mesh.'),
+            p('- Built a cube map texture for the skybox, and applied quaternions and linear algebra for transform matrices.')
           )
         ),
         row(
           cell(
             '50%',
-            p('- Wrote a render manager handling many instances of a model and different light types, with a UV system that offsets texture-array padding automatically.'),
-            p('- A transform class homogenises moving, rotating and scaling, and supports parent transforms for relative placement.')
+            p('- Wrote a render manager that simplifies loading many instances of a model and different light types.'),
+            p('- A UV system automatically generates custom UVs for texture arrays, offsetting whatever padding is required.'),
+            p('- A transform class homogenises moving, rotating and scaling, with parent transforms for relative placement, and specular maps vary reflection across a model.')
           ),
           cell('50%', img('Resources/PlaneSC3.png', 'Multiple lights and models loaded at once'))
         )
@@ -187,18 +224,28 @@ export const projects = [
           ),
           cell(
             '50%',
-            p('- Started as a project of a game development club I founded and led, then continued solo after graduation. Unity and C#.'),
-            p('- Collect scrap while fending off zombies. I directed art and music, and drew a good share of the pixel art myself: menus, half the enemy animations and tile sprites.')
+            p('- Started as a project of a game development club I founded, worked on during meetings by about 9 people, and continued solo after my graduation.'),
+            p('- Made in Unity and C# with Github for source control. The loop is collecting scrap while fending off zombies.'),
+            p('- I was project lead and directed art and music, and drew a good share of the pixel art myself in Piskel: menus, half the enemy animations and tile sprites.')
+          )
+        ),
+        row(
+          cell('50%', img('Resources/SampleMapScreenShot.png', 'An example of a generated map')),
+          cell(
+            '50%',
+            p('- Programmed the randomly generating map: a grid of rooms, each assigned a difficulty, function and set of opening directions.'),
+            p('- Wrote a text processor that turns values in a .txt file into room layouts, which rooms are then assigned at random to match their openings, function and difficulty.'),
+            p('- Resource rooms are placed at certain dead ends to stop aimless wandering.')
           )
         ),
         row(
           cell(
             '50%',
-            p('- Programmed the generated map: a grid of rooms each assigned a difficulty, function and set of openings, with layouts read from a custom text format and resource rooms placed at dead ends to stop aimless wandering.'),
-            p('- Designed 5 enemy types on a shared base class, from walking at the player to circling and firing projectiles.'),
-            p('- Programmed the weapons, split between normal scrap and golden scrap with unusual properties like teleportation.')
+            p('- Handled enemy behaviour design and development: 5 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.'),
+            p('- Their movement ranges from walking at the player to flying around them and firing projectiles.'),
+            p('- Programmed the weapons too, split between normal scrap and golden scrap, the latter with unusual properties like teleportation or projectiles.')
           ),
-          cell('50%', img('Resources/SampleMapScreenShot.png', 'An example of a generated map'))
+          cell('50%', img('Resources/EnemyDisplay.png', 'Every enemy in the game'))
         )
       ),
     ],
