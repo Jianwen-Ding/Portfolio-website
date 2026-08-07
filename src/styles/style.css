@@ -29,8 +29,8 @@ body {
   background: var(--surface);
   color: var(--ink);
   font-family: 'Times New Roman', Times, serif;
-  font-size: 16px;
-  line-height: 1.45;
+  font-size: 15px;
+  line-height: 1.42;
 }
 
 img {
@@ -310,10 +310,10 @@ img {
 /* Scrolls away with the page rather than sticking under the nav. */
 .sectionHeader {
   margin: 0;
-  padding: 8px var(--gutter);
+  padding: 6px var(--gutter);
   background: var(--band);
   border-bottom: 1px solid var(--tile-edge);
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   font-weight: normal;
   text-align: center;
 }
@@ -323,7 +323,7 @@ img {
 .exp {
   max-width: var(--page);
   margin: 0 auto;
-  padding: 26px var(--gutter);
+  padding: 20px var(--gutter);
   scroll-margin-top: var(--nav-h);
 }
 
@@ -333,7 +333,7 @@ img {
 
 .exp__name {
   margin: 0;
-  font-size: 1.65rem;
+  font-size: 1.5rem;
   font-weight: normal;
 }
 
@@ -345,10 +345,10 @@ img {
 
 .exp__body {
   display: grid;
-  grid-template-columns: 150px minmax(0, 1fr);
-  gap: 26px;
+  grid-template-columns: 128px minmax(0, 1fr);
+  gap: 22px;
   align-items: start;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .exp__aside {
@@ -360,9 +360,9 @@ img {
 .exp__logo {
   display: grid;
   place-items: center;
-  width: 150px;
-  height: 150px;
-  padding: 16px;
+  width: 128px;
+  height: 128px;
+  padding: 13px;
   border: 1px solid var(--tile-edge);
   border-radius: 50%;
   background: var(--tile);
@@ -380,11 +380,11 @@ img {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
+  gap: 14px;
   align-items: start;
   max-width: var(--page);
   margin: 0 auto;
-  padding: 24px var(--gutter) 48px;
+  padding: 20px var(--gutter) 40px;
 }
 
 .card {
@@ -409,7 +409,7 @@ img {
 
 .card__summary {
   display: block;
-  padding: 13px;
+  padding: 11px;
   cursor: pointer;
   list-style: none;
 }
@@ -431,11 +431,11 @@ img {
 
 .card__title {
   flex: 1;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
 }
 
 .card[open] .card__title {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
 }
 
 /* Clicking anywhere on the summary toggles the card; the glyph marks which way
@@ -472,8 +472,9 @@ img {
 .card__thumb {
   display: grid;
   place-items: center;
-  aspect-ratio: 16 / 9;
-  margin: 8px 0;
+  aspect-ratio: 2 / 1;
+  max-height: 165px;
+  margin: 7px 0;
   border-radius: 4px;
   background: #d8d8d8;
   overflow: hidden;
@@ -500,7 +501,7 @@ img {
 }
 
 .card__detail {
-  padding: 4px 13px 14px;
+  padding: 4px 11px 12px;
   animation: expandIn 0.35s ease both;
 }
 
@@ -541,7 +542,7 @@ img {
 /* --- Detail content ----------------------------------------------------- */
 
 .flatSection__heading {
-  margin: 18px 0 8px;
+  margin: 14px 0 7px;
   padding-bottom: 4px;
   border-bottom: 1px solid var(--line);
   font-size: 1.1rem;
@@ -550,7 +551,7 @@ img {
 
 .contentRow {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   align-items: flex-start;
 }
 
@@ -559,7 +560,7 @@ img {
 }
 
 .block__text {
-  margin: 0 0 8px;
+  margin: 0 0 7px;
 }
 
 .block__text--indent {
@@ -573,14 +574,14 @@ img {
 .block__image {
   display: block;
   max-width: 100%;
-  max-height: 190px;
+  max-height: 150px;
   margin: 0 auto;
 }
 
 .block__video {
   display: block;
   width: 100%;
-  max-width: 420px;
+  max-width: 360px;
   margin: 0 auto;
   aspect-ratio: 16 / 9;
   border: 0;
