@@ -24,19 +24,13 @@ function ToggleGlyph() {
 
 // A grid tile that expands in place into a full-width detail panel.
 //
-// Built on <details> so the whole open/close interaction is native: it works
-// with JavaScript disabled, and cards sharing a `name` form an exclusive
-// accordion without any state. The only scripted part is scrolling a freshly
-// opened card into view, which is a pure enhancement.
+// Built on <details>, so open/close is entirely native: it works with
+// JavaScript disabled, and cards sharing a `name` form an exclusive accordion
+// without any state. Nothing scrolls on open — the card grows where it sits and
+// the reader's position stays put.
 export default function ProjectCard({ project, group }) {
-  const handleToggle = (event) => {
-    if (event.currentTarget.open) {
-      event.currentTarget.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
-    <details className="card" name={group} id={project.id} onToggle={handleToggle}>
+    <details className="card" name={group} id={project.id}>
       <summary className="card__summary">
         <span className="card__titleRow">
           <span className="card__title">{project.title}</span>

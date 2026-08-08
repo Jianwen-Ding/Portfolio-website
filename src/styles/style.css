@@ -40,6 +40,39 @@ img {
   max-width: 100%;
 }
 
+/* --- Keyboard ----------------------------------------------------------- */
+
+/* One visible ring for everything focusable. Offset outward by default; card
+   headers pull it inward so it does not collide with the card's own border. */
+:focus-visible {
+  outline: 2px solid var(--edge);
+  outline-offset: 2px;
+}
+
+.card__summary:focus-visible,
+main:focus-visible {
+  outline-offset: -4px;
+}
+
+/* Fixed, not absolute: it has to be on screen whenever it takes focus, which
+   includes shift-tabbing back to it from partway down the page. */
+.skipLink {
+  position: fixed;
+  top: -80px;
+  left: 10px;
+  z-index: 100;
+  padding: 8px 14px;
+  border: 1px solid var(--edge);
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition: top 0.15s linear;
+}
+
+.skipLink:focus {
+  top: 10px;
+}
+
 /* --- Shared ------------------------------------------------------------- */
 
 .button {

@@ -25,10 +25,17 @@ export default function App() {
 
   return (
     <>
+      {/* First tab stop on the page, so keyboard users can jump the hero. */}
+      <a className="skipLink" href="#content">
+        Skip to content
+      </a>
+
       <Hero innerRef={heroRef} />
       <NavBar showToTop={!heroVisible} />
 
-      <main>
+      {/* tabIndex lets the skip link move focus here, so Tab continues from the
+          content rather than restarting at the top of the page. */}
+      <main id="content" tabIndex={-1}>
         <section className="section" id="experience">
           <SectionHeader title="Experience" />
           {experience.map((entry) => (

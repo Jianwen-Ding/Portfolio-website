@@ -29,7 +29,8 @@ src/
     Hero.jsx               Portrait, intro and the gradient field
     NavBar.jsx             Sticky nav with the "to top" control
     ExperienceEntry.jsx    Logo + name + detail for one role
-    ProjectGrid.jsx        Two-column grid
+    SectionHeader.jsx      The ruled band between sections
+    ProjectGrid.jsx        Two-column grid, plus keyboard navigation
     ProjectCard.jsx        Grid tile that expands in place
     InfoBlocks.jsx         List / paragraph / image / video / link blocks
   styles/style.css         The whole stylesheet
@@ -45,10 +46,33 @@ revealed by an `IntersectionObserver` watching the hero.
 `grid-column: 1 / -1` so it expands to a full-width row where it already sat,
 and the grid reflows around it — the page stays scrollable and the other cards
 stay put. Cards within a grid share a `name`, which makes each grid an exclusive
-accordion natively. Script only adds the smooth scroll to a freshly opened card.
+accordion natively. Nothing scrolls on open — the card grows where it sits and
+your position on the page does not change.
 
 **Game jams** are their own section and grid below Projects, with their own
 accordion group — opening a jam does not collapse an open project.
+
+## Keyboard
+
+The whole site is operable without a mouse. A skip link is the first tab stop
+and jumps past the hero into the content. Everything focusable draws a visible
+ring.
+
+Tab and Enter work with scripting off, since the cards are native `<details>`.
+Script adds the rest, as a progressive enhancement, while focus is on a card
+header:
+
+| Key | Action |
+| --- | --- |
+| `Enter` / `Space` | Open or close the card |
+| `Arrow` keys | Step to the previous or next card in the section |
+| `Home` / `End` | Jump to the first or last card in the section |
+| `Escape` | Close the card you are in, returning focus to its header |
+
+Arrows walk cards in document order rather than by geometry, because an open
+card spans the full row and makes the grid irregular. They only steer while
+focus is on a card header, so they still scroll normally while you are reading
+an opened card.
 
 ## Mobile
 
@@ -65,7 +89,8 @@ hydrates that same markup.
 
 With JavaScript off the site is fully usable: every project and experience entry
 is readable, card expansion works (native `<details>`), the exclusive accordion
-works, and the "to top" control is a plain `#top` anchor with CSS smooth scroll.
+works, the skip link works, and the "to top" control is a plain `#top` anchor
+with CSS smooth scroll.
 The stylesheet keeps script-dependent affordances visible by default and only
 hides them under a `.js` class, which a one-line inline script adds — so nothing
 ends up invisible-but-required for unscripted visitors.
