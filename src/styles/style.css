@@ -160,8 +160,10 @@ main:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 47%);
-  gap: clamp(28px, 3.5vw, 68px);
+  /* Intro and artwork share one cell so they overlap instead of sitting in
+     separate columns. Their widths add up to more than 100%, and the surplus is
+     the bleed. */
+  grid-template-columns: minmax(0, 1fr);
   align-items: center;
   width: 100%;
   max-width: var(--hero-page);
@@ -171,10 +173,25 @@ main:focus-visible {
   padding: clamp(28px, 4.5vh, 64px) var(--gutter);
 }
 
-/* Square artwork dissolved into a circle: a radial mask fades the image out
-   before it reaches the edges, so there is no hard crop. */
+.hero__intro {
+  position: relative;
+  z-index: 1;
+  grid-area: 1 / 1;
+  max-width: min(64%, 780px);
+}
+
+/* Square artwork dissolved into a circle: a radial mask fades it out before it
+   reaches the edges, so there is no hard crop. A second left-to-right fade,
+   intersected with the first, dissolves it further where it passes under the
+   intro, so the two can overlap without the text fighting the picture. */
 .hero__media {
+  grid-area: 1 / 1;
+  justify-self: end;
   align-self: center;
+  /* The artwork is square, so its width is also its height — the vh term stops
+     a wide screen with little height from making it drive the panel taller than
+     the fold. */
+  width: min(60%, 740px, 64vh);
 }
 
 .hero__mediaImg {
@@ -182,20 +199,26 @@ main:focus-visible {
   width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
-  -webkit-mask-image: radial-gradient(
-    circle at 50% 50%,
-    #000 40%,
-    rgba(0, 0, 0, 0.75) 55%,
-    rgba(0, 0, 0, 0.25) 66%,
-    transparent 74%
-  );
-  mask-image: radial-gradient(
-    circle at 50% 50%,
-    #000 40%,
-    rgba(0, 0, 0, 0.75) 55%,
-    rgba(0, 0, 0, 0.25) 66%,
-    transparent 74%
-  );
+  -webkit-mask-image:
+    radial-gradient(
+      circle at 50% 50%,
+      #000 40%,
+      rgba(0, 0, 0, 0.75) 55%,
+      rgba(0, 0, 0, 0.25) 66%,
+      transparent 74%
+    ),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 46%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    radial-gradient(
+      circle at 50% 50%,
+      #000 40%,
+      rgba(0, 0, 0, 0.75) 55%,
+      rgba(0, 0, 0, 0.25) 66%,
+      transparent 74%
+    ),
+    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 46%);
+  mask-composite: intersect;
 }
 
 .hero__head {
@@ -749,11 +772,38 @@ main > .section:last-child .grid {
   }
 
   /* Artwork ahead of the intro so the fold is not all text. The desktop scale
-     does not fit a phone, so the panel stays at its compact sizes here. */
+     does not fit a phone, so the panel stays at its compact sizes here, and
+     stacking replaces the overlap. */
+  .hero__intro {
+    grid-area: auto;
+    max-width: none;
+  }
+
   .hero__media {
+    grid-area: auto;
     order: -1;
+    justify-self: center;
+    width: auto;
     max-width: min(286px, 72vw);
     margin: 0 auto;
+  }
+
+  /* Stacked, so drop the overlap fade and keep only the circular one. */
+  .hero__mediaImg {
+    -webkit-mask-image: radial-gradient(
+      circle at 50% 50%,
+      #000 40%,
+      rgba(0, 0, 0, 0.75) 55%,
+      rgba(0, 0, 0, 0.25) 66%,
+      transparent 74%
+    );
+    mask-image: radial-gradient(
+      circle at 50% 50%,
+      #000 40%,
+      rgba(0, 0, 0, 0.75) 55%,
+      rgba(0, 0, 0, 0.25) 66%,
+      transparent 74%
+    );
   }
 
   .hero__label {
