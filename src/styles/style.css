@@ -16,6 +16,9 @@
   --nav-h: 48px;
   /* Content never exceeds two thirds of the viewport on desktop. */
   --page: min(1040px, 66.67vw);
+  /* The two-thirds cap is for the work sections. The landing panel gets a wider
+     measure of its own, or it sits marooned in white space on big screens. */
+  --hero-page: min(1460px, 86vw);
   --gutter: 24px;
 }
 
@@ -157,13 +160,15 @@ main:focus-visible {
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 40%);
-  gap: 36px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 47%);
+  gap: clamp(28px, 3.5vw, 68px);
   align-items: center;
   width: 100%;
-  max-width: var(--page);
+  max-width: var(--hero-page);
   margin: 0 auto;
-  padding: 48px var(--gutter);
+  /* Vertical padding tracks viewport height so a short screen still fits the
+     panel without the nav being pushed off. */
+  padding: clamp(28px, 4.5vh, 64px) var(--gutter);
 }
 
 /* Square artwork dissolved into a circle: a radial mask fades the image out
@@ -196,12 +201,12 @@ main:focus-visible {
 .hero__head {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: clamp(16px, 2vw, 34px);
 }
 
 .hero__face {
-  width: 104px;
-  height: 104px;
+  width: clamp(104px, 10vw, 168px);
+  height: clamp(104px, 10vw, 168px);
   border-radius: 50%;
   object-fit: cover;
   border: 1px solid var(--tile-edge);
@@ -209,27 +214,29 @@ main:focus-visible {
 
 .hero__name {
   margin: 0;
-  font-size: 2.6rem;
+  font-size: clamp(2.6rem, 4.1vw, 4.6rem);
   line-height: 1.05;
 }
 
 .hero__role {
   margin: 4px 0 0;
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 1.65vw, 1.85rem);
   font-style: italic;
   color: var(--muted);
 }
 
 .hero__label {
-  margin: 26px 0 8px;
-  font-size: 1.3rem;
+  margin: clamp(18px, 2.8vh, 34px) 0 9px;
+  font-size: clamp(1.3rem, 1.7vw, 1.95rem);
   font-weight: normal;
   border-bottom: 1px solid var(--line);
   padding-bottom: 5px;
 }
 
 .hero__text {
-  margin: 0 0 9px;
+  margin: 0 0 clamp(10px, 1.6vh, 20px);
+  font-size: clamp(1.05rem, 1.35vw, 1.35rem);
+  line-height: 1.5;
 }
 
 /* --- Nav ---------------------------------------------------------------- */
@@ -720,6 +727,7 @@ main > .section:last-child .grid {
      full width. */
   :root {
     --page: 100%;
+    --hero-page: 100%;
     --gutter: 16px;
     /* The nav wraps to two rows here and measures 83px; anchors need to clear
        both rows, with a pixel to spare. */
@@ -736,15 +744,25 @@ main > .section:last-child .grid {
 
   .hero__inner {
     grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-    padding: 32px var(--gutter);
+    gap: 18px;
+    padding: clamp(22px, 3vh, 34px) var(--gutter);
   }
 
-  /* Artwork ahead of the intro so the fold is not all text. */
+  /* Artwork ahead of the intro so the fold is not all text. The desktop scale
+     does not fit a phone, so the panel stays at its compact sizes here. */
   .hero__media {
     order: -1;
-    max-width: 260px;
+    max-width: min(286px, 72vw);
     margin: 0 auto;
+  }
+
+  .hero__label {
+    margin: 16px 0 8px;
+  }
+
+  .hero__text {
+    font-size: 1rem;
+    margin: 0 0 10px;
   }
 
   .hero__head {
