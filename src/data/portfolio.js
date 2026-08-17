@@ -23,8 +23,10 @@ const tab = (label, ...rows) => ({ label, rows });
 
 export const about = {
   photo: { src: 'Resources/PortfolioPhotoCropped.JPG', alt: 'Photo of me' },
-  // Square artwork shown opposite the intro. It is masked into a circular fade,
-  // so the subject should sit near the centre. Swap the src to replace it.
+  // Landscape artwork (16:9) shown opposite the intro. Its edges are masked into
+  // a fade, and it overlaps the intro on its left, so keep the subject centred or
+  // right of centre. Anything not 16:9 is cropped to fit. Swap the src to
+  // replace it.
   showcase: { src: 'Resources/HeroPlaceholder.svg', alt: '' },
   paragraphs: [
     "Hello! I'm Jianwen Ding, a programmer, game developer and rising junior BSCS student at the University of Virginia.",

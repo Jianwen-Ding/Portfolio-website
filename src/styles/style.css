@@ -177,7 +177,7 @@ main:focus-visible {
   position: relative;
   z-index: 1;
   grid-area: 1 / 1;
-  max-width: min(64%, 780px);
+  max-width: min(62%, 800px);
 }
 
 /* Square artwork dissolved into a circle: a radial mask fades it out before it
@@ -188,34 +188,33 @@ main:focus-visible {
   grid-area: 1 / 1;
   justify-self: end;
   align-self: center;
-  /* The artwork is square, so its width is also its height — the vh term stops
-     a wide screen with little height from making it drive the panel taller than
-     the fold. */
-  width: min(60%, 740px, 64vh);
+  /* Landscape, so it can run wider without driving the panel taller than the
+     fold. The vh term is the backstop for very short windows. */
+  width: min(68%, 960px, 112vh);
 }
 
 .hero__mediaImg {
   display: block;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   -webkit-mask-image:
     radial-gradient(
-      circle at 50% 50%,
-      #000 40%,
-      rgba(0, 0, 0, 0.75) 55%,
-      rgba(0, 0, 0, 0.25) 66%,
-      transparent 74%
+      ellipse at 50% 50%,
+      #000 42%,
+      rgba(0, 0, 0, 0.75) 58%,
+      rgba(0, 0, 0, 0.25) 70%,
+      transparent 80%
     ),
     linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 46%);
   -webkit-mask-composite: source-in;
   mask-image:
     radial-gradient(
-      circle at 50% 50%,
-      #000 40%,
-      rgba(0, 0, 0, 0.75) 55%,
-      rgba(0, 0, 0, 0.25) 66%,
-      transparent 74%
+      ellipse at 50% 50%,
+      #000 42%,
+      rgba(0, 0, 0, 0.75) 58%,
+      rgba(0, 0, 0, 0.25) 70%,
+      transparent 80%
     ),
     linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 46%);
   mask-composite: intersect;
@@ -784,25 +783,25 @@ main > .section:last-child .grid {
     order: -1;
     justify-self: center;
     width: auto;
-    max-width: min(286px, 72vw);
+    max-width: min(380px, 88vw);
     margin: 0 auto;
   }
 
-  /* Stacked, so drop the overlap fade and keep only the circular one. */
+  /* Stacked, so drop the overlap fade and keep only the edge one. */
   .hero__mediaImg {
     -webkit-mask-image: radial-gradient(
-      circle at 50% 50%,
-      #000 40%,
-      rgba(0, 0, 0, 0.75) 55%,
-      rgba(0, 0, 0, 0.25) 66%,
-      transparent 74%
+      ellipse at 50% 50%,
+      #000 42%,
+      rgba(0, 0, 0, 0.75) 58%,
+      rgba(0, 0, 0, 0.25) 70%,
+      transparent 80%
     );
     mask-image: radial-gradient(
-      circle at 50% 50%,
-      #000 40%,
-      rgba(0, 0, 0, 0.75) 55%,
-      rgba(0, 0, 0, 0.25) 66%,
-      transparent 74%
+      ellipse at 50% 50%,
+      #000 42%,
+      rgba(0, 0, 0, 0.75) 58%,
+      rgba(0, 0, 0, 0.25) 70%,
+      transparent 80%
     );
   }
 
