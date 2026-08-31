@@ -18,7 +18,7 @@ npm run preview  # serve the production build locally
 ```
 index.html                 Vite entry point
 prerender.js               Bakes rendered markup into dist/index.html after build
-public/Resources/          Images, logos, resume PDF (served as-is)
+public/Resources/          Images and logos (served as-is)
 src/
   main.jsx                 Client entry; hydrates the prerendered markup
   entry-server.jsx         Build-time render used by prerender.js
