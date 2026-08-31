@@ -1,4 +1,4 @@
-import { asset, resolveHref } from '../asset.js';
+import { asset } from '../asset.js';
 import { contact, socials } from '../data/portfolio.js';
 
 // Double chevron, matching the "to top" marker in the wireframe.
@@ -42,9 +42,6 @@ export default function NavBar({ showToTop }) {
         </a>
 
         <div className="nav__group nav__group--links">
-          <a className="nav__link nav__link--quiet" href={resolveHref(contact.resume)}>
-            Resume
-          </a>
           {socials.map((social) => (
             <a key={social.href} className="nav__icon" href={social.href} title={social.label}>
               <img src={asset(social.src)} alt={social.alt} />

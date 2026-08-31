@@ -27,6 +27,7 @@ src/
   data/portfolio.js        All site content lives here
   components/
     Hero.jsx               Portrait, intro and the gradient field
+    ProjectMarquee.jsx     Moving strip of the work along the hero's bottom
     NavBar.jsx             Sticky nav with the "to top" control
     ExperienceEntry.jsx    Logo + name + detail for one role
     SectionHeader.jsx      The ruled band between sections
@@ -52,6 +53,13 @@ your position on the page does not change.
 **Game jams** are their own section and grid below Projects, with their own
 accordion group — opening a jam does not collapse an open project.
 
+**The marquee** runs along the bottom of the hero, between the intro and the
+nav. Its track holds the project list twice and slides exactly -50%, so the loop
+is seamless; the animation is pure CSS, so it runs with scripting off. It pauses
+on hover and on keyboard focus, since the tiles are links to each project. The
+second copy is `aria-hidden` and `tabindex="-1"`, or every project would be
+announced and tabbed through twice. `prefers-reduced-motion` stops it entirely.
+
 ## Keyboard
 
 The whole site is operable without a mouse. A skip link is the first tab stop
@@ -68,6 +76,9 @@ header:
 | `Arrow` keys | Step to the previous or next card in the section |
 | `Home` / `End` | Jump to the first or last card in the section |
 | `Escape` | Close the card you are in, returning focus to its header |
+
+The marquee tiles are ordinary links in the tab order, and focusing one pauses
+the strip so it can be followed.
 
 Arrows walk cards in document order rather than by geometry, because an open
 card spans the full row and makes the grid irregular. They only steer while

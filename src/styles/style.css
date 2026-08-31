@@ -140,7 +140,7 @@ main:focus-visible {
 .hero {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   min-height: calc(100vh - var(--nav-h));
   overflow: hidden;
   background-image:
@@ -159,12 +159,10 @@ main:focus-visible {
 .hero__inner {
   position: relative;
   z-index: 1;
+  /* Grows to take whatever the marquee leaves, and centres the intro in it. */
+  flex: 1 1 auto;
   display: grid;
-  /* Intro and artwork share one cell so they overlap instead of sitting in
-     separate columns. Their widths add up to more than 100%, and the surplus is
-     the bleed. */
-  grid-template-columns: minmax(0, 1fr);
-  align-items: center;
+  align-content: center;
   width: 100%;
   max-width: var(--hero-page);
   margin: 0 auto;
@@ -176,48 +174,7 @@ main:focus-visible {
 .hero__intro {
   position: relative;
   z-index: 1;
-  grid-area: 1 / 1;
-  max-width: min(62%, 800px);
-}
-
-/* Square artwork dissolved into a circle: a radial mask fades it out before it
-   reaches the edges, so there is no hard crop. A second left-to-right fade,
-   intersected with the first, dissolves it further where it passes under the
-   intro, so the two can overlap without the text fighting the picture. */
-.hero__media {
-  grid-area: 1 / 1;
-  justify-self: end;
-  align-self: center;
-  /* Landscape, so it can run wider without driving the panel taller than the
-     fold. The vh term is the backstop for very short windows. */
-  width: min(68%, 960px, 112vh);
-}
-
-.hero__mediaImg {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  -webkit-mask-image:
-    radial-gradient(
-      ellipse at 50% 50%,
-      #000 42%,
-      rgba(0, 0, 0, 0.75) 58%,
-      rgba(0, 0, 0, 0.25) 70%,
-      transparent 80%
-    ),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 46%);
-  -webkit-mask-composite: source-in;
-  mask-image:
-    radial-gradient(
-      ellipse at 50% 50%,
-      #000 42%,
-      rgba(0, 0, 0, 0.75) 58%,
-      rgba(0, 0, 0, 0.25) 70%,
-      transparent 80%
-    ),
-    linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.35) 22%, #000 46%);
-  mask-composite: intersect;
+  max-width: min(100%, 880px);
 }
 
 .hero__head {
@@ -259,6 +216,89 @@ main:focus-visible {
   margin: 0 0 clamp(10px, 1.6vh, 20px);
   font-size: clamp(1.05rem, 1.35vw, 1.35rem);
   line-height: 1.5;
+}
+
+/* --- Marquee ------------------------------------------------------------ */
+
+/* A ticker of the work along the bottom of the landing panel. The track holds
+   the list twice and slides exactly -50%, so it loops seamlessly. Edges are
+   masked so items arrive and leave rather than popping. */
+.marquee {
+  flex: none;
+  position: relative;
+  z-index: 1;
+  padding-bottom: clamp(16px, 3vh, 34px);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, #000 7%, #000 93%, transparent 100%);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  gap: clamp(14px, 1.6vw, 28px);
+  animation-name: marqueeScroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes marqueeScroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pausing is what makes the links usable, by pointer or by keyboard. */
+.marquee:hover .marquee__track,
+.marquee:focus-within .marquee__track {
+  animation-play-state: paused;
+}
+
+.marquee__item {
+  flex: none;
+  display: block;
+  /* The vh term keeps the strip from eating a short window: the tiles are 16:9,
+     so their width is what sets how tall the strip is. */
+  width: clamp(160px, min(19vw, 30vh), 300px);
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.marquee__frame {
+  display: block;
+  aspect-ratio: 16 / 9;
+  border: 1px solid var(--edge);
+  background: var(--tile);
+  overflow: hidden;
+  transition: box-shadow 0.14s linear, transform 0.14s linear;
+}
+
+.marquee__item:hover .marquee__frame,
+.marquee__item:focus-visible .marquee__frame {
+  transform: translate(-3px, -3px);
+  box-shadow: 5px 5px 0 var(--edge);
+}
+
+.marquee__frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.marquee__label {
+  display: block;
+  margin-top: 6px;
+  font-size: 0.92rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.marquee__item:hover .marquee__label,
+.marquee__item:focus-visible .marquee__label {
+  color: var(--ink);
 }
 
 /* --- Nav ---------------------------------------------------------------- */
@@ -615,6 +655,11 @@ main:focus-visible {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* A perpetually moving strip is exactly what this preference is about. */
+  .marquee__track {
+    animation: none;
+  }
+
   .card,
   .card__detail,
   .card__glyph,
@@ -765,44 +810,16 @@ main > .section:last-child .grid {
   }
 
   .hero__inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 18px;
     padding: clamp(22px, 3vh, 34px) var(--gutter);
   }
 
-  /* Artwork ahead of the intro so the fold is not all text. The desktop scale
-     does not fit a phone, so the panel stays at its compact sizes here, and
-     stacking replaces the overlap. */
   .hero__intro {
-    grid-area: auto;
     max-width: none;
   }
 
-  .hero__media {
-    grid-area: auto;
-    order: -1;
-    justify-self: center;
-    width: auto;
-    max-width: min(380px, 88vw);
-    margin: 0 auto;
-  }
-
-  /* Stacked, so drop the overlap fade and keep only the edge one. */
-  .hero__mediaImg {
-    -webkit-mask-image: radial-gradient(
-      ellipse at 50% 50%,
-      #000 42%,
-      rgba(0, 0, 0, 0.75) 58%,
-      rgba(0, 0, 0, 0.25) 70%,
-      transparent 80%
-    );
-    mask-image: radial-gradient(
-      ellipse at 50% 50%,
-      #000 42%,
-      rgba(0, 0, 0, 0.75) 58%,
-      rgba(0, 0, 0, 0.25) 70%,
-      transparent 80%
-    );
+  /* Smaller tiles and a shorter loop, so the strip does not eat the fold. */
+  .marquee__item {
+    width: clamp(150px, 44vw, 210px);
   }
 
   .hero__label {

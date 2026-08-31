@@ -23,11 +23,6 @@ const tab = (label, ...rows) => ({ label, rows });
 
 export const about = {
   photo: { src: 'Resources/PortfolioPhotoCropped.JPG', alt: 'Photo of me' },
-  // Landscape artwork (16:9) shown opposite the intro. Its edges are masked into
-  // a fade, and it overlaps the intro on its left, so keep the subject centred or
-  // right of centre. Anything not 16:9 is cropped to fit. Swap the src to
-  // replace it.
-  showcase: { src: 'Resources/HeroPlaceholder.svg', alt: '' },
   paragraphs: [
     "Hello! I'm Jianwen Ding, a programmer, game developer and rising junior BSCS student at the University of Virginia.",
     "I love seeing interesting ideas come to life, and since imagination always outpaces reality you'll often find me in over my head while making games.",
@@ -408,7 +403,6 @@ export const socials = [
 
 export const contact = {
   email: 'mailto:jianwen_ding@icloud.com',
-  resume: 'Resources/Resume Base 2025.pdf',
 };
 
 export const LINK_LOGOS = {

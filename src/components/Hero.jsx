@@ -1,8 +1,10 @@
 import { asset } from '../asset.js';
-import { about } from '../data/portfolio.js';
+import { about, jams, projects } from '../data/portfolio.js';
+import ProjectMarquee from './ProjectMarquee.jsx';
 
-// The landing panel: portrait and intro on the left, showcase artwork on the
-// right. The whole section is a grey wash that fades into the sections below.
+// The landing panel: portrait and intro centred in the panel, with a moving
+// strip of the work running along the bottom, just above the nav. The whole
+// section is a grey wash that fades into the sections below.
 export default function Hero({ innerRef }) {
   return (
     <header className="hero" ref={innerRef} id="top">
@@ -23,11 +25,9 @@ export default function Hero({ innerRef }) {
             </p>
           ))}
         </div>
-
-        <div className="hero__media">
-          <img className="hero__mediaImg" src={asset(about.showcase.src)} alt={about.showcase.alt} />
-        </div>
       </div>
+
+      <ProjectMarquee projects={[...projects, ...jams]} />
     </header>
   );
 }
