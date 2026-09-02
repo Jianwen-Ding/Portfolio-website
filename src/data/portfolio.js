@@ -177,7 +177,10 @@ export const projects = [
       { label: 'Time Span:', value: 'Fall 2025' },
       { label: 'Team Size:', value: '5 people' },
     ],
-    links: [{ type: 'github', href: 'https://github.com/UVASGD/fall-2025-the-last-cup' }],
+    links: [
+      { type: 'itch', href: 'https://sabrina-lopez.itch.io/the-last-cup' },
+      { type: 'github', href: 'https://github.com/UVASGD/fall-2025-the-last-cup' },
+    ],
     tabs: [
       tab(
         'Overview',
