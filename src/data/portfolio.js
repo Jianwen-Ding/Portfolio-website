@@ -24,9 +24,9 @@ const tab = (label, ...rows) => ({ label, rows });
 export const about = {
   photo: { src: 'Resources/PortfolioPhotoCropped.JPG', alt: 'Photo of me' },
   paragraphs: [
-    "Hello! I'm Jianwen Ding, a programmer, game developer and rising junior BSCS student at the University of Virginia.",
-    "I love seeing interesting ideas come to life, and since imagination always outpaces reality you'll often find me in over my head while making games.",
-    'I work at the low level on C++ game engines and at the high level building games in Unity and C#, alongside Java and Python for coursework.',
+    "Hello! I'm Jianwen Ding, a programmer, game developer, and senior BSCS student at the University of Virginia.",
+    "I love seeing how software allows interesting ideas come to life, and especially in the realm of game engine and graphics work.",
+    'Most of my experience is in systems dev in C/C++, creating webserver backends with Java, and Unity C#',
   ],
 };
 
@@ -159,7 +159,7 @@ export const projects = [
             list(
               'Using Dawn WebGPU, implemented cascaded shadow mapping that drops shadow resolution for objects further away.',
               'Used dynamically scaling buffers and instanced rendering to improve performance.',
-              'Organised a shared interface between the Vulkan and WebGPU renderers, and the CMake system for building against either.',
+              'Organized a shared interface between the Vulkan and WebGPU renderers, and the CMake system for building against either.',
               'Created the initial draft of the entity component system that the team later expanded on.'
             )
           ),
@@ -214,7 +214,7 @@ export const projects = [
             list(
               'Wrote a render manager that simplifies loading many instances of a model and different light types.',
               'A UV system automatically generates custom UVs for texture arrays, offsetting whatever padding is required.',
-              'A transform class homogenises moving, rotating and scaling, with parent transforms for relative placement, and specular maps vary reflection across a model.'
+              'A transform class homogenizes moving, rotating and scaling, with parent transforms for relative placement, and specular maps vary reflection across a model.'
             )
           ),
           cell('50%', img('Resources/PlaneSC3.png', 'Multiple lights and models loaded at once'))
@@ -248,7 +248,7 @@ export const projects = [
             list(
               'Started as a project of a game development club I founded, worked on during meetings by about 9 people, and continued solo after my graduation.',
               'Made in Unity and C# with Github for source control. The loop is collecting scrap while fending off zombies.',
-              'I was project lead and directed art and music, and drew a good share of the pixel art myself in Piskel: menus, half the enemy animations and tile sprites.'
+              'Acted as project lead and directed art and music, and drew a good share of the pixel art myself in Piskel.'
             )
           )
         ),
@@ -259,7 +259,7 @@ export const projects = [
             list(
               'Programmed the randomly generating map: a grid of rooms, each assigned a difficulty, function and set of opening directions.',
               'Wrote a text processor that turns values in a .txt file into room layouts, which rooms are then assigned at random to match their openings, function and difficulty.',
-              'Resource rooms are placed at certain dead ends to stop aimless wandering.'
+              'Designed resource rooms system to be placed at certain dead ends to stop aimless wandering.'
             )
           )
         ),
@@ -267,9 +267,9 @@ export const projects = [
           cell(
             '50%',
             list(
-              'Handled enemy behaviour design and development: 5 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.',
+              'Handled enemy behavior design and development: 5 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.',
               'Their movement ranges from walking at the player to flying around them and firing projectiles.',
-              'Programmed the weapons too, split between normal scrap and golden scrap, the latter with unusual properties like teleportation or projectiles.'
+              'Programmed weapon behavior, split between normal scrap and golden scrap, the latter with unusual properties like teleportation or projectiles.'
             )
           ),
           cell('50%', img('Resources/EnemyDisplay.png', 'Every enemy in the game'))
@@ -331,7 +331,8 @@ export const jams = [
             '50%',
             list(
               'Made for the 2024 Husky Jam on the theme "Lighthouse", in Unity and C# with two other programmers.',
-              'I wrote the ship, sea monster and ghost ship AI plus the level system: ships steer toward lighthouse beams, monsters wreck lighthouses and are repelled by light, and ghost ships pass as normal until lit.'
+              'Wrote the ship, sea monster and ghost ship AI.',
+              'Designed plus the level system and enemy spawn rates.'
             )
           )
         )
@@ -359,7 +360,8 @@ export const jams = [
           cell(
             '50%',
             list(
-              'Made for Ludum Dare 54 on the theme "Limited Space": admit, waitlist or reject a queue of patients.',
+              'Made for Ludum Dare 54 on the theme "Limited Space"',
+              'Created functionality to admit, waitlist or reject a queue of patients.',
               "Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted."
             )
           )
@@ -386,7 +388,8 @@ export const jams = [
             '50%',
             list(
               'Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.',
-              'Keep a combo alive until a target hit count, across six levels designed around perpetuating it while dodging moving hazards.'
+              'Designed main mechanic centered around keeping a combo alive until a target hit count',
+              'across six levels designed around perpetuating a combo while dodging moving hazards.'
             )
           )
         )
