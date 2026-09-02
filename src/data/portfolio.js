@@ -26,7 +26,7 @@ export const about = {
   paragraphs: [
     "Hello! I'm Jianwen Ding, a programmer, game developer, and senior BSCS student at the University of Virginia.",
     "I love seeing how software allows interesting ideas to come to life, especially in game engine and graphics work.",
-    'Most of my experience is in systems development in C/C++, webserver backends in Java, and games in Unity and C#.',
+    'I have experience making low level systems in C++, games in Unity and C#, and webserver backends in Java.',
   ],
 };
 
