@@ -25,8 +25,8 @@ export const about = {
   photo: { src: 'Resources/PortfolioPhotoCropped.JPG', alt: 'Photo of me' },
   paragraphs: [
     "Hello! I'm Jianwen Ding, a programmer, game developer, and senior BSCS student at the University of Virginia.",
-    "I love seeing how software allows interesting ideas come to life, and especially in the realm of game engine and graphics work.",
-    'Most of my experience is in systems dev in C/C++, creating webserver backends with Java, and Unity C#',
+    "I love seeing how software allows interesting ideas to come to life, especially in game engine and graphics work.",
+    'Most of my experience is in systems development in C/C++, webserver backends in Java, and games in Unity and C#.',
   ],
 };
 
@@ -85,8 +85,8 @@ export const experience = [
             '50%',
             list(
               'Interns took part in the 2024 IndieCade Climate Jam, alongside work like drafting plans for how a game can push environmental causes.',
-              'Within the jam I formed a team of 8 to build Frogology, a conservation simulator made in Unity and C# by me and two other programmers.',
-              'The loop has you learning about nearby animals while catching them. I owned the animal behaviour and the quest system.'
+              'Formed a team of 8 within the jam to build Frogology, a conservation simulator made in Unity and C# with two other programmers.',
+              'Owned the animal behavior and the quest system, in a loop that has you learning about nearby animals while catching them.'
             )
           )
         ),
@@ -149,7 +149,7 @@ export const projects = [
             '50%',
             list(
               'A general purpose engine in the long run, and for now a place for the team to dig into whatever each of us finds interesting.',
-              'My part was the WebGPU backend of the renderer and the entity component system.'
+              'Worked on the WebGPU backend of the renderer and the entity component system.'
             )
           )
         ),
@@ -247,7 +247,7 @@ export const projects = [
             '50%',
             list(
               'Started as a project of a game development club I founded, worked on during meetings by about 9 people, and continued solo after my graduation.',
-              'Made in Unity and C# with Github for source control. The loop is collecting scrap while fending off zombies.',
+              'Made in Unity and C# with GitHub for source control. The loop is collecting scrap while fending off zombies.',
               'Acted as project lead and directed art and music, and drew a good share of the pixel art myself in Piskel.'
             )
           )
@@ -259,7 +259,7 @@ export const projects = [
             list(
               'Programmed the randomly generating map: a grid of rooms, each assigned a difficulty, function and set of opening directions.',
               'Wrote a text processor that turns values in a .txt file into room layouts, which rooms are then assigned at random to match their openings, function and difficulty.',
-              'Designed resource rooms system to be placed at certain dead ends to stop aimless wandering.'
+              'Designed a resource room system that places them at dead ends to stop aimless wandering.'
             )
           )
         ),
@@ -332,7 +332,7 @@ export const jams = [
             list(
               'Made for the 2024 Husky Jam on the theme "Lighthouse", in Unity and C# with two other programmers.',
               'Wrote the ship, sea monster and ghost ship AI.',
-              'Designed plus the level system and enemy spawn rates.'
+              'Designed the level system and enemy spawn rates.'
             )
           )
         )
@@ -360,7 +360,7 @@ export const jams = [
           cell(
             '50%',
             list(
-              'Made for Ludum Dare 54 on the theme "Limited Space"',
+              'Made for Ludum Dare 54 on the theme "Limited Space".',
               'Created functionality to admit, waitlist or reject a queue of patients.',
               "Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted."
             )
@@ -388,8 +388,8 @@ export const jams = [
             '50%',
             list(
               'Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.',
-              'Designed main mechanic centered around keeping a combo alive until a target hit count',
-              'across six levels designed around perpetuating a combo while dodging moving hazards.'
+              'Designed the main mechanic around keeping a combo alive until a target hit count.',
+              'Built six levels around perpetuating that combo while dodging moving hazards.'
             )
           )
         )
@@ -399,7 +399,7 @@ export const jams = [
 ];
 
 export const socials = [
-  { href: 'https://github.com/Jianwen-Ding', label: 'Github', src: 'Resources/Logos/gitLog.png', alt: 'Github logo' },
+  { href: 'https://github.com/Jianwen-Ding', label: 'GitHub', src: 'Resources/Logos/gitLog.png', alt: 'GitHub logo' },
   { href: 'https://www.linkedin.com/in/jianwen-ding/', label: 'LinkedIn', src: 'Resources/Logos/LinkedInLog.png', alt: 'LinkedIn logo' },
   { href: 'https://pakmanlie.itch.io/', label: 'itch.io', src: 'Resources/Logos/itchLog.png', alt: 'Itch io logo' },
 ];
@@ -410,5 +410,5 @@ export const contact = {
 
 export const LINK_LOGOS = {
   itch: { src: 'Resources/Logos/itchLogGrey.png', alt: 'Logo of Itch io' },
-  github: { src: 'Resources/Logos/gitLogGrey.png', alt: 'Logo of Github' },
+  github: { src: 'Resources/Logos/gitLogGrey.png', alt: 'Logo of GitHub' },
 };
