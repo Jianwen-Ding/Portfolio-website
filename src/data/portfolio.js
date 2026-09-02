@@ -370,7 +370,7 @@ export const jams = [
             list(
               'Made for the 2024 Husky Jam on the theme "Lighthouse", in Unity and C# with two other programmers.',
               'Wrote the ship, sea monster and ghost ship AI.',
-              'Designed the level system and enemy spawn rates.'
+              'Designed level system and enemy spawn rates.'
             )
           )
         )
@@ -426,8 +426,8 @@ export const jams = [
             '50%',
             list(
               'Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.',
-              'Designed the main mechanic around keeping a combo alive until a target hit count.',
-              'Built six levels around perpetuating that combo while dodging moving hazards.'
+              'Implemented main mechanic centered around keeping a combo alive until a target hit count.',
+              'Designed six levels based on perpetuating a combo while dodging moving hazards.'
             )
           )
         )
