@@ -169,6 +169,44 @@ export const projects = [
     ],
   },
   {
+    id: 'lastcup',
+    image: { src: 'Resources/LastCupTitle.png', alt: 'Screen shot of The Last Cup' },
+    title: 'The Last Cup',
+    subtitle: 'A 3D puzzle platformer made with UVA SGD.',
+    meta: [
+      { label: 'Time Span:', value: 'Fall 2025' },
+      { label: 'Team Size:', value: '5 people' },
+    ],
+    links: [{ type: 'github', href: 'https://github.com/UVASGD/fall-2025-the-last-cup' }],
+    tabs: [
+      tab(
+        'Overview',
+        row(
+          cell('50%', img('Resources/LastCupTitle.png')),
+          cell(
+            '50%',
+            list(
+              'Made with UVA SGD over Fall 2025, one of five developers on a 3D puzzle platformer built in Unity 6.',
+              'Programmed the straw squirt mechanic: water projectiles fired from the straw tip, their impacts, and the layer rules that keep them from colliding with each other.',
+              'Built the factory level, along with the pipe and building geometry the hazards run through.'
+            )
+          )
+        ),
+        row(
+          cell(
+            '100%',
+            list(
+              'Wrote the rat hazard: rats walk a pipe node to node and reverse at the ends, and a water projectile stuns them, so the squirt mechanic is what counters them.',
+              'Split the pipe routes out into their own component, so a level can lay out new paths without touching the rat code.',
+              'Built the death screen fade and wired it to the checkpoint respawn.',
+              'Extended the starter third person controller and added pitch variation to the projectile audio.'
+            )
+          )
+        )
+      ),
+    ],
+  },
+  {
     id: 'plane',
     image: { src: 'Resources/PlaneSC2.png', alt: 'Screen shot of the flight render project' },
     title: 'Flight Render Project',
