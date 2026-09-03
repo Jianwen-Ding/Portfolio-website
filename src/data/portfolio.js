@@ -191,7 +191,7 @@ export const projects = [
             list(
               'Made with UVA SGD over Fall 2025, one of five developers on a 3D puzzle platformer built in Unity 6.',
               'Programmed the straw squirt mechanic: water projectiles fired from the straw tip, their impacts, and the layer rules that keep them from colliding with each other.',
-              'Built the factory level, along with the pipe and building geometry the hazards run through.'
+              'Wrote the rat hazard: rats walk a pipe node to node and reverse at the ends, and a water projectile stuns them, so the squirt mechanic is what counters them.'
             )
           )
         ),
@@ -199,7 +199,6 @@ export const projects = [
           cell(
             '100%',
             list(
-              'Wrote the rat hazard: rats walk a pipe node to node and reverse at the ends, and a water projectile stuns them, so the squirt mechanic is what counters them.',
               'Split the pipe routes out into their own component, so a level can lay out new paths without touching the rat code.',
               'Built the death screen fade and wired it to the checkpoint respawn.',
               'Extended the starter third person controller and added pitch variation to the projectile audio.'
