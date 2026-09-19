@@ -14,7 +14,7 @@ export default function Hero({ innerRef }) {
             <img className="hero__face" src={asset(about.photo.src)} alt={about.photo.alt} />
             <div>
               <h1 className="hero__name">Jianwen Ding</h1>
-              <p className="hero__role">Gameplay Programmer</p>
+              <p className="hero__role">Systems Programmer</p>
             </div>
           </div>
 
