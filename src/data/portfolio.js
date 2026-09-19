@@ -214,7 +214,7 @@ export const projects = [
     title: 'Flight Render Project',
     subtitle: 'C++ and OpenGL project made to learn rendering.',
     meta: [
-      { label: 'Time Span:', value: 'Sept 2024 - Nov 2024' },
+      { label: 'Time Span:', value: 'Oct 2024 - Dec 2024' },
       { label: 'Team Size:', value: 'Personal project' },
     ],
     links: [{ type: 'github', href: 'https://github.com/Jianwen-Ding/OpenGL_jam' }],
@@ -269,7 +269,7 @@ export const projects = [
     subtitle: 'A survival roguelike about fending off zombies.',
     meta: [
       { label: 'Time Span:', value: '2022 - 2024' },
-      { label: 'Team Size:', value: '9 people, then personal from 2023' },
+      { label: 'Team Size:', value: '8 people, then personal from 2023' },
     ],
     links: [
       { type: 'itch', href: 'https://pakmanlie.itch.io/strand' },
@@ -286,7 +286,7 @@ export const projects = [
           cell(
             '50%',
             list(
-              'Started as a project of a game development club I founded, worked on during meetings by about 9 people, and continued solo after my graduation.',
+              'Started as a project of a game development club I founded, worked on during meetings by about 8 people, and continued solo after my graduation.',
               'Made in Unity and C# with GitHub for source control. The loop is collecting scrap while fending off zombies.',
               'Acted as project lead and directed art and music, and drew a good share of the pixel art myself in Piskel.'
             )
@@ -307,7 +307,7 @@ export const projects = [
           cell(
             '50%',
             list(
-              'Handled enemy behavior design and development: 5 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.',
+              'Handled enemy behavior design and development: 6 unique types on a shared base class giving them finite hp, a stun state and the ability to be grabbed.',
               'Their movement ranges from walking at the player to flying around them and firing projectiles.',
               'Programmed weapon behavior, split between normal scrap and golden scrap, the latter with unusual properties like teleportation or projectiles.'
             )
