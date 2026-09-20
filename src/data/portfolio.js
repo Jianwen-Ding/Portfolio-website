@@ -121,6 +121,20 @@ export const experience = [
       ),
     ],
   },
+  {
+    id: 'crypticvector',
+    image: { src: 'Resources/CrypticVectorLogo.png', alt: 'The logo of Cryptic Vector' },
+    title: 'Cyber Intern',
+    subtitle: 'Cryptic Vector',
+    meta: [{ label: 'Time Worked:', value: 'May 2026 - Aug 2026' }],
+    links: [],
+    tabs: [
+      tab(
+        'Overview',
+        row(cell('100%', list('Did security analysis on large scale C/C++ system.')))
+      ),
+    ],
+  },
 ];
 
 export const projects = [
