@@ -351,12 +351,17 @@ export const jams = [
       tab(
         'Overview',
         row(
-          cell('50%', img('Resources/RemenantSC.png')),
+          cell('50%', img('Resources/RemenantSC.png'), img('Resources/RemenantSC2.png')),
           cell(
             '50%',
             list(
               'Made for the 2024 Husky Jam on the theme "Lighthouse", in Unity and C# with two other programmers.',
-              'Wrote the ship, sea monster and ghost ship AI.',
+              item(
+                'Wrote the ship, sea monster and ghost ship AI.',
+                'Ships steer toward lighthouse beams.',
+                'Sea monsters wreck lighthouses and are repelled by light.',
+                'Ghost ships pass as ordinary ships until light reveals them, then make for the lighthouse.'
+              ),
               'Designed level system and enemy spawn rates.'
             )
           )
@@ -381,11 +386,12 @@ export const jams = [
       tab(
         'Overview',
         row(
-          cell('50%', img('Resources/RiptideScreenShot.png')),
+          cell('50%', img('Resources/RiptideScreenShot.png'), img('Resources/RiptideScreenShot2.png')),
           cell(
             '50%',
             list(
               "Made for the Spring 2D Jam '24 in Unity and C#: escape starvation by planting a garden on an ever-shifting island.",
+              'Outgrew the three days the jam allowed, so it ran to about a week.',
               'Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbours.'
             )
           )
@@ -410,13 +416,14 @@ export const jams = [
       tab(
         'Overview',
         row(
-          cell('50%', img('Resources/CheckInSC.png')),
+          cell('50%', img('Resources/CheckInSC.png'), img('Resources/CheckInSC2.png')),
           cell(
             '50%',
             list(
               'Made for Ludum Dare 54 on the theme "Limited Space".',
               'Created functionality to admit, waitlist or reject a queue of patients.',
-              "Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted."
+              "Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted.",
+              'Polished a notification system another programmer had started.'
             )
           )
         )
