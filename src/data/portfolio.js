@@ -33,7 +33,7 @@ export const about = {
 export const experience = [
   {
     id: 'stormflag',
-    image: { src: 'Resources/SFLogoOnBlk.png', alt: 'The logo of Storm Flag Games' },
+    image: { src: 'Resources/StormFlagLogo.png', alt: 'The logo of Storm Flag Games' },
     title: 'Associate Game Engineer',
     subtitle: 'Storm Flag Games',
     meta: [{ label: 'Time Worked:', value: 'Jan 2025 - June 2025' }],
