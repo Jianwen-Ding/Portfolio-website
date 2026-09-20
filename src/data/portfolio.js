@@ -444,7 +444,7 @@ export const jams = [
             '50%',
             list(
               "Made for the Spring 2D Jam '24 in Unity and C#: escape starvation by planting a garden on an ever-shifting island.",
-              'Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbours.'
+              'Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbors.'
             )
           )
         )

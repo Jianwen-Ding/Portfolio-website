@@ -121,7 +121,7 @@ A project is one object in the `projects` or `jams` array:
   id: 'strand',                     // anchor target, e.g. #strand
   image: { src: 'Resources/StrandTitle.png', alt: '...' },
   title: 'Strand',
-  subtitle: 'A survival rougelike about fending off zombies.',
+  subtitle: 'A survival roguelike about fending off zombies.',
   meta: [{ label: 'Time Span:', value: '2022-2024' }],
   links: [{ type: 'itch', href: '...' }, { type: 'github', href: '...' }],
   tabs: [ tab('Overview', row(cell('50%', p('...')), cell('50%', img('...')))) ],
