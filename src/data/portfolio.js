@@ -32,31 +32,16 @@ export const about = {
 
 export const experience = [
   {
-    id: 'stormflag',
-    image: { src: 'Resources/StormFlagLogo.png', alt: 'The logo of Storm Flag Games' },
-    title: 'Associate Game Engineer',
-    subtitle: 'Storm Flag Games',
-    meta: [{ label: 'Time Worked:', value: 'Jan 2025 - June 2025' }],
+    id: 'crypticvector',
+    image: { src: 'Resources/CrypticVectorLogo.png', alt: 'The logo of Cryptic Vector' },
+    title: 'Cyber Intern',
+    subtitle: 'Cryptic Vector',
+    meta: [{ label: 'Time Worked:', value: 'May 2026 - Aug 2026' }],
     links: [],
     tabs: [
       tab(
         'Overview',
-        row(
-          cell(
-            '100%',
-            list(
-              'Worked on the C++ game client for a large scale MMO.',
-              item(
-                'Debugged the animation system of the client.',
-                'Patched transparency handling, removing crashes and animation spasms.',
-                'Adjusted mousepicking to work with animated models.',
-                'Implemented a dirty flagging system for animating previously static objects.'
-              ),
-              'Patched an SQLite save corruption bug and implemented save repair functionality.',
-              "Added Lua functions exposing more of the client's graphics engine to scripters."
-            )
-          )
-        )
+        row(cell('100%', list('Did security analysis on large scale C/C++ system.')))
       ),
     ],
   },
@@ -122,16 +107,31 @@ export const experience = [
     ],
   },
   {
-    id: 'crypticvector',
-    image: { src: 'Resources/CrypticVectorLogo.png', alt: 'The logo of Cryptic Vector' },
-    title: 'Cyber Intern',
-    subtitle: 'Cryptic Vector',
-    meta: [{ label: 'Time Worked:', value: 'May 2026 - Aug 2026' }],
+    id: 'stormflag',
+    image: { src: 'Resources/StormFlagLogo.png', alt: 'The logo of Storm Flag Games' },
+    title: 'Associate Game Engineer',
+    subtitle: 'Storm Flag Games',
+    meta: [{ label: 'Time Worked:', value: 'Jan 2025 - June 2025' }],
     links: [],
     tabs: [
       tab(
         'Overview',
-        row(cell('100%', list('Did security analysis on large scale C/C++ system.')))
+        row(
+          cell(
+            '100%',
+            list(
+              'Worked on the C++ game client for a large scale MMO.',
+              item(
+                'Debugged the animation system of the client.',
+                'Patched transparency handling, removing crashes and animation spasms.',
+                'Adjusted mousepicking to work with animated models.',
+                'Implemented a dirty flagging system for animating previously static objects.'
+              ),
+              'Patched an SQLite save corruption bug and implemented save repair functionality.',
+              "Added Lua functions exposing more of the client's graphics engine to scripters."
+            )
+          )
+        )
       ),
     ],
   },
@@ -335,35 +335,6 @@ export const projects = [
 
 export const jams = [
   {
-    id: 'riptide',
-    image: { src: 'Resources/RiptideTitle.png', alt: 'Title of the game Riptide Gardens' },
-    title: 'Riptide Gardens',
-    subtitle: 'A farming game with a constantly shifting base.',
-    meta: [
-      { label: 'Time Span:', value: '1 week in 2024' },
-      { label: 'Team Size:', value: '3 people' },
-    ],
-    links: [
-      { type: 'itch', href: 'https://pakmanlie.itch.io/riptide-gardens' },
-      { type: 'github', href: 'https://github.com/nugamestudioclub/planting-game-spring-24' },
-    ],
-    tabs: [
-      tab(
-        'Overview',
-        row(
-          cell('50%', img('Resources/RiptideScreenShot.png')),
-          cell(
-            '50%',
-            list(
-              "Made for the Spring 2D Jam '24 in Unity and C#: escape starvation by planting a garden on an ever-shifting island.",
-              'Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbours.'
-            )
-          )
-        )
-      ),
-    ],
-  },
-  {
     id: 'remenant',
     image: { src: 'Resources/RemenantTitle.png', alt: "Title of the game Remanent of Davy's Crew" },
     title: "Remanent of Davy's Crew",
@@ -394,6 +365,62 @@ export const jams = [
     ],
   },
   {
+    id: 'combo',
+    image: { src: 'Resources/ComboTitle.png', alt: 'Title of the game Combo Infinity' },
+    title: 'Combo Infinity',
+    subtitle: 'A fighting game based on maintaining a combo.',
+    meta: [
+      { label: 'Time Span:', value: '2 days in 2024' },
+      { label: 'Team Size:', value: 'Personal project' },
+    ],
+    links: [{ type: 'itch', href: 'https://pakmanlie.itch.io/combo-infinity' }],
+    tabs: [
+      tab(
+        'Overview',
+        row(
+          cell('50%', img('Resources/ComboInftySC.png')),
+          cell(
+            '50%',
+            list(
+              'Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.',
+              'Implemented main mechanic centered around keeping a combo alive until a target hit count.',
+              'Designed six levels based on perpetuating a combo while dodging moving hazards.'
+            )
+          )
+        )
+      ),
+    ],
+  },
+  {
+    id: 'riptide',
+    image: { src: 'Resources/RiptideTitle.png', alt: 'Title of the game Riptide Gardens' },
+    title: 'Riptide Gardens',
+    subtitle: 'A farming game with a constantly shifting base.',
+    meta: [
+      { label: 'Time Span:', value: '1 week in 2024' },
+      { label: 'Team Size:', value: '3 people' },
+    ],
+    links: [
+      { type: 'itch', href: 'https://pakmanlie.itch.io/riptide-gardens' },
+      { type: 'github', href: 'https://github.com/nugamestudioclub/planting-game-spring-24' },
+    ],
+    tabs: [
+      tab(
+        'Overview',
+        row(
+          cell('50%', img('Resources/RiptideScreenShot.png')),
+          cell(
+            '50%',
+            list(
+              "Made for the Spring 2D Jam '24 in Unity and C#: escape starvation by planting a garden on an ever-shifting island.",
+              'Built 10 plants sharing a base of timed food production and no water placement, from plain producers to ones that help or sabotage their neighbours.'
+            )
+          )
+        )
+      ),
+    ],
+  },
+  {
     id: 'checkin',
     image: { src: 'Resources/CheckInTitle.png', alt: 'Title of the game Checking In' },
     title: 'Checking In',
@@ -417,33 +444,6 @@ export const jams = [
               'Made for Ludum Dare 54 on the theme "Limited Space".',
               'Created functionality to admit, waitlist or reject a queue of patients.',
               "Built the patient generator on top of a teammate's data, and the room vacancy and waitlist system deciding who can be admitted."
-            )
-          )
-        )
-      ),
-    ],
-  },
-  {
-    id: 'combo',
-    image: { src: 'Resources/ComboTitle.png', alt: 'Title of the game Combo Infinity' },
-    title: 'Combo Infinity',
-    subtitle: 'A fighting game based on maintaining a combo.',
-    meta: [
-      { label: 'Time Span:', value: '2 days in 2024' },
-      { label: 'Team Size:', value: 'Personal project' },
-    ],
-    links: [{ type: 'itch', href: 'https://pakmanlie.itch.io/combo-infinity' }],
-    tabs: [
-      tab(
-        'Overview',
-        row(
-          cell('50%', img('Resources/ComboInftySC.png')),
-          cell(
-            '50%',
-            list(
-              'Made for Ludum Dare on the theme "Keep it Alive", in Unity and C#.',
-              'Implemented main mechanic centered around keeping a combo alive until a target hit count.',
-              'Designed six levels based on perpetuating a combo while dodging moving hazards.'
             )
           )
         )
