@@ -62,7 +62,7 @@ export const experience = [
   },
   {
     id: 'indiecade',
-    image: { src: 'Resources/IndiecadeLogo.jpg', alt: 'The logo of IndieCade' },
+    image: { src: 'Resources/IndiecadeLogo.png', alt: 'The logo of IndieCade' },
     title: 'Summer Game Design Intern',
     subtitle: 'IndieCade',
     meta: [{ label: 'Time Worked:', value: 'June 2025 - July 2025' }],
