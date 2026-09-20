@@ -33,7 +33,7 @@ export const about = {
 export const experience = [
   {
     id: 'stormflag',
-    image: { src: 'Resources/SFLogoOnBlk.png', alt: 'The logo of Storm Flag Games' },
+    image: { src: 'Resources/StormFlagLogo.png', alt: 'The logo of Storm Flag Games' },
     title: 'Associate Game Engineer',
     subtitle: 'Storm Flag Games',
     meta: [{ label: 'Time Worked:', value: 'Jan 2025 - June 2025' }],
@@ -62,7 +62,7 @@ export const experience = [
   },
   {
     id: 'indiecade',
-    image: { src: 'Resources/IndiecadeLogo.jpg', alt: 'The logo of IndieCade' },
+    image: { src: 'Resources/IndiecadeLogo.png', alt: 'The logo of IndieCade' },
     title: 'Summer Game Design Intern',
     subtitle: 'IndieCade',
     meta: [{ label: 'Time Worked:', value: 'June 2025 - July 2025' }],
@@ -118,6 +118,20 @@ export const experience = [
             )
           )
         )
+      ),
+    ],
+  },
+  {
+    id: 'crypticvector',
+    image: { src: 'Resources/CrypticVectorLogo.png', alt: 'The logo of Cryptic Vector' },
+    title: 'Cyber Intern',
+    subtitle: 'Cryptic Vector',
+    meta: [{ label: 'Time Worked:', value: 'May 2026 - Aug 2026' }],
+    links: [],
+    tabs: [
+      tab(
+        'Overview',
+        row(cell('100%', list('Did security analysis on large scale C/C++ system.')))
       ),
     ],
   },
