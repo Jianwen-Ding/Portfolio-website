@@ -423,33 +423,6 @@ export const jams = [
       ),
     ],
   },
-  {
-    id: 'combo',
-    image: { src: 'Resources/ComboTitle.png', alt: 'Title of the game Combo Infinity' },
-    title: 'Combo Infinity',
-    subtitle: 'A fighting game based on maintaining a combo.',
-    meta: [
-      { label: 'Time Span:', value: '2 days in 2020' },
-      { label: 'Team Size:', value: 'Personal project' },
-    ],
-    links: [{ type: 'itch', href: 'https://pakmanlie.itch.io/combo-infinity' }],
-    tabs: [
-      tab(
-        'Overview',
-        row(
-          cell('50%', img('Resources/ComboInftySC.png')),
-          cell(
-            '50%',
-            list(
-              'Made for Ludum Dare 46 on the theme "Keep it Alive", in Unity and C#.',
-              'Implemented main mechanic centered around keeping a combo alive until a target hit count.',
-              'Designed six levels based on perpetuating a combo while dodging moving hazards.'
-            )
-          )
-        )
-      ),
-    ],
-  },
 ];
 
 export const socials = [
