@@ -331,6 +331,64 @@ export const projects = [
       ),
     ],
   },
+  {
+    id: 'hunter',
+    image: { src: 'Resources/HeadhunterTitle.png', alt: 'Title of the game Head Hunters' },
+    title: 'Head Hunters',
+    subtitle: 'A funk themed turn based strategy game.',
+    meta: [
+      { label: 'Time Span:', value: '2021 - 2022' },
+      { label: 'Team Size:', value: 'Personal project' },
+    ],
+    links: [
+      { type: 'itch', href: 'https://pakmanlie.itch.io/head-hunters' },
+      { type: 'github', href: 'https://github.com/Jianwen-Ding/AgentRpg' },
+    ],
+    tabs: [
+      tab(
+        'Overview',
+        row(
+          cell(
+            '50%',
+            video(
+              'https://www.youtube.com/embed/Lp9SjmDYSGU?si=vYU0L4hQaZagjNF9',
+              'A short clip of me playing Head Hunters'
+            )
+          ),
+          cell(
+            '50%',
+            list(
+              'A personal project started and finished in high school, made in Unity and C# with GitHub for source control.',
+              'You command three characters against six bosses. Each character can shoot, use a special move, or step to an adjacent tile, and the bosses have the same options.',
+              'Built the turn system around a queue of events and actions, which also carries status effects and the messages shown between turns.'
+            )
+          )
+        ),
+        row(
+          cell(
+            '50%',
+            list(
+              'Special moves run from slowing an enemy to rigging a character to explode a set number of turns later.',
+              'Enemies share every ability the player has, so their AI scores each action by priority points, weighted by the type of action and the path taken to reach it.',
+              'Tuning those priority values produces new behavior without touching any code.'
+            )
+          ),
+          cell('50%', img('Resources/HunterSShot2.png'))
+        ),
+        row(
+          cell('50%', img('Resources/MovelistScreenshot.png', 'The move selection screen')),
+          cell(
+            '50%',
+            list(
+              'Selecting a special move highlights both the tiles it can be cast on and the tiles it would affect.',
+              "Animated the art myself, feeding illustrations through Unity's animation system, and wrote the music in MuseScore, leaning hard into funk and rock.",
+              'Named after the Herbie Hancock album, with many bosses themed on records and artists I liked at the time.'
+            )
+          )
+        )
+      ),
+    ],
+  },
 ];
 
 export const jams = [
